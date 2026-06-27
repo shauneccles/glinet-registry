@@ -24,7 +24,7 @@ function methodRow(service, method, rec) {
   const present = PRESENT.has(rec.status);
   let cov = "";
   if (rec.covered_by) cov = badge(`gli4py: ${rec.covered_by}`, "cov-yes");
-  else if (present) cov = badge("not yet wrapped", "cov-no");
+  else if (present) cov = badge("not yet in gli4py", "cov-no");
   let detail = "";
   if (rec.params || rec.schema) {
     const body = JSON.stringify({ params: rec.params, schema: rec.schema }, null, 2);

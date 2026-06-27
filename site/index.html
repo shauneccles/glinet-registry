@@ -17,12 +17,15 @@
     </label>
     <input id="search" type="search" placeholder="filter service / method…">
     <label class="chk"><input type="checkbox" id="available-only"> available only</label>
-    <label class="chk"><input type="checkbox" id="not-wrapped"> not yet wrapped</label>
+    <label class="chk"><input type="checkbox" id="not-wrapped"> not yet in gli4py</label>
     <span id="count" class="count"></span>
   </div>
   <main id="results"></main>
   <footer>
-    <p>Sanitized profiles — no device identifiers or response values are published.</p>
+    <p>Sanitized profiles — no device identifiers or response values are published.
+      Profiles are captured with <a href="https://github.com/shauneccles/glinet-profiler">glinet-profiler</a>;
+      a <code>gli4py:&nbsp;…</code> badge marks methods the
+      <a href="https://github.com/shauneccles/gli4py">gli4py</a> Python client wraps.</p>
   </footer>
   <script src="app.js"></script>
 </body>
