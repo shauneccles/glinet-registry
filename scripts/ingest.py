@@ -23,7 +23,7 @@ def main(argv: list[str] | None = None) -> int:
     data["id"] = new_id
     (_REG / "devices").mkdir(parents=True, exist_ok=True)
     (_REG / "devices" / f"{new_id}.json").write_text(
-        json.dumps(data, indent=2, sort_keys=True), encoding="utf-8"
+        json.dumps(data, indent=2, sort_keys=True) + "\n", encoding="utf-8"
     )
     profiles = [
         json.loads(p.read_text(encoding="utf-8")) for p in sorted((_REG / "devices").glob("*.json"))

@@ -25,6 +25,13 @@ def test_validate_clean_and_rejections():
     bad = {**CLEAN, "services": {"s": {"m": {"status": "available", "value": {"x": 1}}}}}
     assert "response value" in validate_profile(bad)
     assert "MAC" in validate_profile({**CLEAN, "services": {"s": {"m": {"schema": {"a": "94:83:C4:AA:BB:CC"}}}}})
+    assert "JSON object" in validate_profile("not a dict")
+    assert "missing required key" in validate_profile({"model": "x", "firmware_version": "1"})
+    assert "non-empty string" in validate_profile({"model": "", "firmware_version": "1", "services": {}})
+    assert "must be an object" in validate_profile({"model": "x", "firmware_version": "1", "services": []})
+    assert "must be an object" in validate_profile(
+        {"model": "x", "firmware_version": "1", "services": {"s": {"m": "notdict"}}}
+    )
 
 
 def test_build_manifest_counts():
