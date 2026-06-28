@@ -1,13 +1,13 @@
 {
   "devices": [
     {
-      "available_count": 105,
-      "discovered_count": 0,
+      "available_count": 131,
+      "discovered_count": 300,
       "firmware_version": "4.9.0",
       "id": "mt6000_4.9.0",
       "model": "mt6000",
-      "not_wrapped_count": 94,
-      "service_count": 44
+      "not_wrapped_count": 121,
+      "service_count": 42
     }
   ]
 }

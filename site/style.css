@@ -27,6 +27,7 @@ select, #search { background: var(--panel); color: var(--fg); border: 1px solid 
 .st-available { background: rgba(46,160,67,.15); color: var(--green); }
 .st-needs_params { background: rgba(210,153,34,.15); color: var(--amber); }
 .st-discovered { background: rgba(47,129,247,.15); color: var(--blue); }
+.st-error { background: rgba(210,153,34,.12); color: var(--amber); }
 .st-absent, .st-unreachable, .st-other, .st-auth_error, .st-token_error {
   background: var(--panel); color: var(--muted); }
 .cov-yes { background: rgba(47,129,247,.15); color: var(--blue); }
