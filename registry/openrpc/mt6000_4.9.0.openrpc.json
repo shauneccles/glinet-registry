@@ -42,6 +42,17 @@
       "x-status": "discovered"
     },
     {
+      "name": "acl.get_acl_list",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {}
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "needs_params"
+    },
+    {
       "name": "acl.get_group_list",
       "params": [],
       "result": {
@@ -304,6 +315,24 @@
       "x-discovered-by": "ssh",
       "x-risk": "write",
       "x-status": "discovered"
+    },
+    {
+      "name": "cable.get_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "protocol": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
     },
     {
       "name": "cable.get_ports_config",
@@ -2143,6 +2172,66 @@
       "x-status": "discovered"
     },
     {
+      "name": "flow_statistics.get_app_flow_statistics",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "error": {
+              "type": "string"
+            },
+            "mac_addresses": {
+              "type": "array"
+            },
+            "max_bytes": {
+              "type": "string"
+            },
+            "metadata": {
+              "properties": {
+                "end_time": {
+                  "type": "integer"
+                },
+                "start_time": {
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            },
+            "period_seconds": {
+              "type": "integer"
+            },
+            "time_series": {
+              "type": "array"
+            },
+            "total_download": {
+              "type": "integer"
+            },
+            "total_upload": {
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "flow_statistics.get_flow_statistics",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "array"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
       "name": "flow_statistics.get_statistics_rule",
       "params": [],
       "result": {
@@ -2157,6 +2246,30 @@
             },
             "type": {
               "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "flow_statistics.get_top_app_flow_statistics",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "max_bytes": {
+              "type": "string"
+            },
+            "period_seconds": {
+              "type": "integer"
+            },
+            "top_apps": {
+              "type": "array"
             }
           },
           "type": "object"
@@ -3209,6 +3322,19 @@
       "x-status": "discovered"
     },
     {
+      "name": "logread.get_crash_log",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "array"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
       "name": "logread.get_esim_log",
       "params": [],
       "result": {
@@ -3262,6 +3388,42 @@
         }
       },
       "x-discovered-by": "ssh",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "logread.get_nginx_log",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "log": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "ssh",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "logread.get_system_log",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "log": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
       "x-risk": "read",
       "x-status": "available"
     },
@@ -4010,6 +4172,27 @@
       "x-status": "available"
     },
     {
+      "name": "mptun.get_token",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "err_code": {
+              "type": "integer"
+            },
+            "err_msg": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "ssh",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
       "name": "mptun.get_traffic",
       "params": [],
       "result": {
@@ -4605,6 +4788,30 @@
       "x-discovered-by": "ssh",
       "x-risk": "write",
       "x-status": "discovered"
+    },
+    {
+      "name": "network.check_wan_cable",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "cable_enabled": {
+              "type": "boolean"
+            },
+            "cable_inserted": {
+              "type": "boolean"
+            },
+            "macclone_enabled": {
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
     },
     {
       "name": "network.get_advance_config",
@@ -7917,6 +8124,17 @@
       "x-status": "available"
     },
     {
+      "name": "ui.load_locales",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {}
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "needs_params"
+    },
+    {
       "name": "ui.set_encryption_init",
       "params": [],
       "result": {
@@ -8452,6 +8670,27 @@
       "x-discovered-by": "ssh",
       "x-risk": "write",
       "x-status": "discovered"
+    },
+    {
+      "name": "vpn-client.check_domain_online",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "err_code": {
+              "type": "integer"
+            },
+            "err_msg": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "ssh",
+      "x-risk": "read",
+      "x-status": "available"
     },
     {
       "name": "vpn-client.check_vpn_config",
@@ -9487,6 +9726,48 @@
           "properties": {
             "max_client": {
               "type": "integer"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "ssh",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "wg_client.get_provider_server_list",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "err_code": {
+              "type": "integer"
+            },
+            "err_msg": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "ssh",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "wg_client.get_provider_user_info",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "err_code": {
+              "type": "integer"
+            },
+            "err_msg": {
+              "type": "string"
             }
           },
           "type": "object"

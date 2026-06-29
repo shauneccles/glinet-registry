@@ -91,11 +91,11 @@
       "get_acl_list": {
         "covered_by": null,
         "discovered_by": "catalog",
-        "error_code": null,
+        "error_code": -32602,
         "params": null,
         "risk": "read",
         "schema": null,
-        "status": "unreachable"
+        "status": "needs_params"
       },
       "get_config": {
         "covered_by": null,
@@ -511,8 +511,10 @@
         "error_code": null,
         "params": null,
         "risk": "read",
-        "schema": null,
-        "status": "unreachable"
+        "schema": {
+          "protocol": "str"
+        },
+        "status": "available"
       },
       "get_device_usbwan_port": {
         "covered_by": null,
@@ -2378,8 +2380,20 @@
         "error_code": null,
         "params": null,
         "risk": "read",
-        "schema": null,
-        "status": "unreachable"
+        "schema": {
+          "error": "str",
+          "mac_addresses": "list",
+          "max_bytes": "str",
+          "metadata": {
+            "end_time": "int",
+            "start_time": "int"
+          },
+          "period_seconds": "int",
+          "time_series": "list",
+          "total_download": "int",
+          "total_upload": "int"
+        },
+        "status": "available"
       },
       "get_app_traffic_stats": {
         "covered_by": null,
@@ -2423,8 +2437,8 @@
         "error_code": null,
         "params": null,
         "risk": "read",
-        "schema": null,
-        "status": "unreachable"
+        "schema": "list",
+        "status": "available"
       },
       "get_info": {
         "covered_by": null,
@@ -2499,8 +2513,12 @@
         "error_code": null,
         "params": null,
         "risk": "read",
-        "schema": null,
-        "status": "unreachable"
+        "schema": {
+          "max_bytes": "str",
+          "period_seconds": "int",
+          "top_apps": "list"
+        },
+        "status": "available"
       },
       "get_top_apps_traffic": {
         "covered_by": null,
@@ -3612,8 +3630,8 @@
         "error_code": null,
         "params": null,
         "risk": "read",
-        "schema": null,
-        "status": "unreachable"
+        "schema": "list",
+        "status": "available"
       },
       "get_esim_log": {
         "covered_by": null,
@@ -3674,8 +3692,10 @@
         "error_code": null,
         "params": null,
         "risk": "read",
-        "schema": null,
-        "status": "unreachable"
+        "schema": {
+          "log": "str"
+        },
+        "status": "available"
       },
       "get_status": {
         "covered_by": null,
@@ -3692,8 +3712,10 @@
         "error_code": null,
         "params": null,
         "risk": "read",
-        "schema": null,
-        "status": "unreachable"
+        "schema": {
+          "log": "str"
+        },
+        "status": "available"
       },
       "get_uboot_log": {
         "covered_by": null,
@@ -4448,8 +4470,11 @@
         "error_code": null,
         "params": null,
         "risk": "read",
-        "schema": null,
-        "status": "unreachable"
+        "schema": {
+          "err_code": "int",
+          "err_msg": "str"
+        },
+        "status": "available"
       },
       "get_traffic": {
         "covered_by": null,
@@ -5117,8 +5142,12 @@
         "error_code": null,
         "params": null,
         "risk": "read",
-        "schema": null,
-        "status": "unreachable"
+        "schema": {
+          "cable_enabled": "bool",
+          "cable_inserted": "bool",
+          "macclone_enabled": "bool"
+        },
+        "status": "available"
       },
       "get_advance_config": {
         "covered_by": null,
@@ -8563,11 +8592,11 @@
       "load_locales": {
         "covered_by": null,
         "discovered_by": "catalog",
-        "error_code": null,
+        "error_code": -32602,
         "params": null,
         "risk": "read",
         "schema": null,
-        "status": "unreachable"
+        "status": "needs_params"
       },
       "set_encryption_init": {
         "covered_by": null,
@@ -9014,8 +9043,11 @@
         "error_code": null,
         "params": [],
         "risk": "read",
-        "schema": null,
-        "status": "unreachable"
+        "schema": {
+          "err_code": "int",
+          "err_msg": "str"
+        },
+        "status": "available"
       },
       "check_fn": {
         "covered_by": null,
@@ -10061,8 +10093,11 @@
         "error_code": null,
         "params": [],
         "risk": "read",
-        "schema": null,
-        "status": "unreachable"
+        "schema": {
+          "err_code": "int",
+          "err_msg": "str"
+        },
+        "status": "available"
       },
       "get_provider_user_info": {
         "covered_by": null,
@@ -10070,8 +10105,11 @@
         "error_code": null,
         "params": null,
         "risk": "read",
-        "schema": null,
-        "status": "unreachable"
+        "schema": {
+          "err_code": "int",
+          "err_msg": "str"
+        },
+        "status": "available"
       },
       "init_provider_group": {
         "covered_by": null,
