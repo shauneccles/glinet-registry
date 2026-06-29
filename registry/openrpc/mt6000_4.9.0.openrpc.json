@@ -21,12 +21,21 @@
     },
     {
       "name": "acl.add_group",
-      "params": [],
+      "params": [
+        {
+          "name": "groups",
+          "schema": {
+            "items": {},
+            "type": "array"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "acl.get_group_list",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -60,6 +69,7 @@
         "schema": {
           "properties": {
             "groups": {
+              "items": {},
               "type": "array"
             }
           },
@@ -83,12 +93,21 @@
     },
     {
       "name": "acl.remove_group",
-      "params": [],
+      "params": [
+        {
+          "name": "groups",
+          "schema": {
+            "items": {},
+            "type": "array"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "acl.get_group_list",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -111,9 +130,15 @@
         "schema": {
           "properties": {
             "dns_enabled": {
+              "examples": [
+                true
+              ],
               "type": "boolean"
             },
             "enabled": {
+              "examples": [
+                true
+              ],
               "type": "boolean"
             }
           },
@@ -126,12 +151,32 @@
     },
     {
       "name": "adguardhome.set_config",
-      "params": [],
+      "params": [
+        {
+          "name": "dns_enabled",
+          "schema": {
+            "examples": [
+              true
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "enabled",
+          "schema": {
+            "examples": [
+              true
+            ],
+            "type": "boolean"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "adguardhome.get_config",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -176,9 +221,15 @@
         "schema": {
           "properties": {
             "enable": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "ipv6_enable": {
+              "examples": [
+                true
+              ],
               "type": "boolean"
             }
           },
@@ -200,6 +251,9 @@
               "type": "string"
             },
             "status": {
+              "examples": [
+                1
+              ],
               "type": "integer"
             }
           },
@@ -223,12 +277,32 @@
     },
     {
       "name": "bark.set_config",
-      "params": [],
+      "params": [
+        {
+          "name": "enable",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "ipv6_enable",
+          "schema": {
+            "examples": [
+              true
+            ],
+            "type": "boolean"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "bark.get_config",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -240,6 +314,9 @@
         "schema": {
           "properties": {
             "mode": {
+              "examples": [
+                "black"
+              ],
               "type": "string"
             }
           },
@@ -252,12 +329,23 @@
     },
     {
       "name": "black_white_list.set_config",
-      "params": [],
+      "params": [
+        {
+          "name": "mode",
+          "schema": {
+            "examples": [
+              "black"
+            ],
+            "type": "string"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "black_white_list.get_config",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -324,6 +412,9 @@
         "schema": {
           "properties": {
             "protocol": {
+              "examples": [
+                "dhcp"
+              ],
               "type": "string"
             }
           },
@@ -345,29 +436,43 @@
               "items": {
                 "properties": {
                   "default_mode": {
+                    "examples": [
+                      "wan"
+                    ],
                     "type": "string"
                   },
                   "macaddr": {
                     "properties": {
                       "defmacaddr": {
+                        "format": "mac",
                         "type": "string"
                       },
                       "macaddr": {
+                        "format": "mac",
                         "type": "string"
                       },
                       "mode": {
+                        "examples": [
+                          "default"
+                        ],
                         "type": "string"
                       }
                     },
                     "type": "object"
                   },
                   "mode": {
+                    "examples": [
+                      "wan"
+                    ],
                     "type": "string"
                   },
                   "name": {
                     "type": "string"
                   },
                   "silk": {
+                    "examples": [
+                      "WAN"
+                    ],
                     "type": "string"
                   }
                 },
@@ -394,12 +499,18 @@
               "items": {
                 "properties": {
                   "duplex": {
+                    "examples": [
+                      "full"
+                    ],
                     "type": "string"
                   },
                   "name": {
                     "type": "string"
                   },
                   "speed": {
+                    "examples": [
+                      1000
+                    ],
                     "type": "integer"
                   }
                 },
@@ -426,11 +537,13 @@
               "properties": {
                 "dns": {
                   "items": {
+                    "format": "ipv4",
                     "type": "string"
                   },
                   "type": "array"
                 },
                 "gateway": {
+                  "format": "ipv4",
                   "type": "string"
                 },
                 "ip": {
@@ -440,28 +553,46 @@
               "type": "object"
             },
             "mode": {
+              "examples": [
+                0
+              ],
               "type": "integer"
             },
             "protocol": {
+              "examples": [
+                "dhcp"
+              ],
               "type": "string"
             },
             "secondwan": {
               "properties": {
                 "mode": {
+                  "examples": [
+                    1
+                  ],
                   "type": "integer"
                 },
                 "status": {
+                  "examples": [
+                    3
+                  ],
                   "type": "integer"
                 }
               },
               "type": "object"
             },
             "status": {
+              "examples": [
+                1
+              ],
               "type": "integer"
             },
             "usbwan": {
               "properties": {
                 "err_code": {
+                  "examples": [
+                    -4
+                  ],
                   "type": "integer"
                 },
                 "err_msg": {
@@ -491,12 +622,23 @@
     },
     {
       "name": "cable.set_config",
-      "params": [],
+      "params": [
+        {
+          "name": "protocol",
+          "schema": {
+            "examples": [
+              "dhcp"
+            ],
+            "type": "string"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "cable.get_config",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -643,60 +785,104 @@
               "items": {
                 "properties": {
                   "blocked": {
+                    "examples": [
+                      false
+                    ],
                     "type": "boolean"
                   },
                   "iface": {
+                    "examples": [
+                      "2.4G"
+                    ],
                     "type": "string"
                   },
                   "ip": {
+                    "format": "ipv4",
                     "type": "string"
                   },
                   "ipv6": {
+                    "items": {},
                     "type": "array"
                   },
                   "last_update_rate": {
+                    "examples": [
+                      1781503476
+                    ],
                     "type": "integer"
                   },
                   "limit_rx": {
+                    "examples": [
+                      0
+                    ],
                     "type": "integer"
                   },
                   "limit_tx": {
+                    "examples": [
+                      0
+                    ],
                     "type": "integer"
                   },
                   "mac": {
+                    "format": "mac",
                     "type": "string"
                   },
                   "name": {
                     "type": "string"
                   },
                   "online": {
+                    "examples": [
+                      true
+                    ],
                     "type": "boolean"
                   },
                   "online_time": {
+                    "examples": [
+                      1744794048
+                    ],
                     "type": "integer"
                   },
                   "remote": {
+                    "examples": [
+                      false
+                    ],
                     "type": "boolean"
                   },
                   "rx": {
+                    "examples": [
+                      51
+                    ],
                     "type": "integer"
                   },
                   "total_rx": {
+                    "examples": [
+                      "51941214423"
+                    ],
                     "type": "string"
                   },
                   "total_rx_init": {
+                    "examples": [
+                      "51921707788"
+                    ],
                     "type": "string"
                   },
                   "total_tx": {
+                    "format": "date-time",
                     "type": "string"
                   },
                   "total_tx_init": {
+                    "format": "date-time",
                     "type": "string"
                   },
                   "tx": {
+                    "examples": [
+                      61
+                    ],
                     "type": "integer"
                   },
                   "type": {
+                    "examples": [
+                      0
+                    ],
                     "type": "integer"
                   }
                 },
@@ -721,9 +907,15 @@
         "schema": {
           "properties": {
             "speed_rx": {
+              "examples": [
+                4473
+              ],
               "type": "integer"
             },
             "speed_tx": {
+              "examples": [
+                2775
+              ],
               "type": "integer"
             }
           },
@@ -742,12 +934,21 @@
         "schema": {
           "properties": {
             "auto_remove_offline": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "cable_total": {
+              "examples": [
+                3
+              ],
               "type": "integer"
             },
             "wireless_total": {
+              "examples": [
+                12
+              ],
               "type": "integer"
             }
           },
@@ -766,9 +967,15 @@
         "schema": {
           "properties": {
             "speed_rx": {
+              "examples": [
+                4582
+              ],
               "type": "integer"
             },
             "speed_tx": {
+              "examples": [
+                2926
+              ],
               "type": "integer"
             }
           },
@@ -853,6 +1060,9 @@
         "schema": {
           "properties": {
             "err_code": {
+              "examples": [
+                -1
+              ],
               "type": "integer"
             },
             "err_msg": {
@@ -883,24 +1093,42 @@
               "type": "string"
             },
             "cloud_enable": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "rtty_ssh": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "rtty_web": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "serverzones": {
               "items": {
+                "examples": [
+                  "Europe"
+                ],
                 "type": "string"
               },
               "type": "array"
             },
             "token_invalid": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "token_status": {
+              "examples": [
+                0
+              ],
               "type": "integer"
             }
           },
@@ -913,12 +1141,89 @@
     },
     {
       "name": "cloud.set_config",
-      "params": [],
+      "params": [
+        {
+          "name": "aw_api_url",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "aw_url",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "bindtype",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "cloud_enable",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "rtty_ssh",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "rtty_web",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "serverzones",
+          "schema": {
+            "items": {
+              "examples": [
+                "Europe"
+              ],
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        {
+          "name": "token_invalid",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "token_status",
+          "schema": {
+            "examples": [
+              0
+            ],
+            "type": "integer"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "cloud.get_config",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -1121,21 +1426,34 @@
               "type": "string"
             },
             "controld_type": {
+              "examples": [
+                1
+              ],
               "type": "integer"
             },
             "force_dns": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "manual_list": {
+              "items": {},
               "type": "array"
             },
             "mode": {
+              "examples": [
+                "auto"
+              ],
               "type": "string"
             },
             "nextdns_id": {
               "type": "string"
             },
             "override_vpn": {
+              "examples": [
+                true
+              ],
               "type": "boolean"
             },
             "proto": {
@@ -1148,12 +1466,17 @@
               "type": "string"
             },
             "proxy_list": {
+              "items": {},
               "type": "array"
             },
             "rebind_protection": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "secure_manual_list": {
+              "items": {},
               "type": "array"
             },
             "server_auto": {
@@ -1163,6 +1486,7 @@
               "type": "array"
             },
             "servers_list": {
+              "items": {},
               "type": "array"
             }
           },
@@ -1200,15 +1524,26 @@
           "items": {
             "properties": {
               "provider": {
+                "examples": [
+                  "controld"
+                ],
                 "type": "string"
               },
               "server_list": {
                 "items": {
                   "properties": {
                     "address": {
+                      "items": {
+                        "format": "ipv4",
+                        "type": "string"
+                      },
                       "type": "array"
                     },
                     "address6": {
+                      "items": {
+                        "format": "ipv6",
+                        "type": "string"
+                      },
                       "type": "array"
                     },
                     "description": {
@@ -1233,6 +1568,9 @@
               },
               "sup_proto": {
                 "items": {
+                  "examples": [
+                    "dot"
+                  ],
                   "type": "string"
                 },
                 "type": "array"
@@ -1249,12 +1587,126 @@
     },
     {
       "name": "dns.set_config",
-      "params": [],
+      "params": [
+        {
+          "name": "controld_id",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "controld_type",
+          "schema": {
+            "examples": [
+              1
+            ],
+            "type": "integer"
+          }
+        },
+        {
+          "name": "force_dns",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "manual_list",
+          "schema": {
+            "items": {},
+            "type": "array"
+          }
+        },
+        {
+          "name": "mode",
+          "schema": {
+            "examples": [
+              "auto"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "nextdns_id",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "override_vpn",
+          "schema": {
+            "examples": [
+              true
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "proto",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "proto_manual",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "provider",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "proxy_list",
+          "schema": {
+            "items": {},
+            "type": "array"
+          }
+        },
+        {
+          "name": "rebind_protection",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "secure_manual_list",
+          "schema": {
+            "items": {},
+            "type": "array"
+          }
+        },
+        {
+          "name": "server_auto",
+          "schema": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        {
+          "name": "servers_list",
+          "schema": {
+            "items": {},
+            "type": "array"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "dns.get_config",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -1282,12 +1734,20 @@
     },
     {
       "name": "dns.set_host",
-      "params": [],
+      "params": [
+        {
+          "name": "content",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "dns.get_host",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -1346,6 +1806,9 @@
               "type": "string"
             },
             "upgrade_available": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             }
           },
@@ -1367,6 +1830,9 @@
               "type": "string"
             },
             "upgrade_available": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             }
           },
@@ -1397,6 +1863,7 @@
           "items": {
             "properties": {
               "apps": {
+                "items": {},
                 "type": "array"
               },
               "category_name": {
@@ -1420,15 +1887,22 @@
         "schema": {
           "properties": {
             "app_list": {
+              "items": {},
               "type": "array"
             },
             "category_list": {
               "items": {
+                "examples": [
+                  "gambling"
+                ],
                 "type": "string"
               },
               "type": "array"
             },
             "enable": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             }
           },
@@ -1447,15 +1921,27 @@
         "schema": {
           "properties": {
             "lib_update_auto": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "lib_version": {
+              "examples": [
+                "20260226_01"
+              ],
               "type": "string"
             },
             "ota_update_auto": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "ota_version": {
+              "examples": [
+                "1.0.2"
+              ],
               "type": "string"
             }
           },
@@ -1474,15 +1960,27 @@
         "schema": {
           "properties": {
             "content_protection_all": {
+              "examples": [
+                0
+              ],
               "type": "integer"
             },
             "content_protection_day": {
+              "examples": [
+                0
+              ],
               "type": "integer"
             },
             "qos": {
+              "examples": [
+                0
+              ],
               "type": "integer"
             },
             "traffic_day": {
+              "examples": [
+                0
+              ],
               "type": "integer"
             }
           },
@@ -1501,12 +1999,19 @@
         "schema": {
           "properties": {
             "lib_update_time": {
+              "format": "date-time",
               "type": "string"
             },
             "lib_version": {
+              "examples": [
+                "20260226_01"
+              ],
               "type": "string"
             },
             "status": {
+              "examples": [
+                "1"
+              ],
               "type": "string"
             }
           },
@@ -1528,21 +2033,32 @@
               "type": "string"
             },
             "enable": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "high": {
+              "items": {},
               "type": "array"
             },
             "low": {
+              "items": {},
               "type": "array"
             },
             "middle": {
               "items": {
+                "examples": [
+                  "meeting"
+                ],
                 "type": "string"
               },
               "type": "array"
             },
             "mode": {
+              "examples": [
+                "1"
+              ],
               "type": "string"
             },
             "upload": {
@@ -1564,6 +2080,9 @@
         "schema": {
           "properties": {
             "enable": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             }
           },
@@ -1587,12 +2106,42 @@
     },
     {
       "name": "dpi.set_content_protection",
-      "params": [],
+      "params": [
+        {
+          "name": "app_list",
+          "schema": {
+            "items": {},
+            "type": "array"
+          }
+        },
+        {
+          "name": "category_list",
+          "schema": {
+            "items": {
+              "examples": [
+                "gambling"
+              ],
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        {
+          "name": "enable",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "dpi.get_content_protection",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -1609,12 +2158,50 @@
     },
     {
       "name": "dpi.set_dpi_config",
-      "params": [],
+      "params": [
+        {
+          "name": "lib_update_auto",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "lib_version",
+          "schema": {
+            "examples": [
+              "20260226_01"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "ota_update_auto",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "ota_version",
+          "schema": {
+            "examples": [
+              "1.0.2"
+            ],
+            "type": "string"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "dpi.get_dpi_config",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -1664,12 +2251,70 @@
     },
     {
       "name": "dpi.set_qos",
-      "params": [],
+      "params": [
+        {
+          "name": "download",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "enable",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "high",
+          "schema": {
+            "items": {},
+            "type": "array"
+          }
+        },
+        {
+          "name": "low",
+          "schema": {
+            "items": {},
+            "type": "array"
+          }
+        },
+        {
+          "name": "middle",
+          "schema": {
+            "items": {
+              "examples": [
+                "meeting"
+              ],
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        {
+          "name": "mode",
+          "schema": {
+            "examples": [
+              "1"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "upload",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "dpi.get_qos",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -1747,9 +2392,15 @@
         "schema": {
           "properties": {
             "enable": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "ignore": {
+              "examples": [
+                true
+              ],
               "type": "boolean"
             }
           },
@@ -1768,6 +2419,9 @@
         "schema": {
           "properties": {
             "detected": {
+              "examples": [
+                0
+              ],
               "type": "integer"
             }
           },
@@ -1781,12 +2435,32 @@
     },
     {
       "name": "edgerouter.set_config",
-      "params": [],
+      "params": [
+        {
+          "name": "enable",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "ignore",
+          "schema": {
+            "examples": [
+              true
+            ],
+            "type": "boolean"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "edgerouter.get_config",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -1803,23 +2477,91 @@
     },
     {
       "name": "firewall.add_port_forward",
-      "params": [],
+      "params": [
+        {
+          "name": "res",
+          "schema": {
+            "items": {
+              "properties": {
+                "dest": {
+                  "examples": [
+                    "lan"
+                  ],
+                  "type": "string"
+                },
+                "dest_ip": {
+                  "format": "ipv4",
+                  "type": "string"
+                },
+                "dest_port": {
+                  "examples": [
+                    "32400"
+                  ],
+                  "type": "string"
+                },
+                "enabled": {
+                  "examples": [
+                    true
+                  ],
+                  "type": "boolean"
+                },
+                "id": {
+                  "examples": [
+                    "cfg013837"
+                  ],
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "proto": {
+                  "type": "string"
+                },
+                "src": {
+                  "examples": [
+                    "wan"
+                  ],
+                  "type": "string"
+                },
+                "src_dport": {
+                  "examples": [
+                    "32400"
+                  ],
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "firewall.get_port_forward_list",
       "x-risk": "write",
       "x-status": "discovered"
     },
     {
       "name": "firewall.add_rule",
-      "params": [],
+      "params": [
+        {
+          "name": "res",
+          "schema": {
+            "items": {},
+            "type": "array"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "firewall.get_rule_list",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -1840,6 +2582,7 @@
       "result": {
         "name": "result",
         "schema": {
+          "items": {},
           "type": "array"
         }
       },
@@ -1856,12 +2599,18 @@
           "properties": {
             "externals": {
               "items": {
+                "examples": [
+                  "lan"
+                ],
                 "type": "string"
               },
               "type": "array"
             },
             "internals": {
               "items": {
+                "examples": [
+                  "lan"
+                ],
                 "type": "string"
               },
               "type": "array"
@@ -1882,6 +2631,9 @@
         "schema": {
           "properties": {
             "enabled": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             }
           },
@@ -1903,18 +2655,31 @@
               "items": {
                 "properties": {
                   "dest": {
+                    "examples": [
+                      "lan"
+                    ],
                     "type": "string"
                   },
                   "dest_ip": {
+                    "format": "ipv4",
                     "type": "string"
                   },
                   "dest_port": {
+                    "examples": [
+                      "32400"
+                    ],
                     "type": "string"
                   },
                   "enabled": {
+                    "examples": [
+                      true
+                    ],
                     "type": "boolean"
                   },
                   "id": {
+                    "examples": [
+                      "cfg013837"
+                    ],
                     "type": "string"
                   },
                   "name": {
@@ -1924,9 +2689,15 @@
                     "type": "string"
                   },
                   "src": {
+                    "examples": [
+                      "wan"
+                    ],
                     "type": "string"
                   },
                   "src_dport": {
+                    "examples": [
+                      "32400"
+                    ],
                     "type": "string"
                   }
                 },
@@ -1950,6 +2721,7 @@
         "schema": {
           "properties": {
             "res": {
+              "items": {},
               "type": "array"
             }
           },
@@ -1968,18 +2740,31 @@
         "schema": {
           "properties": {
             "enable_https": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "enable_ping": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "enable_ssh": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "enable_whitelist": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "whitelist": {
+              "items": {},
               "type": "array"
             }
           },
@@ -1999,12 +2784,18 @@
           "properties": {
             "externals": {
               "items": {
+                "examples": [
+                  "lan"
+                ],
                 "type": "string"
               },
               "type": "array"
             },
             "internals": {
               "items": {
+                "examples": [
+                  "lan"
+                ],
                 "type": "string"
               },
               "type": "array"
@@ -2019,34 +2810,113 @@
     },
     {
       "name": "firewall.remove_port_forward",
-      "params": [],
+      "params": [
+        {
+          "name": "res",
+          "schema": {
+            "items": {
+              "properties": {
+                "dest": {
+                  "examples": [
+                    "lan"
+                  ],
+                  "type": "string"
+                },
+                "dest_ip": {
+                  "format": "ipv4",
+                  "type": "string"
+                },
+                "dest_port": {
+                  "examples": [
+                    "32400"
+                  ],
+                  "type": "string"
+                },
+                "enabled": {
+                  "examples": [
+                    true
+                  ],
+                  "type": "boolean"
+                },
+                "id": {
+                  "examples": [
+                    "cfg013837"
+                  ],
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "proto": {
+                  "type": "string"
+                },
+                "src": {
+                  "examples": [
+                    "wan"
+                  ],
+                  "type": "string"
+                },
+                "src_dport": {
+                  "examples": [
+                    "32400"
+                  ],
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "firewall.get_port_forward_list",
       "x-risk": "write",
       "x-status": "discovered"
     },
     {
       "name": "firewall.remove_rule",
-      "params": [],
+      "params": [
+        {
+          "name": "res",
+          "schema": {
+            "items": {},
+            "type": "array"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "firewall.get_rule_list",
       "x-risk": "write",
       "x-status": "discovered"
     },
     {
       "name": "firewall.set_dmz",
-      "params": [],
+      "params": [
+        {
+          "name": "enabled",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "firewall.get_dmz",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -2085,34 +2955,147 @@
     },
     {
       "name": "firewall.set_port_forward",
-      "params": [],
+      "params": [
+        {
+          "name": "res",
+          "schema": {
+            "items": {
+              "properties": {
+                "dest": {
+                  "examples": [
+                    "lan"
+                  ],
+                  "type": "string"
+                },
+                "dest_ip": {
+                  "format": "ipv4",
+                  "type": "string"
+                },
+                "dest_port": {
+                  "examples": [
+                    "32400"
+                  ],
+                  "type": "string"
+                },
+                "enabled": {
+                  "examples": [
+                    true
+                  ],
+                  "type": "boolean"
+                },
+                "id": {
+                  "examples": [
+                    "cfg013837"
+                  ],
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "proto": {
+                  "type": "string"
+                },
+                "src": {
+                  "examples": [
+                    "wan"
+                  ],
+                  "type": "string"
+                },
+                "src_dport": {
+                  "examples": [
+                    "32400"
+                  ],
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "firewall.get_port_forward_list",
       "x-risk": "write",
       "x-status": "discovered"
     },
     {
       "name": "firewall.set_rule",
-      "params": [],
+      "params": [
+        {
+          "name": "res",
+          "schema": {
+            "items": {},
+            "type": "array"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "firewall.get_rule_list",
       "x-risk": "write",
       "x-status": "discovered"
     },
     {
       "name": "firewall.set_wan_access",
-      "params": [],
+      "params": [
+        {
+          "name": "enable_https",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "enable_ping",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "enable_ssh",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "enable_whitelist",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "whitelist",
+          "schema": {
+            "items": {},
+            "type": "array"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "firewall.get_wan_access",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -2182,32 +3165,52 @@
               "type": "string"
             },
             "mac_addresses": {
+              "items": {},
               "type": "array"
             },
             "max_bytes": {
+              "examples": [
+                "0"
+              ],
               "type": "string"
             },
             "metadata": {
               "properties": {
                 "end_time": {
+                  "examples": [
+                    1782705193
+                  ],
                   "type": "integer"
                 },
                 "start_time": {
+                  "examples": [
+                    1782618793
+                  ],
                   "type": "integer"
                 }
               },
               "type": "object"
             },
             "period_seconds": {
+              "examples": [
+                86400
+              ],
               "type": "integer"
             },
             "time_series": {
+              "items": {},
               "type": "array"
             },
             "total_download": {
+              "examples": [
+                0
+              ],
               "type": "integer"
             },
             "total_upload": {
+              "examples": [
+                0
+              ],
               "type": "integer"
             }
           },
@@ -2224,6 +3227,7 @@
       "result": {
         "name": "result",
         "schema": {
+          "items": {},
           "type": "array"
         }
       },
@@ -2239,12 +3243,21 @@
         "schema": {
           "properties": {
             "enable": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "time": {
+              "examples": [
+                "day"
+              ],
               "type": "string"
             },
             "type": {
+              "examples": [
+                "app"
+              ],
               "type": "string"
             }
           },
@@ -2263,12 +3276,19 @@
         "schema": {
           "properties": {
             "max_bytes": {
+              "examples": [
+                "0"
+              ],
               "type": "string"
             },
             "period_seconds": {
+              "examples": [
+                86400
+              ],
               "type": "integer"
             },
             "top_apps": {
+              "items": {},
               "type": "array"
             }
           },
@@ -2292,12 +3312,41 @@
     },
     {
       "name": "flow_statistics.set_statistics_rule",
-      "params": [],
+      "params": [
+        {
+          "name": "enable",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "time",
+          "schema": {
+            "examples": [
+              "day"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "type",
+          "schema": {
+            "examples": [
+              "app"
+            ],
+            "type": "string"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "flow_statistics.get_statistics_rule",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -2331,9 +3380,15 @@
         "schema": {
           "properties": {
             "enable": {
+              "examples": [
+                true
+              ],
               "type": "boolean"
             },
             "version": {
+              "examples": [
+                3
+              ],
               "type": "integer"
             }
           },
@@ -2346,12 +3401,32 @@
     },
     {
       "name": "igmp.set_config",
-      "params": [],
+      "params": [
+        {
+          "name": "enable",
+          "schema": {
+            "examples": [
+              true
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "version",
+          "schema": {
+            "examples": [
+              3
+            ],
+            "type": "integer"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "igmp.get_config",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -2363,12 +3438,21 @@
         "schema": {
           "properties": {
             "enable": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "lan_dns_mode": {
+              "examples": [
+                true
+              ],
               "type": "boolean"
             },
             "lan_mode": {
+              "examples": [
+                "nat6"
+              ],
               "type": "string"
             }
           },
@@ -2381,12 +3465,41 @@
     },
     {
       "name": "ipv6.set_ipv6",
-      "params": [],
+      "params": [
+        {
+          "name": "enable",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "lan_dns_mode",
+          "schema": {
+            "examples": [
+              true
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "lan_mode",
+          "schema": {
+            "examples": [
+              "nat6"
+            ],
+            "type": "string"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "ipv6.get_ipv6",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -2423,39 +3536,65 @@
               "items": {
                 "properties": {
                   "enable_check": {
+                    "examples": [
+                      true
+                    ],
                     "type": "boolean"
                   },
                   "enable_ssl": {
+                    "examples": [
+                      false
+                    ],
                     "type": "boolean"
                   },
                   "interface": {
+                    "examples": [
+                      "wan"
+                    ],
                     "type": "string"
                   },
                   "metric": {
+                    "examples": [
+                      10
+                    ],
                     "type": "integer"
                   },
                   "track_ipv4": {
                     "items": {
+                      "format": "ipv4",
                       "type": "string"
                     },
                     "type": "array"
                   },
                   "track_ipv6": {
                     "items": {
+                      "format": "ipv6",
                       "type": "string"
                     },
                     "type": "array"
                   },
                   "track_method": {
+                    "examples": [
+                      0
+                    ],
                     "type": "integer"
                   },
                   "track_mode": {
+                    "examples": [
+                      1
+                    ],
                     "type": "integer"
                   },
                   "track_proto": {
+                    "examples": [
+                      0
+                    ],
                     "type": "integer"
                   },
                   "weight": {
+                    "examples": [
+                      1
+                    ],
                     "type": "integer"
                   }
                 },
@@ -2464,6 +3603,9 @@
               "type": "array"
             },
             "mode": {
+              "examples": [
+                0
+              ],
               "type": "integer"
             }
           },
@@ -2484,9 +3626,15 @@
             "sensitivity": {
               "properties": {
                 "level": {
+                  "examples": [
+                    "medium"
+                  ],
                   "type": "string"
                 },
                 "val": {
+                  "examples": [
+                    3
+                  ],
                   "type": "integer"
                 }
               },
@@ -2511,12 +3659,21 @@
               "items": {
                 "properties": {
                   "interface": {
+                    "examples": [
+                      "wan"
+                    ],
                     "type": "string"
                   },
                   "status_v4": {
+                    "examples": [
+                      0
+                    ],
                     "type": "integer"
                   },
                   "status_v6": {
+                    "examples": [
+                      1
+                    ],
                     "type": "integer"
                   }
                 },
@@ -2534,12 +3691,96 @@
     },
     {
       "name": "kmwan.set_config",
-      "params": [],
+      "params": [
+        {
+          "name": "interfaces",
+          "schema": {
+            "items": {
+              "properties": {
+                "enable_check": {
+                  "examples": [
+                    true
+                  ],
+                  "type": "boolean"
+                },
+                "enable_ssl": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "interface": {
+                  "examples": [
+                    "wan"
+                  ],
+                  "type": "string"
+                },
+                "metric": {
+                  "examples": [
+                    10
+                  ],
+                  "type": "integer"
+                },
+                "track_ipv4": {
+                  "items": {
+                    "format": "ipv4",
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "track_ipv6": {
+                  "items": {
+                    "format": "ipv6",
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "track_method": {
+                  "examples": [
+                    0
+                  ],
+                  "type": "integer"
+                },
+                "track_mode": {
+                  "examples": [
+                    1
+                  ],
+                  "type": "integer"
+                },
+                "track_proto": {
+                  "examples": [
+                    0
+                  ],
+                  "type": "integer"
+                },
+                "weight": {
+                  "examples": [
+                    1
+                  ],
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        {
+          "name": "mode",
+          "schema": {
+            "examples": [
+              0
+            ],
+            "type": "integer"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "kmwan.get_config",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -2556,12 +3797,34 @@
     },
     {
       "name": "kmwan.set_sensitivity",
-      "params": [],
+      "params": [
+        {
+          "name": "sensitivity",
+          "schema": {
+            "properties": {
+              "level": {
+                "examples": [
+                  "medium"
+                ],
+                "type": "string"
+              },
+              "val": {
+                "examples": [
+                  3
+                ],
+                "type": "integer"
+              }
+            },
+            "type": "object"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "kmwan.get_sensitivity",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -2600,12 +3863,36 @@
     },
     {
       "name": "lan.add_static_bind",
-      "params": [],
+      "params": [
+        {
+          "name": "static_bind_list",
+          "schema": {
+            "items": {
+              "properties": {
+                "ip": {
+                  "format": "ipv4",
+                  "type": "string"
+                },
+                "mac": {
+                  "format": "mac",
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "lan.get_static_bind_list",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -2631,36 +3918,54 @@
               "items": {
                 "properties": {
                   "ap_isolate": {
+                    "examples": [
+                      0
+                    ],
                     "type": "integer"
                   },
                   "dns": {
+                    "items": {},
                     "type": "array"
                   },
                   "enable": {
+                    "examples": [
+                      1
+                    ],
                     "type": "integer"
                   },
                   "end": {
+                    "format": "ipv4",
                     "type": "string"
                   },
                   "gateway": {
                     "type": "string"
                   },
                   "interface": {
+                    "examples": [
+                      "lan"
+                    ],
                     "type": "string"
                   },
                   "ip": {
+                    "format": "ipv4",
                     "type": "string"
                   },
                   "leasetime": {
+                    "examples": [
+                      "720m"
+                    ],
                     "type": "string"
                   },
                   "lpr": {
+                    "items": {},
                     "type": "array"
                   },
                   "netmask": {
+                    "format": "ipv4",
                     "type": "string"
                   },
                   "start": {
+                    "format": "ipv4",
                     "type": "string"
                   }
                 },
@@ -2687,9 +3992,11 @@
               "items": {
                 "properties": {
                   "ip": {
+                    "format": "ipv4",
                     "type": "string"
                   },
                   "mac": {
+                    "format": "mac",
                     "type": "string"
                   },
                   "name": {
@@ -2722,24 +4029,34 @@
                   "info": {
                     "properties": {
                       "broadcast": {
+                        "format": "ipv4",
                         "type": "string"
                       },
                       "ipaddr": {
+                        "format": "ipv4",
                         "type": "string"
                       },
                       "netmask": {
+                        "format": "ipv4",
                         "type": "string"
                       },
                       "network": {
+                        "format": "ipv4",
                         "type": "string"
                       },
                       "prefix": {
+                        "examples": [
+                          21
+                        ],
                         "type": "integer"
                       }
                     },
                     "type": "object"
                   },
                   "interface": {
+                    "examples": [
+                      "wan"
+                    ],
                     "type": "string"
                   }
                 },
@@ -2757,23 +4074,111 @@
     },
     {
       "name": "lan.remove_static_bind",
-      "params": [],
+      "params": [
+        {
+          "name": "static_bind_list",
+          "schema": {
+            "items": {
+              "properties": {
+                "ip": {
+                  "format": "ipv4",
+                  "type": "string"
+                },
+                "mac": {
+                  "format": "mac",
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "lan.get_static_bind_list",
       "x-risk": "write",
       "x-status": "discovered"
     },
     {
       "name": "lan.set_config",
-      "params": [],
+      "params": [
+        {
+          "name": "interfaces",
+          "schema": {
+            "items": {
+              "properties": {
+                "ap_isolate": {
+                  "examples": [
+                    0
+                  ],
+                  "type": "integer"
+                },
+                "dns": {
+                  "items": {},
+                  "type": "array"
+                },
+                "enable": {
+                  "examples": [
+                    1
+                  ],
+                  "type": "integer"
+                },
+                "end": {
+                  "format": "ipv4",
+                  "type": "string"
+                },
+                "gateway": {
+                  "type": "string"
+                },
+                "interface": {
+                  "examples": [
+                    "lan"
+                  ],
+                  "type": "string"
+                },
+                "ip": {
+                  "format": "ipv4",
+                  "type": "string"
+                },
+                "leasetime": {
+                  "examples": [
+                    "720m"
+                  ],
+                  "type": "string"
+                },
+                "lpr": {
+                  "items": {},
+                  "type": "array"
+                },
+                "netmask": {
+                  "format": "ipv4",
+                  "type": "string"
+                },
+                "start": {
+                  "format": "ipv4",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "lan.get_config_list",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -2867,12 +4272,36 @@
     },
     {
       "name": "lan.set_static_bind",
-      "params": [],
+      "params": [
+        {
+          "name": "static_bind_list",
+          "schema": {
+            "items": {
+              "properties": {
+                "ip": {
+                  "format": "ipv4",
+                  "type": "string"
+                },
+                "mac": {
+                  "format": "mac",
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "lan.get_static_bind_list",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -2928,6 +4357,9 @@
         "schema": {
           "properties": {
             "led_enable": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             }
           },
@@ -2940,12 +4372,23 @@
     },
     {
       "name": "led.set_config",
-      "params": [],
+      "params": [
+        {
+          "name": "led_enable",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "led.get_config",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -3265,30 +4708,57 @@
         "schema": {
           "properties": {
             "http_port": {
+              "examples": [
+                80
+              ],
               "type": "integer"
             },
             "https_port": {
+              "examples": [
+                443
+              ],
               "type": "integer"
             },
             "luci_http_port": {
+              "examples": [
+                8080
+              ],
               "type": "integer"
             },
             "luci_https_port": {
+              "examples": [
+                8443
+              ],
               "type": "integer"
             },
             "luci_redirect_https": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "redirect_https": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "session_timeout": {
+              "examples": [
+                300
+              ],
               "type": "integer"
             },
             "ssh_enabled": {
+              "examples": [
+                true
+              ],
               "type": "boolean"
             },
             "ssh_port": {
+              "examples": [
+                22
+              ],
               "type": "integer"
             }
           },
@@ -3301,12 +4771,95 @@
     },
     {
       "name": "local-access.set_config",
-      "params": [],
+      "params": [
+        {
+          "name": "http_port",
+          "schema": {
+            "examples": [
+              80
+            ],
+            "type": "integer"
+          }
+        },
+        {
+          "name": "https_port",
+          "schema": {
+            "examples": [
+              443
+            ],
+            "type": "integer"
+          }
+        },
+        {
+          "name": "luci_http_port",
+          "schema": {
+            "examples": [
+              8080
+            ],
+            "type": "integer"
+          }
+        },
+        {
+          "name": "luci_https_port",
+          "schema": {
+            "examples": [
+              8443
+            ],
+            "type": "integer"
+          }
+        },
+        {
+          "name": "luci_redirect_https",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "redirect_https",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "session_timeout",
+          "schema": {
+            "examples": [
+              300
+            ],
+            "type": "integer"
+          }
+        },
+        {
+          "name": "ssh_enabled",
+          "schema": {
+            "examples": [
+              true
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "ssh_port",
+          "schema": {
+            "examples": [
+              22
+            ],
+            "type": "integer"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "local-access.get_config",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -3327,6 +4880,7 @@
       "result": {
         "name": "result",
         "schema": {
+          "items": {},
           "type": "array"
         }
       },
@@ -3379,6 +4933,9 @@
           "properties": {
             "modules": {
               "items": {
+                "examples": [
+                  "ipv6"
+                ],
                 "type": "string"
               },
               "type": "array"
@@ -3446,6 +5003,9 @@
         "schema": {
           "properties": {
             "status": {
+              "examples": [
+                2
+              ],
               "type": "integer"
             }
           },
@@ -4014,14 +5574,23 @@
         "schema": {
           "properties": {
             "enabled": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "mode": {
+              "examples": [
+                "classic"
+              ],
               "type": "string"
             },
             "status": {
               "properties": {
                 "enable": {
+                  "examples": [
+                    false
+                  ],
                   "type": "boolean"
                 }
               },
@@ -4048,21 +5617,33 @@
                   "type": "string"
                 },
                 "be_kicked_out": {
+                  "examples": [
+                    "0"
+                  ],
                   "type": "string"
                 },
                 "enabled": {
+                  "examples": [
+                    "0"
+                  ],
                   "type": "string"
                 },
                 "identity": {
                   "type": "string"
                 },
                 "is_p2p": {
+                  "examples": [
+                    "0"
+                  ],
                   "type": "string"
                 },
                 "lastConnectedTime": {
                   "type": "string"
                 },
                 "state": {
+                  "examples": [
+                    "connecting"
+                  ],
                   "type": "string"
                 }
               },
@@ -4087,6 +5668,9 @@
               "items": {
                 "properties": {
                   "enable": {
+                    "examples": [
+                      true
+                    ],
                     "type": "boolean"
                   },
                   "name": {
@@ -4113,6 +5697,9 @@
         "schema": {
           "properties": {
             "err_code": {
+              "examples": [
+                -1
+              ],
               "type": "integer"
             },
             "err_msg": {
@@ -4134,6 +5721,9 @@
         "schema": {
           "properties": {
             "err_code": {
+              "examples": [
+                -1
+              ],
               "type": "integer"
             },
             "err_msg": {
@@ -4155,12 +5745,19 @@
         "schema": {
           "properties": {
             "nodes": {
+              "items": {},
               "type": "array"
             },
             "status": {
+              "examples": [
+                0
+              ],
               "type": "integer"
             },
             "type": {
+              "examples": [
+                2
+              ],
               "type": "integer"
             }
           },
@@ -4179,6 +5776,9 @@
         "schema": {
           "properties": {
             "err_code": {
+              "examples": [
+                -2
+              ],
               "type": "integer"
             },
             "err_msg": {
@@ -4200,6 +5800,7 @@
         "schema": {
           "properties": {
             "path": {
+              "items": {},
               "type": "array"
             }
           },
@@ -4223,12 +5824,34 @@
     },
     {
       "name": "mptun.set_config",
-      "params": [],
+      "params": [
+        {
+          "name": "interfaces",
+          "schema": {
+            "items": {
+              "properties": {
+                "enable": {
+                  "examples": [
+                    true
+                  ],
+                  "type": "boolean"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "mptun.get_config",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -4680,6 +6303,9 @@
         "schema": {
           "properties": {
             "mode": {
+              "examples": [
+                "router"
+              ],
               "type": "string"
             }
           },
@@ -4703,12 +6329,23 @@
     },
     {
       "name": "netmode.set_mode",
-      "params": [],
+      "params": [
+        {
+          "name": "mode",
+          "schema": {
+            "examples": [
+              "router"
+            ],
+            "type": "string"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "netmode.get_mode",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -4797,12 +6434,21 @@
         "schema": {
           "properties": {
             "cable_enabled": {
+              "examples": [
+                true
+              ],
               "type": "boolean"
             },
             "cable_inserted": {
+              "examples": [
+                true
+              ],
               "type": "boolean"
             },
             "macclone_enabled": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             }
           },
@@ -4821,9 +6467,15 @@
         "schema": {
           "properties": {
             "nat_enable": {
+              "examples": [
+                0
+              ],
               "type": "integer"
             },
             "sip_enable": {
+              "examples": [
+                0
+              ],
               "type": "integer"
             }
           },
@@ -4845,12 +6497,17 @@
               "items": {
                 "properties": {
                   "device": {
+                    "examples": [
+                      "br-lan"
+                    ],
                     "type": "string"
                   },
                   "ip": {
+                    "format": "ipv4",
                     "type": "string"
                   },
                   "mac": {
+                    "format": "mac",
                     "type": "string"
                   }
                 },
@@ -4881,12 +6538,14 @@
             },
             "pub_ip": {
               "items": {
+                "format": "ipv4",
                 "type": "string"
               },
               "type": "array"
             },
             "wan_ip": {
               "items": {
+                "format": "ipv4",
                 "type": "string"
               },
               "type": "array"
@@ -4907,9 +6566,11 @@
         "schema": {
           "properties": {
             "gateway_ip": {
+              "format": "ipv4",
               "type": "string"
             },
             "internal_ip": {
+              "format": "ipv4",
               "type": "string"
             }
           },
@@ -4926,6 +6587,7 @@
       "result": {
         "name": "result",
         "schema": {
+          "items": {},
           "type": "array"
         }
       },
@@ -4941,24 +6603,42 @@
         "schema": {
           "properties": {
             "actype": {
+              "examples": [
+                1
+              ],
               "type": "integer"
             },
             "dpi_enabled": {
+              "examples": [
+                true
+              ],
               "type": "boolean"
             },
             "enable": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "list": {
               "items": {
+                "examples": [
+                  0
+                ],
                 "type": "integer"
               },
               "type": "array"
             },
             "qos_enabled": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "wifi_reload": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             }
           },
@@ -4971,23 +6651,102 @@
     },
     {
       "name": "network.set_advance_config",
-      "params": [],
+      "params": [
+        {
+          "name": "nat_enable",
+          "schema": {
+            "examples": [
+              0
+            ],
+            "type": "integer"
+          }
+        },
+        {
+          "name": "sip_enable",
+          "schema": {
+            "examples": [
+              0
+            ],
+            "type": "integer"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "network.get_advance_config",
       "x-risk": "write",
       "x-status": "discovered"
     },
     {
       "name": "network.set_netnat_config",
-      "params": [],
+      "params": [
+        {
+          "name": "actype",
+          "schema": {
+            "examples": [
+              1
+            ],
+            "type": "integer"
+          }
+        },
+        {
+          "name": "dpi_enabled",
+          "schema": {
+            "examples": [
+              true
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "enable",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "list",
+          "schema": {
+            "items": {
+              "examples": [
+                0
+              ],
+              "type": "integer"
+            },
+            "type": "array"
+          }
+        },
+        {
+          "name": "qos_enabled",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "wifi_reload",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "network.get_netnat_config",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -5638,6 +7397,7 @@
           "items": {
             "properties": {
               "apps": {
+                "items": {},
                 "type": "array"
               },
               "category_name": {
@@ -5661,12 +7421,19 @@
         "schema": {
           "properties": {
             "enable": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "groups": {
+              "items": {},
               "type": "array"
             },
             "init": {
+              "examples": [
+                true
+              ],
               "type": "boolean"
             }
           },
@@ -5690,12 +7457,39 @@
     },
     {
       "name": "parental-control.set_config",
-      "params": [],
+      "params": [
+        {
+          "name": "enable",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "groups",
+          "schema": {
+            "items": {},
+            "type": "array"
+          }
+        },
+        {
+          "name": "init",
+          "schema": {
+            "examples": [
+              true
+            ],
+            "type": "boolean"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "parental-control.get_config",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -5833,12 +7627,21 @@
     },
     {
       "name": "qos.add_device_group",
-      "params": [],
+      "params": [
+        {
+          "name": "group",
+          "schema": {
+            "items": {},
+            "type": "array"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "qos.get_device_group",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -5850,6 +7653,7 @@
         "schema": {
           "properties": {
             "band_cfg": {
+              "items": {},
               "type": "array"
             }
           },
@@ -5868,12 +7672,17 @@
         "schema": {
           "properties": {
             "download": {
+              "items": {},
               "type": "array"
             },
             "sync_ratio": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "upload": {
+              "items": {},
               "type": "array"
             }
           },
@@ -5892,6 +7701,7 @@
         "schema": {
           "properties": {
             "clients": {
+              "items": {},
               "type": "array"
             }
           },
@@ -5910,9 +7720,15 @@
         "schema": {
           "properties": {
             "enable": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "mode": {
+              "examples": [
+                "0"
+              ],
               "type": "string"
             }
           },
@@ -5931,6 +7747,7 @@
         "schema": {
           "properties": {
             "group": {
+              "items": {},
               "type": "array"
             }
           },
@@ -5954,34 +7771,88 @@
     },
     {
       "name": "qos.set_bandwidth_config",
-      "params": [],
+      "params": [
+        {
+          "name": "band_cfg",
+          "schema": {
+            "items": {},
+            "type": "array"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "qos.get_bandwidth_config",
       "x-risk": "write",
       "x-status": "discovered"
     },
     {
       "name": "qos.set_channel_bandwidth_ratio",
-      "params": [],
+      "params": [
+        {
+          "name": "download",
+          "schema": {
+            "items": {},
+            "type": "array"
+          }
+        },
+        {
+          "name": "sync_ratio",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "upload",
+          "schema": {
+            "items": {},
+            "type": "array"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "qos.get_channel_bandwidth_ratio",
       "x-risk": "write",
       "x-status": "discovered"
     },
     {
       "name": "qos.set_config",
-      "params": [],
+      "params": [
+        {
+          "name": "enable",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "mode",
+          "schema": {
+            "examples": [
+              "0"
+            ],
+            "type": "string"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "qos.get_config",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -6081,9 +7952,15 @@
         "schema": {
           "properties": {
             "chan_prompt_en": {
+              "examples": [
+                true
+              ],
               "type": "boolean"
             },
             "popup_prompt_en": {
+              "examples": [
+                true
+              ],
               "type": "boolean"
             }
           },
@@ -6102,15 +7979,25 @@
         "schema": {
           "properties": {
             "auto": {
+              "examples": [
+                true
+              ],
               "type": "boolean"
             },
             "dfs_support": {
+              "examples": [
+                true
+              ],
               "type": "boolean"
             },
             "macaddr": {
+              "format": "mac",
               "type": "string"
             },
             "smart_reconnect": {
+              "examples": [
+                true
+              ],
               "type": "boolean"
             }
           },
@@ -6132,9 +8019,15 @@
               "items": {
                 "properties": {
                   "auto_portal": {
+                    "examples": [
+                      false
+                    ],
                     "type": "boolean"
                   },
                   "disguise": {
+                    "examples": [
+                      false
+                    ],
                     "type": "boolean"
                   },
                   "key": {
@@ -6143,21 +8036,34 @@
                   "macaddr": {
                     "properties": {
                       "macaddr": {
+                        "format": "mac",
                         "type": "string"
                       },
                       "mode": {
+                        "examples": [
+                          "random"
+                        ],
                         "type": "string"
                       },
                       "update": {
+                        "examples": [
+                          "none"
+                        ],
                         "type": "string"
                       }
                     },
                     "type": "object"
                   },
                   "manual": {
+                    "examples": [
+                      true
+                    ],
                     "type": "boolean"
                   },
                   "protocol": {
+                    "examples": [
+                      "dhcp"
+                    ],
                     "type": "string"
                   },
                   "ssid": {
@@ -6186,6 +8092,9 @@
             "portal_info": {
               "properties": {
                 "auth_mode": {
+                  "examples": [
+                    0
+                  ],
                   "type": "integer"
                 },
                 "password": {
@@ -6201,9 +8110,15 @@
               "type": "object"
             },
             "state": {
+              "examples": [
+                0
+              ],
               "type": "integer"
             },
             "state_s": {
+              "examples": [
+                "idle"
+              ],
               "type": "string"
             }
           },
@@ -6216,12 +8131,76 @@
     },
     {
       "name": "repeater.remove_saved_ap",
-      "params": [],
+      "params": [
+        {
+          "name": "res",
+          "schema": {
+            "items": {
+              "properties": {
+                "auto_portal": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "disguise": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "key": {
+                  "type": "string"
+                },
+                "macaddr": {
+                  "properties": {
+                    "macaddr": {
+                      "format": "mac",
+                      "type": "string"
+                    },
+                    "mode": {
+                      "examples": [
+                        "random"
+                      ],
+                      "type": "string"
+                    },
+                    "update": {
+                      "examples": [
+                        "none"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "manual": {
+                  "examples": [
+                    true
+                  ],
+                  "type": "boolean"
+                },
+                "protocol": {
+                  "examples": [
+                    "dhcp"
+                  ],
+                  "type": "string"
+                },
+                "ssid": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "repeater.get_saved_ap_list",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -6238,23 +8217,79 @@
     },
     {
       "name": "repeater.set_channel_prompt",
-      "params": [],
+      "params": [
+        {
+          "name": "chan_prompt_en",
+          "schema": {
+            "examples": [
+              true
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "popup_prompt_en",
+          "schema": {
+            "examples": [
+              true
+            ],
+            "type": "boolean"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "repeater.get_channel_prompt",
       "x-risk": "write",
       "x-status": "discovered"
     },
     {
       "name": "repeater.set_config",
-      "params": [],
+      "params": [
+        {
+          "name": "auto",
+          "schema": {
+            "examples": [
+              true
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "dfs_support",
+          "schema": {
+            "examples": [
+              true
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "macaddr",
+          "schema": {
+            "format": "mac",
+            "type": "string"
+          }
+        },
+        {
+          "name": "smart_reconnect",
+          "schema": {
+            "examples": [
+              true
+            ],
+            "type": "boolean"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "repeater.get_config",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -6288,9 +8323,15 @@
         "schema": {
           "properties": {
             "ssh_enabled": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "web_enabled": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             }
           },
@@ -6303,12 +8344,32 @@
     },
     {
       "name": "rtty.set_config",
-      "params": [],
+      "params": [
+        {
+          "name": "ssh_enabled",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "web_enabled",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "rtty.get_config",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -6408,6 +8469,9 @@
         "schema": {
           "properties": {
             "err_code": {
+              "examples": [
+                -1
+              ],
               "type": "integer"
             },
             "err_msg": {
@@ -6451,15 +8515,27 @@
         "schema": {
           "properties": {
             "download": {
+              "examples": [
+                90
+              ],
               "type": "integer"
             },
             "enable": {
+              "examples": [
+                true
+              ],
               "type": "boolean"
             },
             "qdisc": {
+              "examples": [
+                "cake"
+              ],
               "type": "string"
             },
             "upload": {
+              "examples": [
+                30
+              ],
               "type": "integer"
             }
           },
@@ -6472,12 +8548,50 @@
     },
     {
       "name": "sqm.set_config",
-      "params": [],
+      "params": [
+        {
+          "name": "download",
+          "schema": {
+            "examples": [
+              90
+            ],
+            "type": "integer"
+          }
+        },
+        {
+          "name": "enable",
+          "schema": {
+            "examples": [
+              true
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "qdisc",
+          "schema": {
+            "examples": [
+              "cake"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "upload",
+          "schema": {
+            "examples": [
+              30
+            ],
+            "type": "integer"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "sqm.get_config",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -6546,12 +8660,21 @@
             "root": {
               "properties": {
                 "free": {
+                  "examples": [
+                    7237193728
+                  ],
                   "type": "integer"
                 },
                 "total": {
+                  "examples": [
+                    7697334272
+                  ],
                   "type": "integer"
                 },
                 "used": {
+                  "examples": [
+                    460140544
+                  ],
                   "type": "integer"
                 }
               },
@@ -6560,12 +8683,21 @@
             "tmp": {
               "properties": {
                 "free": {
+                  "examples": [
+                    510251008
+                  ],
                   "type": "integer"
                 },
                 "total": {
+                  "examples": [
+                    518713344
+                  ],
                   "type": "integer"
                 },
                 "used": {
+                  "examples": [
+                    8462336
+                  ],
                   "type": "integer"
                 }
               },
@@ -6587,6 +8719,9 @@
         "schema": {
           "properties": {
             "enable": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             }
           },
@@ -6605,6 +8740,9 @@
         "schema": {
           "properties": {
             "memory_used": {
+              "examples": [
+                26256
+              ],
               "type": "integer"
             }
           },
@@ -6631,6 +8769,9 @@
                   "type": "string"
                 },
                 "kernel_version": {
+                  "examples": [
+                    "5.4.238"
+                  ],
                   "type": "string"
                 },
                 "model": {
@@ -6643,86 +8784,147 @@
               "type": "object"
             },
             "country_code": {
+              "examples": [
+                "US"
+              ],
               "type": "string"
             },
             "cpu_num": {
+              "examples": [
+                4
+              ],
               "type": "integer"
             },
             "ddns": {
               "type": "string"
             },
             "device_type": {
+              "examples": [
+                2
+              ],
               "type": "integer"
             },
             "firmware_date": {
+              "format": "date-time",
               "type": "string"
             },
             "firmware_type": {
+              "examples": [
+                "release"
+              ],
               "type": "string"
             },
             "firmware_version": {
+              "examples": [
+                "4.9.0"
+              ],
               "type": "string"
             },
             "hardware_feature": {
               "properties": {
                 "bluetooth": {
+                  "examples": [
+                    false
+                  ],
                   "type": "boolean"
                 },
                 "build_in_modem": {
                   "type": "string"
                 },
                 "fan": {
+                  "examples": [
+                    false
+                  ],
                   "type": "boolean"
                 },
                 "gps": {
+                  "examples": [
+                    false
+                  ],
                   "type": "boolean"
                 },
                 "hwnat": {
+                  "examples": [
+                    true
+                  ],
                   "type": "boolean"
                 },
                 "lan": {
                   "type": "string"
                 },
                 "lcd_sched": {
+                  "examples": [
+                    false
+                  ],
                   "type": "boolean"
                 },
                 "mcu": {
+                  "examples": [
+                    false
+                  ],
                   "type": "boolean"
                 },
                 "microsd": {
                   "type": "string"
                 },
                 "modem_reset": {
+                  "examples": [
+                    2
+                  ],
                   "type": "integer"
                 },
                 "nand": {
+                  "examples": [
+                    false
+                  ],
                   "type": "boolean"
                 },
                 "noled": {
+                  "examples": [
+                    false
+                  ],
                   "type": "boolean"
                 },
                 "nowds": {
+                  "examples": [
+                    false
+                  ],
                   "type": "boolean"
                 },
                 "radio": {
                   "type": "string"
                 },
                 "reset_button": {
+                  "examples": [
+                    "gpio-420"
+                  ],
                   "type": "string"
                 },
                 "rs485": {
+                  "examples": [
+                    false
+                  ],
                   "type": "boolean"
                 },
                 "screen": {
+                  "examples": [
+                    false
+                  ],
                   "type": "boolean"
                 },
                 "silkprint": {
                   "type": "string"
                 },
                 "simo": {
+                  "examples": [
+                    false
+                  ],
                   "type": "boolean"
                 },
                 "slot": {
+                  "examples": [
+                    "single"
+                  ],
                   "type": "string"
                 },
                 "submodel": {
@@ -6735,6 +8937,9 @@
                   "type": "string"
                 },
                 "usb3": {
+                  "examples": [
+                    "2-1"
+                  ],
                   "type": "string"
                 },
                 "usb_power": {
@@ -6744,6 +8949,9 @@
                   "type": "string"
                 },
                 "wan": {
+                  "examples": [
+                    "eth1"
+                  ],
                   "type": "string"
                 },
                 "wifi_type": {
@@ -6756,12 +8964,17 @@
               "type": "string"
             },
             "hidden_features": {
+              "items": {},
               "type": "array"
             },
             "mac": {
+              "format": "mac",
               "type": "string"
             },
             "model": {
+              "examples": [
+                "mt6000"
+              ],
               "type": "string"
             },
             "sn": {
@@ -6773,69 +8986,132 @@
             "software_feature": {
               "properties": {
                 "adguard": {
+                  "examples": [
+                    true
+                  ],
                   "type": "boolean"
                 },
                 "astrowarp_lite": {
+                  "examples": [
+                    false
+                  ],
                   "type": "boolean"
                 },
                 "bark": {
+                  "examples": [
+                    true
+                  ],
                   "type": "boolean"
                 },
                 "cellular_ref": {
+                  "examples": [
+                    "1.0"
+                  ],
                   "type": "string"
                 },
                 "cellular_upgrade": {
+                  "examples": [
+                    false
+                  ],
                   "type": "boolean"
                 },
                 "ids_ips": {
+                  "examples": [
+                    false
+                  ],
                   "type": "boolean"
                 },
                 "ipv6": {
+                  "examples": [
+                    true
+                  ],
                   "type": "boolean"
                 },
                 "is_need_6g_bssid_sync": {
+                  "examples": [
+                    false
+                  ],
                   "type": "boolean"
                 },
                 "ksmbd": {
+                  "examples": [
+                    false
+                  ],
                   "type": "boolean"
                 },
                 "minimum_temperature": {
+                  "examples": [
+                    "70"
+                  ],
                   "type": "string"
                 },
                 "mlo": {
+                  "examples": [
+                    false
+                  ],
                   "type": "boolean"
                 },
                 "nas": {
+                  "examples": [
+                    true
+                  ],
                   "type": "boolean"
                 },
                 "obfuscation": {
+                  "examples": [
+                    true
+                  ],
                   "type": "boolean"
                 },
                 "passthrough": {
+                  "examples": [
+                    false
+                  ],
                   "type": "boolean"
                 },
                 "repeater_eap": {
+                  "examples": [
+                    false
+                  ],
                   "type": "boolean"
                 },
                 "secondwan": {
+                  "examples": [
+                    true
+                  ],
                   "type": "boolean"
                 },
                 "sms_forward": {
+                  "examples": [
+                    true
+                  ],
                   "type": "boolean"
                 },
                 "tor": {
+                  "examples": [
+                    true
+                  ],
                   "type": "boolean"
                 },
                 "vlan": {
+                  "examples": [
+                    false
+                  ],
                   "type": "boolean"
                 },
                 "vpn": {
+                  "examples": [
+                    true
+                  ],
                   "type": "boolean"
                 }
               },
               "type": "object"
             },
             "vendor": {
+              "examples": [
+                "GL.iNet"
+              ],
               "type": "string"
             }
           },
@@ -6856,17 +9132,29 @@
           "properties": {
             "load_average": {
               "items": {
+                "examples": [
+                  0.06
+                ],
                 "type": "number"
               },
               "type": "array"
             },
             "memory_buff_cache": {
+              "examples": [
+                293474304
+              ],
               "type": "integer"
             },
             "memory_free": {
+              "examples": [
+                232275968
+              ],
               "type": "integer"
             },
             "memory_total": {
+              "examples": [
+                1037430784
+              ],
               "type": "integer"
             }
           },
@@ -6889,12 +9177,21 @@
               "items": {
                 "properties": {
                   "interface": {
+                    "examples": [
+                      "modem_1_1_2_6"
+                    ],
                     "type": "string"
                   },
                   "online": {
+                    "examples": [
+                      true
+                    ],
                     "type": "boolean"
                   },
                   "up": {
+                    "examples": [
+                      false
+                    ],
                     "type": "boolean"
                   }
                 },
@@ -6918,9 +9215,15 @@
         "schema": {
           "properties": {
             "redirect_https": {
+              "examples": [
+                0
+              ],
               "type": "integer"
             },
             "security_rule": {
+              "examples": [
+                1
+              ],
               "type": "integer"
             }
           },
@@ -6942,12 +9245,21 @@
               "items": {
                 "properties": {
                   "auto_remove_offline": {
+                    "examples": [
+                      false
+                    ],
                     "type": "boolean"
                   },
                   "cable_total": {
+                    "examples": [
+                      3
+                    ],
                     "type": "integer"
                   },
                   "wireless_total": {
+                    "examples": [
+                      12
+                    ],
                     "type": "integer"
                   }
                 },
@@ -6959,12 +9271,21 @@
               "items": {
                 "properties": {
                   "interface": {
+                    "examples": [
+                      "modem_1_1_2_6"
+                    ],
                     "type": "string"
                   },
                   "online": {
+                    "examples": [
+                      true
+                    ],
                     "type": "boolean"
                   },
                   "up": {
+                    "examples": [
+                      false
+                    ],
                     "type": "boolean"
                   }
                 },
@@ -6979,6 +9300,9 @@
                     "type": "string"
                   },
                   "status": {
+                    "examples": [
+                      1
+                    ],
                     "type": "integer"
                   }
                 },
@@ -6989,106 +9313,179 @@
             "system": {
               "properties": {
                 "content_protection_enabled": {
+                  "examples": [
+                    false
+                  ],
                   "type": "boolean"
                 },
                 "cpu": {
                   "properties": {
                     "temperature": {
+                      "examples": [
+                        43
+                      ],
                       "type": "integer"
                     }
                   },
                   "type": "object"
                 },
                 "ddns_enabled": {
+                  "examples": [
+                    true
+                  ],
                   "type": "boolean"
                 },
                 "dpi_info": {
                   "properties": {
                     "lib_update_time": {
+                      "format": "date-time",
                       "type": "string"
                     },
                     "lib_version": {
+                      "examples": [
+                        "20260226_01"
+                      ],
                       "type": "string"
                     },
                     "status": {
+                      "examples": [
+                        "1"
+                      ],
                       "type": "string"
                     }
                   },
                   "type": "object"
                 },
                 "flash_app": {
+                  "examples": [
+                    460140544
+                  ],
                   "type": "integer"
                 },
                 "flash_free": {
+                  "examples": [
+                    7237193728
+                  ],
                   "type": "integer"
                 },
                 "flash_total": {
+                  "examples": [
+                    7818182656
+                  ],
                   "type": "integer"
                 },
                 "flow_statistics_enabled": {
+                  "examples": [
+                    false
+                  ],
                   "type": "boolean"
                 },
                 "guest_ip": {
+                  "format": "ipv4",
                   "type": "string"
                 },
                 "guest_netmask": {
+                  "format": "ipv4",
                   "type": "string"
                 },
                 "iot_ip": {
+                  "format": "ipv4",
                   "type": "string"
                 },
                 "iot_netmask": {
+                  "format": "ipv4",
                   "type": "string"
                 },
                 "ipv6_enabled": {
+                  "examples": [
+                    false
+                  ],
                   "type": "boolean"
                 },
                 "lan_ip": {
+                  "format": "ipv4",
                   "type": "string"
                 },
                 "lan_netmask": {
+                  "format": "ipv4",
                   "type": "string"
                 },
                 "load_average": {
                   "items": {
+                    "examples": [
+                      0.06
+                    ],
                     "type": "number"
                   },
                   "type": "array"
                 },
                 "memory_buff_cache": {
+                  "examples": [
+                    293474304
+                  ],
                   "type": "integer"
                 },
                 "memory_free": {
+                  "examples": [
+                    232275968
+                  ],
                   "type": "integer"
                 },
                 "memory_total": {
+                  "examples": [
+                    1037430784
+                  ],
                   "type": "integer"
                 },
                 "mode": {
+                  "examples": [
+                    0
+                  ],
                   "type": "integer"
                 },
                 "netnat_enabled": {
+                  "examples": [
+                    false
+                  ],
                   "type": "boolean"
                 },
                 "prio_enabled": {
+                  "examples": [
+                    false
+                  ],
                   "type": "boolean"
                 },
                 "qos_enabled": {
+                  "examples": [
+                    false
+                  ],
                   "type": "boolean"
                 },
                 "sqm_enabled": {
+                  "examples": [
+                    true
+                  ],
                   "type": "boolean"
                 },
                 "time_sync_status": {
+                  "examples": [
+                    true
+                  ],
                   "type": "boolean"
                 },
                 "timestamp": {
+                  "examples": [
+                    1782705193
+                  ],
                   "type": "integer"
                 },
                 "tzoffset": {
                   "type": "string"
                 },
                 "uptime": {
+                  "examples": [
+                    1201766.52
+                  ],
                   "type": "number"
                 }
               },
@@ -7098,27 +9495,51 @@
               "items": {
                 "properties": {
                   "band": {
+                    "examples": [
+                      "2G"
+                    ],
                     "type": "string"
                   },
                   "channel": {
+                    "examples": [
+                      6
+                    ],
                     "type": "integer"
                   },
                   "encryption": {
+                    "examples": [
+                      "psk2"
+                    ],
                     "type": "string"
                   },
                   "guest": {
+                    "examples": [
+                      false
+                    ],
                     "type": "boolean"
                   },
                   "hidden": {
+                    "examples": [
+                      false
+                    ],
                     "type": "boolean"
                   },
                   "init": {
+                    "examples": [
+                      true
+                    ],
                     "type": "boolean"
                   },
                   "iot": {
+                    "examples": [
+                      false
+                    ],
                     "type": "boolean"
                   },
                   "mld": {
+                    "examples": [
+                      false
+                    ],
                     "type": "boolean"
                   },
                   "name": {
@@ -7131,6 +9552,9 @@
                     "type": "string"
                   },
                   "up": {
+                    "examples": [
+                      true
+                    ],
                     "type": "boolean"
                   }
                 },
@@ -7155,12 +9579,21 @@
         "schema": {
           "properties": {
             "autotimezone_enabled": {
+              "examples": [
+                true
+              ],
               "type": "boolean"
             },
             "localtime": {
+              "examples": [
+                1782741193
+              ],
               "type": "integer"
             },
             "timestamp": {
+              "examples": [
+                1782705193
+              ],
               "type": "integer"
             },
             "timezone": {
@@ -7191,9 +9624,15 @@
               "items": {
                 "properties": {
                   "timezone": {
+                    "examples": [
+                      "UTC"
+                    ],
                     "type": "string"
                   },
                   "zonename": {
+                    "examples": [
+                      "UTC"
+                    ],
                     "type": "string"
                   }
                 },
@@ -7217,6 +9656,9 @@
         "schema": {
           "properties": {
             "time": {
+              "examples": [
+                1782705193
+              ],
               "type": "integer"
             }
           },
@@ -7235,6 +9677,9 @@
         "schema": {
           "properties": {
             "usb3_disable": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             }
           },
@@ -7253,6 +9698,9 @@
         "schema": {
           "properties": {
             "protocol": {
+              "examples": [
+                "usb3.0"
+              ],
               "type": "string"
             }
           },
@@ -7275,6 +9723,9 @@
                 "type": "string"
               },
               "value": {
+                "examples": [
+                  "usb2.0"
+                ],
                 "type": "string"
               }
             },
@@ -7300,12 +9751,23 @@
     },
     {
       "name": "system.set_airplane_mode",
-      "params": [],
+      "params": [
+        {
+          "name": "enable",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "system.get_airplane_mode",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -7322,34 +9784,103 @@
     },
     {
       "name": "system.set_timezone_config",
-      "params": [],
+      "params": [
+        {
+          "name": "autotimezone_enabled",
+          "schema": {
+            "examples": [
+              true
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "localtime",
+          "schema": {
+            "examples": [
+              1782741193
+            ],
+            "type": "integer"
+          }
+        },
+        {
+          "name": "timestamp",
+          "schema": {
+            "examples": [
+              1782705193
+            ],
+            "type": "integer"
+          }
+        },
+        {
+          "name": "timezone",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "tzoffset",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "zonename",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "system.get_timezone_config",
       "x-risk": "write",
       "x-status": "discovered"
     },
     {
       "name": "system.set_usb3_disable",
-      "params": [],
+      "params": [
+        {
+          "name": "usb3_disable",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "system.get_usb3_disable",
       "x-risk": "write",
       "x-status": "discovered"
     },
     {
       "name": "system.set_usb_config",
-      "params": [],
+      "params": [
+        {
+          "name": "protocol",
+          "schema": {
+            "examples": [
+              "usb3.0"
+            ],
+            "type": "string"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "system.get_usb_config",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -7392,6 +9923,7 @@
       "result": {
         "name": "result",
         "schema": {
+          "items": {},
           "type": "array"
         }
       },
@@ -7407,21 +9939,36 @@
         "schema": {
           "properties": {
             "enabled": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "lan_enabled": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "lan_ip": {
               "type": "string"
             },
             "masq": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "run_exit_node": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "wan_enabled": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             }
           },
@@ -7439,6 +9986,7 @@
       "result": {
         "name": "result",
         "schema": {
+          "items": {},
           "type": "array"
         }
       },
@@ -7455,6 +10003,7 @@
           "properties": {
             "dns": {
               "items": {
+                "format": "ipv4",
                 "type": "string"
               },
               "type": "array"
@@ -7481,13 +10030,66 @@
     },
     {
       "name": "tailscale.set_config",
-      "params": [],
+      "params": [
+        {
+          "name": "enabled",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "lan_enabled",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "lan_ip",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "masq",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "run_exit_node",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "wan_enabled",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
       "x-gli4py": "tailscale_start",
+      "x-inferred-from": "tailscale.get_config",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -7508,6 +10110,7 @@
       "result": {
         "name": "result",
         "schema": {
+          "items": {},
           "type": "array"
         }
       },
@@ -7523,9 +10126,13 @@
         "schema": {
           "properties": {
             "devices": {
+              "items": {},
               "type": "array"
             },
             "status": {
+              "examples": [
+                0
+              ],
               "type": "integer"
             }
           },
@@ -7566,22 +10173,40 @@
         "schema": {
           "properties": {
             "enable": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "turnoff_hour": {
+              "examples": [
+                "22"
+              ],
               "type": "string"
             },
             "turnoff_min": {
+              "examples": [
+                "00"
+              ],
               "type": "string"
             },
             "turnon_hour": {
+              "examples": [
+                "07"
+              ],
               "type": "string"
             },
             "turnon_min": {
+              "examples": [
+                "00"
+              ],
               "type": "string"
             },
             "week": {
               "items": {
+                "examples": [
+                  0
+                ],
                 "type": "integer"
               },
               "type": "array"
@@ -7602,22 +10227,40 @@
         "schema": {
           "properties": {
             "enable": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "turnoff_hour": {
+              "examples": [
+                "22"
+              ],
               "type": "string"
             },
             "turnoff_min": {
+              "examples": [
+                "00"
+              ],
               "type": "string"
             },
             "turnon_hour": {
+              "examples": [
+                "07"
+              ],
               "type": "string"
             },
             "turnon_min": {
+              "examples": [
+                "00"
+              ],
               "type": "string"
             },
             "week": {
               "items": {
+                "examples": [
+                  0
+                ],
                 "type": "integer"
               },
               "type": "array"
@@ -7638,16 +10281,28 @@
         "schema": {
           "properties": {
             "enable": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "hour": {
+              "examples": [
+                "03"
+              ],
               "type": "string"
             },
             "min": {
+              "examples": [
+                "00"
+              ],
               "type": "string"
             },
             "week": {
               "items": {
+                "examples": [
+                  1
+                ],
                 "type": "integer"
               },
               "type": "array"
@@ -7668,22 +10323,40 @@
         "schema": {
           "properties": {
             "enable": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "turnoff_hour": {
+              "examples": [
+                "22"
+              ],
               "type": "string"
             },
             "turnoff_min": {
+              "examples": [
+                "00"
+              ],
               "type": "string"
             },
             "turnon_hour": {
+              "examples": [
+                "07"
+              ],
               "type": "string"
             },
             "turnon_min": {
+              "examples": [
+                "00"
+              ],
               "type": "string"
             },
             "week": {
               "items": {
+                "examples": [
+                  0
+                ],
                 "type": "integer"
               },
               "type": "array"
@@ -7707,31 +10380,58 @@
               "items": {
                 "properties": {
                   "band": {
+                    "examples": [
+                      "5G"
+                    ],
                     "type": "string"
                   },
                   "enable": {
+                    "examples": [
+                      false
+                    ],
                     "type": "boolean"
                   },
                   "func": {
+                    "examples": [
+                      "turn_onoff"
+                    ],
                     "type": "string"
                   },
                   "guest": {
+                    "examples": [
+                      0
+                    ],
                     "type": "integer"
                   },
                   "turnoff_hour": {
+                    "examples": [
+                      "23"
+                    ],
                     "type": "string"
                   },
                   "turnoff_min": {
+                    "examples": [
+                      "05"
+                    ],
                     "type": "string"
                   },
                   "turnon_hour": {
+                    "examples": [
+                      "07"
+                    ],
                     "type": "string"
                   },
                   "turnon_min": {
+                    "examples": [
+                      "00"
+                    ],
                     "type": "string"
                   },
                   "week": {
                     "items": {
+                      "examples": [
+                        0
+                      ],
                       "type": "integer"
                     },
                     "type": "array"
@@ -7742,9 +10442,15 @@
               "type": "array"
             },
             "wifi_func_2g": {
+              "examples": [
+                "turn_onoff"
+              ],
               "type": "string"
             },
             "wifi_func_5g": {
+              "examples": [
+                "turn_onoff"
+              ],
               "type": "string"
             }
           },
@@ -7757,56 +10463,362 @@
     },
     {
       "name": "timer.set_disk",
-      "params": [],
+      "params": [
+        {
+          "name": "enable",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "turnoff_hour",
+          "schema": {
+            "examples": [
+              "22"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "turnoff_min",
+          "schema": {
+            "examples": [
+              "00"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "turnon_hour",
+          "schema": {
+            "examples": [
+              "07"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "turnon_min",
+          "schema": {
+            "examples": [
+              "00"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "week",
+          "schema": {
+            "items": {
+              "examples": [
+                0
+              ],
+              "type": "integer"
+            },
+            "type": "array"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "timer.get_disk",
       "x-risk": "write",
       "x-status": "discovered"
     },
     {
       "name": "timer.set_led",
-      "params": [],
+      "params": [
+        {
+          "name": "enable",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "turnoff_hour",
+          "schema": {
+            "examples": [
+              "22"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "turnoff_min",
+          "schema": {
+            "examples": [
+              "00"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "turnon_hour",
+          "schema": {
+            "examples": [
+              "07"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "turnon_min",
+          "schema": {
+            "examples": [
+              "00"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "week",
+          "schema": {
+            "items": {
+              "examples": [
+                0
+              ],
+              "type": "integer"
+            },
+            "type": "array"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "timer.get_led",
       "x-risk": "write",
       "x-status": "discovered"
     },
     {
       "name": "timer.set_reboot",
-      "params": [],
+      "params": [
+        {
+          "name": "enable",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "hour",
+          "schema": {
+            "examples": [
+              "03"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "min",
+          "schema": {
+            "examples": [
+              "00"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "week",
+          "schema": {
+            "items": {
+              "examples": [
+                1
+              ],
+              "type": "integer"
+            },
+            "type": "array"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "timer.get_reboot",
       "x-risk": "write",
       "x-status": "discovered"
     },
     {
       "name": "timer.set_screen",
-      "params": [],
+      "params": [
+        {
+          "name": "enable",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "turnoff_hour",
+          "schema": {
+            "examples": [
+              "22"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "turnoff_min",
+          "schema": {
+            "examples": [
+              "00"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "turnon_hour",
+          "schema": {
+            "examples": [
+              "07"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "turnon_min",
+          "schema": {
+            "examples": [
+              "00"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "week",
+          "schema": {
+            "items": {
+              "examples": [
+                0
+              ],
+              "type": "integer"
+            },
+            "type": "array"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "timer.get_screen",
       "x-risk": "write",
       "x-status": "discovered"
     },
     {
       "name": "timer.set_wifi",
-      "params": [],
+      "params": [
+        {
+          "name": "wifi",
+          "schema": {
+            "items": {
+              "properties": {
+                "band": {
+                  "examples": [
+                    "5G"
+                  ],
+                  "type": "string"
+                },
+                "enable": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "func": {
+                  "examples": [
+                    "turn_onoff"
+                  ],
+                  "type": "string"
+                },
+                "guest": {
+                  "examples": [
+                    0
+                  ],
+                  "type": "integer"
+                },
+                "turnoff_hour": {
+                  "examples": [
+                    "23"
+                  ],
+                  "type": "string"
+                },
+                "turnoff_min": {
+                  "examples": [
+                    "05"
+                  ],
+                  "type": "string"
+                },
+                "turnon_hour": {
+                  "examples": [
+                    "07"
+                  ],
+                  "type": "string"
+                },
+                "turnon_min": {
+                  "examples": [
+                    "00"
+                  ],
+                  "type": "string"
+                },
+                "week": {
+                  "items": {
+                    "examples": [
+                      0
+                    ],
+                    "type": "integer"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        {
+          "name": "wifi_func_2g",
+          "schema": {
+            "examples": [
+              "turn_onoff"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "wifi_func_5g",
+          "schema": {
+            "examples": [
+              "turn_onoff"
+            ],
+            "type": "string"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "timer.get_wifi",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -7818,12 +10830,19 @@
         "schema": {
           "properties": {
             "countries": {
+              "items": {},
               "type": "array"
             },
             "enable": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "manual": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             }
           },
@@ -7840,6 +10859,7 @@
       "result": {
         "name": "result",
         "schema": {
+          "items": {},
           "type": "array"
         }
       },
@@ -7849,12 +10869,39 @@
     },
     {
       "name": "tor.set_config",
-      "params": [],
+      "params": [
+        {
+          "name": "countries",
+          "schema": {
+            "items": {},
+            "type": "array"
+          }
+        },
+        {
+          "name": "enable",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "manual",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "tor.get_config",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -7877,56 +10924,99 @@
         "schema": {
           "properties": {
             "environment_support": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "firmware_category": {
+              "examples": [
+                "2c"
+              ],
               "type": "string"
             },
             "firmware_version": {
+              "examples": [
+                "4.9.0"
+              ],
               "type": "string"
             },
             "hostname": {
               "type": "string"
             },
             "inited_agent": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "inited_internet": {
+              "examples": [
+                true
+              ],
               "type": "boolean"
             },
             "initialized": {
+              "examples": [
+                true
+              ],
               "type": "boolean"
             },
             "mac": {
+              "format": "mac",
               "type": "string"
             },
             "model": {
+              "examples": [
+                "mt6000"
+              ],
               "type": "string"
             },
             "security_rule": {
+              "examples": [
+                1
+              ],
               "type": "integer"
             },
             "support_screen_init": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "time_info": {
               "properties": {
                 "api_extra": {
+                  "examples": [
+                    0
+                  ],
                   "type": "integer"
                 },
                 "init": {
+                  "examples": [
+                    3
+                  ],
                   "type": "integer"
                 },
                 "reboot": {
+                  "examples": [
+                    60
+                  ],
                   "type": "integer"
                 },
                 "upgrade": {
+                  "examples": [
+                    120
+                  ],
                   "type": "integer"
                 }
               },
               "type": "object"
             },
             "vpn_wizard_done": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             }
           },
@@ -7956,18 +11046,27 @@
         "schema": {
           "properties": {
             "lang": {
+              "examples": [
+                "en"
+              ],
               "type": "string"
             },
             "list": {
               "items": {
                 "properties": {
                   "id": {
+                    "examples": [
+                      16
+                    ],
                     "type": "integer"
                   },
                   "label": {
                     "type": "string"
                   },
                   "value": {
+                    "examples": [
+                      "de"
+                    ],
                     "type": "string"
                   }
                 },
@@ -7995,40 +11094,67 @@
                 "properties": {
                   "disables": {
                     "items": {
+                      "examples": [
+                        "taps2s"
+                      ],
                       "type": "string"
                     },
                     "type": "array"
                   },
                   "hidden_mode": {
                     "items": {
+                      "examples": [
+                        "agent"
+                      ],
                       "type": "string"
                     },
                     "type": "array"
                   },
                   "index": {
+                    "examples": [
+                      15
+                    ],
                     "type": "integer"
                   },
                   "level": {
+                    "examples": [
+                      2
+                    ],
                     "type": "integer"
                   },
                   "parent": {
+                    "examples": [
+                      "security"
+                    ],
                     "type": "string"
                   },
                   "parent_icon": {
+                    "examples": [
+                      "security"
+                    ],
                     "type": "string"
                   },
                   "parent_index": {
+                    "examples": [
+                      50
+                    ],
                     "type": "integer"
                   },
                   "title": {
                     "properties": {
                       "translate": {
+                        "examples": [
+                          "menu_acl"
+                        ],
                         "type": "string"
                       }
                     },
                     "type": "object"
                   },
                   "view": {
+                    "examples": [
+                      "acl-view"
+                    ],
                     "type": "string"
                   }
                 },
@@ -8052,21 +11178,33 @@
         "schema": {
           "properties": {
             "enable": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "hour": {
+              "examples": [
+                "00"
+              ],
               "type": "string"
             },
             "list": {
               "items": {
                 "properties": {
                   "id": {
+                    "examples": [
+                      16
+                    ],
                     "type": "integer"
                   },
                   "label": {
                     "type": "string"
                   },
                   "value": {
+                    "examples": [
+                      "de"
+                    ],
                     "type": "string"
                   }
                 },
@@ -8075,13 +11213,22 @@
               "type": "array"
             },
             "min": {
+              "examples": [
+                "00"
+              ],
               "type": "string"
             },
             "status": {
+              "examples": [
+                0
+              ],
               "type": "integer"
             },
             "week": {
               "items": {
+                "examples": [
+                  0
+                ],
                 "type": "integer"
               },
               "type": "array"
@@ -8108,6 +11255,9 @@
                     "type": "string"
                   },
                   "zonename": {
+                    "examples": [
+                      "CET"
+                    ],
                     "type": "string"
                   }
                 },
@@ -8158,12 +11308,49 @@
     },
     {
       "name": "ui.set_lang",
-      "params": [],
+      "params": [
+        {
+          "name": "lang",
+          "schema": {
+            "examples": [
+              "en"
+            ],
+            "type": "string"
+          }
+        },
+        {
+          "name": "list",
+          "schema": {
+            "items": {
+              "properties": {
+                "id": {
+                  "examples": [
+                    16
+                  ],
+                  "type": "integer"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "value": {
+                  "examples": [
+                    "de"
+                  ],
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "ui.get_lang",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -8219,6 +11406,9 @@
         "schema": {
           "properties": {
             "err_code": {
+              "examples": [
+                -2
+              ],
               "type": "integer"
             },
             "err_msg": {
@@ -8251,12 +11441,19 @@
         "schema": {
           "properties": {
             "current_compile_time": {
+              "format": "date-time",
               "type": "string"
             },
             "current_type": {
+              "examples": [
+                "release"
+              ],
               "type": "string"
             },
             "current_version": {
+              "examples": [
+                "4.9.0"
+              ],
               "type": "string"
             }
           },
@@ -8374,6 +11571,9 @@
         "schema": {
           "properties": {
             "status": {
+              "examples": [
+                0
+              ],
               "type": "integer"
             }
           },
@@ -8392,9 +11592,15 @@
         "schema": {
           "properties": {
             "prompt": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "upgrade_enable": {
+              "examples": [
+                true
+              ],
               "type": "boolean"
             }
           },
@@ -8543,6 +11749,7 @@
       "result": {
         "name": "result",
         "schema": {
+          "items": {},
           "type": "array"
         }
       },
@@ -8651,12 +11858,116 @@
     },
     {
       "name": "vpn-client.add_tunnel",
-      "params": [],
+      "params": [
+        {
+          "name": "default_tunnels",
+          "schema": {
+            "items": {
+              "properties": {
+                "enabled": {
+                  "examples": [
+                    true
+                  ],
+                  "type": "boolean"
+                },
+                "from": {
+                  "properties": {
+                    "type": {
+                      "examples": [
+                        "default"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "id": {
+                  "examples": [
+                    "cfg02548a"
+                  ],
+                  "type": "string"
+                },
+                "killswitch": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "to": {
+                  "properties": {
+                    "domain_list": {
+                      "type": "string"
+                    },
+                    "domain_list_len": {
+                      "examples": [
+                        0
+                      ],
+                      "type": "integer"
+                    },
+                    "manual": {
+                      "examples": [
+                        true
+                      ],
+                      "type": "boolean"
+                    },
+                    "type": {
+                      "examples": [
+                        "default"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "tunnel_id": {
+                  "examples": [
+                    100
+                  ],
+                  "type": "integer"
+                },
+                "via": {
+                  "properties": {
+                    "via": {
+                      "examples": [
+                        "novpn"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        {
+          "name": "global_enabled",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "tunnels",
+          "schema": {
+            "items": {},
+            "type": "array"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "vpn-client.get_tunnel",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -8679,6 +11990,9 @@
         "schema": {
           "properties": {
             "err_code": {
+              "examples": [
+                20001011
+              ],
               "type": "integer"
             },
             "err_msg": {
@@ -8698,6 +12012,7 @@
       "result": {
         "name": "result",
         "schema": {
+          "items": {},
           "type": "array"
         }
       },
@@ -8746,6 +12061,7 @@
         "schema": {
           "properties": {
             "configs": {
+              "items": {},
               "type": "array"
             }
           },
@@ -8765,6 +12081,9 @@
           "properties": {
             "connection_methods": {
               "items": {
+                "examples": [
+                  "lan"
+                ],
                 "type": "string"
               },
               "type": "array"
@@ -8785,9 +12104,13 @@
         "schema": {
           "properties": {
             "mode": {
+              "examples": [
+                0
+              ],
               "type": "integer"
             },
             "status_list": {
+              "items": {},
               "type": "array"
             }
           },
@@ -8810,20 +12133,32 @@
               "items": {
                 "properties": {
                   "enabled": {
+                    "examples": [
+                      true
+                    ],
                     "type": "boolean"
                   },
                   "from": {
                     "properties": {
                       "type": {
+                        "examples": [
+                          "default"
+                        ],
                         "type": "string"
                       }
                     },
                     "type": "object"
                   },
                   "id": {
+                    "examples": [
+                      "cfg02548a"
+                    ],
                     "type": "string"
                   },
                   "killswitch": {
+                    "examples": [
+                      false
+                    ],
                     "type": "boolean"
                   },
                   "name": {
@@ -8835,23 +12170,38 @@
                         "type": "string"
                       },
                       "domain_list_len": {
+                        "examples": [
+                          0
+                        ],
                         "type": "integer"
                       },
                       "manual": {
+                        "examples": [
+                          true
+                        ],
                         "type": "boolean"
                       },
                       "type": {
+                        "examples": [
+                          "default"
+                        ],
                         "type": "string"
                       }
                     },
                     "type": "object"
                   },
                   "tunnel_id": {
+                    "examples": [
+                      100
+                    ],
                     "type": "integer"
                   },
                   "via": {
                     "properties": {
                       "via": {
+                        "examples": [
+                          "novpn"
+                        ],
                         "type": "string"
                       }
                     },
@@ -8863,9 +12213,13 @@
               "type": "array"
             },
             "global_enabled": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "tunnels": {
+              "items": {},
               "type": "array"
             }
           },
@@ -8885,9 +12239,13 @@
           "items": {
             "properties": {
               "mac": {
+                "format": "mac",
                 "type": "string"
               },
               "status": {
+                "examples": [
+                  0
+                ],
                 "type": "integer"
               }
             },
@@ -8902,12 +12260,116 @@
     },
     {
       "name": "vpn-client.remove_tunnel",
-      "params": [],
+      "params": [
+        {
+          "name": "default_tunnels",
+          "schema": {
+            "items": {
+              "properties": {
+                "enabled": {
+                  "examples": [
+                    true
+                  ],
+                  "type": "boolean"
+                },
+                "from": {
+                  "properties": {
+                    "type": {
+                      "examples": [
+                        "default"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "id": {
+                  "examples": [
+                    "cfg02548a"
+                  ],
+                  "type": "string"
+                },
+                "killswitch": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "to": {
+                  "properties": {
+                    "domain_list": {
+                      "type": "string"
+                    },
+                    "domain_list_len": {
+                      "examples": [
+                        0
+                      ],
+                      "type": "integer"
+                    },
+                    "manual": {
+                      "examples": [
+                        true
+                      ],
+                      "type": "boolean"
+                    },
+                    "type": {
+                      "examples": [
+                        "default"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "tunnel_id": {
+                  "examples": [
+                    100
+                  ],
+                  "type": "integer"
+                },
+                "via": {
+                  "properties": {
+                    "via": {
+                      "examples": [
+                        "novpn"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        {
+          "name": "global_enabled",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "tunnels",
+          "schema": {
+            "items": {},
+            "type": "array"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "vpn-client.get_tunnel",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -8979,13 +12441,117 @@
     },
     {
       "name": "vpn-client.set_tunnel",
-      "params": [],
+      "params": [
+        {
+          "name": "default_tunnels",
+          "schema": {
+            "items": {
+              "properties": {
+                "enabled": {
+                  "examples": [
+                    true
+                  ],
+                  "type": "boolean"
+                },
+                "from": {
+                  "properties": {
+                    "type": {
+                      "examples": [
+                        "default"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "id": {
+                  "examples": [
+                    "cfg02548a"
+                  ],
+                  "type": "string"
+                },
+                "killswitch": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "to": {
+                  "properties": {
+                    "domain_list": {
+                      "type": "string"
+                    },
+                    "domain_list_len": {
+                      "examples": [
+                        0
+                      ],
+                      "type": "integer"
+                    },
+                    "manual": {
+                      "examples": [
+                        true
+                      ],
+                      "type": "boolean"
+                    },
+                    "type": {
+                      "examples": [
+                        "default"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "tunnel_id": {
+                  "examples": [
+                    100
+                  ],
+                  "type": "integer"
+                },
+                "via": {
+                  "properties": {
+                    "via": {
+                      "examples": [
+                        "novpn"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        {
+          "name": "global_enabled",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "tunnels",
+          "schema": {
+            "items": {},
+            "type": "array"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
       "x-gli4py": "wireguard_client_start",
+      "x-inferred-from": "vpn-client.get_tunnel",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -9725,6 +13291,9 @@
         "schema": {
           "properties": {
             "max_client": {
+              "examples": [
+                648695
+              ],
               "type": "integer"
             }
           },
@@ -9743,6 +13312,9 @@
         "schema": {
           "properties": {
             "err_code": {
+              "examples": [
+                20001011
+              ],
               "type": "integer"
             },
             "err_msg": {
@@ -9764,6 +13336,9 @@
         "schema": {
           "properties": {
             "err_code": {
+              "examples": [
+                20001011
+              ],
               "type": "integer"
             },
             "err_msg": {
@@ -9851,53 +13426,107 @@
         "schema": {
           "properties": {
             "bandmode": {
+              "items": {},
               "type": "array"
             },
             "dfs_support": {
+              "examples": [
+                true
+              ],
               "type": "boolean"
             },
             "res": {
               "items": {
                 "properties": {
                   "band": {
+                    "examples": [
+                      "2G"
+                    ],
                     "type": "string"
                   },
                   "channel": {
+                    "examples": [
+                      6
+                    ],
                     "type": "integer"
                   },
                   "channels": {
                     "items": {
+                      "properties": {
+                        "channel": {
+                          "examples": [
+                            1
+                          ],
+                          "type": "integer"
+                        },
+                        "dfs": {
+                          "examples": [
+                            false
+                          ],
+                          "type": "boolean"
+                        },
+                        "psc": {
+                          "examples": [
+                            false
+                          ],
+                          "type": "boolean"
+                        }
+                      },
                       "type": "object"
                     },
                     "type": "array"
                   },
                   "device": {
+                    "examples": [
+                      "mt798611"
+                    ],
                     "type": "string"
                   },
                   "encryptions": {
                     "items": {
+                      "examples": [
+                        "none"
+                      ],
                       "type": "string"
                     },
                     "type": "array"
                   },
                   "htmode": {
+                    "examples": [
+                      "20"
+                    ],
                     "type": "string"
                   },
                   "htmodes": {
                     "properties": {
                       "11b/g/n": {
+                        "examples": [
+                          40
+                        ],
                         "type": "integer"
                       },
                       "11b/g/n/ax": {
+                        "examples": [
+                          40
+                        ],
                         "type": "integer"
                       },
                       "11g/n/ax": {
+                        "examples": [
+                          40
+                        ],
                         "type": "integer"
                       },
                       "11n/ax": {
+                        "examples": [
+                          40
+                        ],
                         "type": "integer"
                       },
                       "auto": {
+                        "examples": [
+                          true
+                        ],
                         "type": "boolean"
                       }
                     },
@@ -9914,11 +13543,71 @@
                   },
                   "ifaces": {
                     "items": {
+                      "properties": {
+                        "bssid": {
+                          "format": "mac",
+                          "type": "string"
+                        },
+                        "enabled": {
+                          "examples": [
+                            true
+                          ],
+                          "type": "boolean"
+                        },
+                        "encryption": {
+                          "examples": [
+                            "psk2"
+                          ],
+                          "type": "string"
+                        },
+                        "guest": {
+                          "examples": [
+                            false
+                          ],
+                          "type": "boolean"
+                        },
+                        "hidden": {
+                          "examples": [
+                            false
+                          ],
+                          "type": "boolean"
+                        },
+                        "init": {
+                          "examples": [
+                            true
+                          ],
+                          "type": "boolean"
+                        },
+                        "iot": {
+                          "examples": [
+                            false
+                          ],
+                          "type": "boolean"
+                        },
+                        "key": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "random_bssid": {
+                          "examples": [
+                            false
+                          ],
+                          "type": "boolean"
+                        },
+                        "ssid": {
+                          "type": "string"
+                        }
+                      },
                       "type": "object"
                     },
                     "type": "array"
                   },
                   "txpower": {
+                    "examples": [
+                      "Max"
+                    ],
                     "type": "string"
                   }
                 },
@@ -9943,6 +13632,9 @@
         "schema": {
           "properties": {
             "use_environment": {
+              "examples": [
+                0
+              ],
               "type": "integer"
             }
           },
@@ -9964,14 +13656,21 @@
               "properties": {
                 "encryptions": {
                   "items": {
+                    "examples": [
+                      "none"
+                    ],
                     "type": "string"
                   },
                   "type": "array"
                 },
                 "ifaces": {
+                  "items": {},
                   "type": "array"
                 },
                 "random_bssid": {
+                  "examples": [
+                    false
+                  ],
                   "type": "boolean"
                 }
               },
@@ -9996,15 +13695,24 @@
               "items": {
                 "properties": {
                   "band": {
+                    "examples": [
+                      "2g"
+                    ],
                     "type": "string"
                   },
                   "channel": {
+                    "examples": [
+                      6
+                    ],
                     "type": "integer"
                   },
                   "name": {
                     "type": "string"
                   },
                   "state": {
+                    "examples": [
+                      "ready"
+                    ],
                     "type": "string"
                   }
                 },
@@ -10022,24 +13730,236 @@
     },
     {
       "name": "wifi.set_config",
-      "params": [],
+      "params": [
+        {
+          "name": "bandmode",
+          "schema": {
+            "items": {},
+            "type": "array"
+          }
+        },
+        {
+          "name": "dfs_support",
+          "schema": {
+            "examples": [
+              true
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "res",
+          "schema": {
+            "items": {
+              "properties": {
+                "band": {
+                  "examples": [
+                    "2G"
+                  ],
+                  "type": "string"
+                },
+                "channel": {
+                  "examples": [
+                    6
+                  ],
+                  "type": "integer"
+                },
+                "channels": {
+                  "items": {
+                    "properties": {
+                      "channel": {
+                        "examples": [
+                          1
+                        ],
+                        "type": "integer"
+                      },
+                      "dfs": {
+                        "examples": [
+                          false
+                        ],
+                        "type": "boolean"
+                      },
+                      "psc": {
+                        "examples": [
+                          false
+                        ],
+                        "type": "boolean"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "device": {
+                  "examples": [
+                    "mt798611"
+                  ],
+                  "type": "string"
+                },
+                "encryptions": {
+                  "items": {
+                    "examples": [
+                      "none"
+                    ],
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "htmode": {
+                  "examples": [
+                    "20"
+                  ],
+                  "type": "string"
+                },
+                "htmodes": {
+                  "properties": {
+                    "11b/g/n": {
+                      "examples": [
+                        40
+                      ],
+                      "type": "integer"
+                    },
+                    "11b/g/n/ax": {
+                      "examples": [
+                        40
+                      ],
+                      "type": "integer"
+                    },
+                    "11g/n/ax": {
+                      "examples": [
+                        40
+                      ],
+                      "type": "integer"
+                    },
+                    "11n/ax": {
+                      "examples": [
+                        40
+                      ],
+                      "type": "integer"
+                    },
+                    "auto": {
+                      "examples": [
+                        true
+                      ],
+                      "type": "boolean"
+                    }
+                  },
+                  "type": "object"
+                },
+                "hwmode": {
+                  "type": "string"
+                },
+                "hwmodes": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "ifaces": {
+                  "items": {
+                    "properties": {
+                      "bssid": {
+                        "format": "mac",
+                        "type": "string"
+                      },
+                      "enabled": {
+                        "examples": [
+                          true
+                        ],
+                        "type": "boolean"
+                      },
+                      "encryption": {
+                        "examples": [
+                          "psk2"
+                        ],
+                        "type": "string"
+                      },
+                      "guest": {
+                        "examples": [
+                          false
+                        ],
+                        "type": "boolean"
+                      },
+                      "hidden": {
+                        "examples": [
+                          false
+                        ],
+                        "type": "boolean"
+                      },
+                      "init": {
+                        "examples": [
+                          true
+                        ],
+                        "type": "boolean"
+                      },
+                      "iot": {
+                        "examples": [
+                          false
+                        ],
+                        "type": "boolean"
+                      },
+                      "key": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "random_bssid": {
+                        "examples": [
+                          false
+                        ],
+                        "type": "boolean"
+                      },
+                      "ssid": {
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "txpower": {
+                  "examples": [
+                    "Max"
+                  ],
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
       "x-gli4py": "wifi_iface_set_enabled",
+      "x-inferred-from": "wifi.get_config",
       "x-risk": "write",
       "x-status": "discovered"
     },
     {
       "name": "wifi.set_environment_config",
-      "params": [],
+      "params": [
+        {
+          "name": "use_environment",
+          "schema": {
+            "examples": [
+              0
+            ],
+            "type": "integer"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "wifi.get_environment_config",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -10067,12 +13987,41 @@
     },
     {
       "name": "wifi.set_mlo_config",
-      "params": [],
+      "params": [
+        {
+          "name": "res",
+          "schema": {
+            "properties": {
+              "encryptions": {
+                "items": {
+                  "examples": [
+                    "none"
+                  ],
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "ifaces": {
+                "items": {},
+                "type": "array"
+              },
+              "random_bssid": {
+                "examples": [
+                  false
+                ],
+                "type": "boolean"
+              }
+            },
+            "type": "object"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "wifi.get_mlo_config",
       "x-risk": "write",
       "x-status": "discovered"
     },
@@ -10183,12 +14132,21 @@
         "schema": {
           "properties": {
             "enabled": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "lan_enabled": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             },
             "wan_enabled": {
+              "examples": [
+                false
+              ],
               "type": "boolean"
             }
           },
@@ -10205,6 +14163,7 @@
       "result": {
         "name": "result",
         "schema": {
+          "items": {},
           "type": "array"
         }
       },
@@ -10214,12 +14173,41 @@
     },
     {
       "name": "zerotier.set_config",
-      "params": [],
+      "params": [
+        {
+          "name": "enabled",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "lan_enabled",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "wan_enabled",
+          "schema": {
+            "examples": [
+              false
+            ],
+            "type": "boolean"
+          }
+        }
+      ],
       "result": {
         "name": "result",
         "schema": {}
       },
       "x-discovered-by": "ssh",
+      "x-inferred-from": "zerotier.get_config",
       "x-risk": "write",
       "x-status": "discovered"
     }
