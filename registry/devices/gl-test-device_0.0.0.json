@@ -1,0 +1,56 @@
+{
+  "device_type": "router",
+  "firmware_version": "0.0.0",
+  "id": "gl-test-device_0.0.0",
+  "model": "gl-test-device",
+  "services": {
+    "clients": {
+      "get_list": {
+        "covered_by": "list_all_clients",
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "schema": {
+          "clients": "list"
+        },
+        "status": "available"
+      }
+    },
+    "system": {
+      "get_info": {
+        "covered_by": "router_info",
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "schema": {
+          "firmware_version": "str",
+          "model": "str"
+        },
+        "status": "available"
+      },
+      "reboot": {
+        "covered_by": null,
+        "discovered_by": "ssh",
+        "error_code": null,
+        "params": null,
+        "risk": "dangerous",
+        "schema": null,
+        "status": "discovered"
+      },
+      "set_timezone_config": {
+        "covered_by": null,
+        "discovered_by": "ssh",
+        "error_code": null,
+        "params": [
+          "timezone"
+        ],
+        "risk": "write",
+        "schema": null,
+        "status": "discovered"
+      }
+    }
+  },
+  "vendor": "gl.inet"
+}

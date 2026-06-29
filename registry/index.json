@@ -1,6 +1,15 @@
 {
   "devices": [
     {
+      "available_count": 2,
+      "discovered_count": 2,
+      "firmware_version": "0.0.0",
+      "id": "gl-test-device_0.0.0",
+      "model": "gl-test-device",
+      "not_wrapped_count": 0,
+      "service_count": 2
+    },
+    {
       "available_count": 131,
       "discovered_count": 300,
       "firmware_version": "4.9.0",
