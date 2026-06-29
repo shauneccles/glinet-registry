@@ -2,6 +2,8 @@
 
 Community device-profile registry for GL.iNet routers — firmware API capability data, fully decoupled from the `glinet-profiler` package.
 
+> **Built with AI assistance.** Most of this code (and the tooling/bot) was written by Claude — human-directed, reviewed, and tested against real hardware. It's open source; read it and judge for yourself.
+
 ## What this is
 
 `registry/devices/` holds one sanitized JSON profile per device+firmware combination. Two sets of files are **generated** from those (don't hand-edit), both kept in sync by `scripts/build_manifest.py`:
