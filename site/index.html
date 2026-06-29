@@ -76,8 +76,14 @@
 
   <footer class="site-footer">
     <p>
-      Sanitized profiles — no device identifiers or response values are published.
-      Captured with <a href="https://github.com/shauneccles/glinet-profiler">glinet-profiler</a>;
+      Published profiles are the <strong>API shape</strong> only — method names, statuses, and a
+      response <strong>signature</strong>: field structure with safe example values (numbers, enums
+      like <code>5g</code>) and format labels (<code>&lt;ipv4&gt;</code>, <code>&lt;mac&gt;</code>,
+      <code>&lt;string&gt;</code>) standing in for anything identifying. MACs, serials, secrets,
+      IPs, hostnames and SSIDs are scrubbed to labels — never published as values; raw response
+      bodies are dropped entirely, and the registry validator rejects any submission that still
+      contains one. Captured with
+      <a href="https://github.com/shauneccles/glinet-profiler">glinet-profiler</a>;
       a <code>gli4py</code> badge marks methods the
       <a href="https://github.com/shauneccles/gli4py">gli4py</a> client wraps.
     </p>

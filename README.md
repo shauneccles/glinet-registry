@@ -13,7 +13,7 @@ Community device-profile registry for GL.iNet routers — firmware API capabilit
 
 ## How to contribute
 
-**Option 1 — the launcher (recommended):** Run [`glinet-profiler`](https://github.com/shauneccles/glinet-profiler) against your device. It captures a **sanitized** profile (no MAC addresses, no serials, no credentials, no response values), tells you whether the device is already here, and opens a prefilled submission for you.
+**Option 1 — the launcher (recommended):** Run [`glinet-profiler`](https://github.com/shauneccles/glinet-profiler) against your device. It captures a **sanitized** profile (see [What a profile contains](#what-a-profile-contains-and-what-it-doesnt) below — no MACs, serials, credentials, or real config values), tells you whether the device is already here, and opens a prefilled submission for you.
 
 ```bash
 uvx glinet-profiler              # local web UI
@@ -23,6 +23,29 @@ uvx glinet-profiler 192.168.8.1  # headless; prints the submission link
 **Option 2 — the issue form:** Open a [Device Profile submission](../../issues/new?template=profile-submission.yml) issue and **drag-and-drop** the `<id>.json` the launcher saved (don't paste its contents). A bot validates it and opens a pull request.
 
 **Option 3 — a manual pull request:** Add the sanitized file under `registry/devices/<id>.json`, run `python scripts/build_manifest.py`, and open a PR.
+
+## What a profile contains (and what it doesn't)
+
+A published profile is the **API shape**, distilled on the submitter's machine
+before anything is written:
+
+- **Device:** model, firmware, vendor, hardware revision, and non-identifying
+  **capability flags** — the regulatory region (e.g. `US`) and the software/hardware
+  feature map (AdGuard, Tor, VPN, cellular, USB 3.0 …).
+- **Per method:** name, status, read/write risk, gli4py coverage, params, and a
+  response **signature**.
+
+The **signature** keeps the response's field **structure** and *safe* example
+values — numbers, booleans, and short enum-like strings (`"5g"`, `"ap"`) — but
+**every identifying or personal value is replaced by a format label, never a real
+value**: MAC → `<mac>`, IPv4/IPv6 → `<ipv4>`/`<ipv6>`, timestamps → `<datetime>`,
+passwords/keys/tokens/serials → `<secret>`, and SSIDs/hostnames/domains/free text →
+`<string>`.
+
+**Never present:** MAC addresses, serial numbers, device IDs, credentials, your
+real IPs/hostnames/SSIDs/DDNS names, or any raw response body. `tools/registry_lib.py`'s
+`validate_profile` **rejects** any submission that contains a MAC, a serial/identifier,
+or a raw response value, so the bot won't even open a PR for one.
 
 ## Keeping `index.json` in sync
 
