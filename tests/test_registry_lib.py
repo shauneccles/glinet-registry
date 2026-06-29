@@ -172,6 +172,23 @@ def test_to_openrpc_uses_signature_for_schema_and_examples():
     assert schema["properties"]["gateway"] == {"type": "string", "format": "ipv4"}
 
 
+def test_to_openrpc_pairs_write_request_shape_from_get_sibling():
+    profile = {
+        "id": "x_1", "model": "x", "firmware_version": "1",
+        "services": {"tor": {
+            "get_config": {"status": "available", "risk": "read", "covered_by": None,
+                           "signature": {"enable": False, "manual": True}},
+            "set_config": {"status": "discovered", "risk": "write", "covered_by": None,
+                           "params": [], "signature": None},
+        }},
+    }
+    m = {x["name"]: x for x in to_openrpc(profile)["methods"]}["tor.set_config"]
+    names = {p["name"] for p in m["params"]}
+    assert names == {"enable", "manual"}
+    assert m["x-inferred-from"] == "tor.get_config"
+    assert m["params"][0]["schema"]  # has a JSON-schema fragment from the read
+
+
 def test_committed_index_matches_devices():
     reg = Path(__file__).resolve().parent.parent / "registry"
     profiles = [

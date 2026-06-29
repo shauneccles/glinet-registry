@@ -129,6 +129,21 @@ def _signature_to_schema(sig: Any) -> dict[str, Any]:
     return {}
 
 
+_WRITE_VERBS = ("set", "add", "update", "create", "del", "remove", "clear")
+
+
+def _paired_read(service_methods: dict[str, Any], method: str) -> tuple[str, Any] | None:
+    """For a write `<verb>_<noun>`, return (read_name, read_signature) of its get_* sibling, if any."""
+    verb, _, noun = method.partition("_")
+    if verb not in _WRITE_VERBS or not noun:
+        return None
+    for cand in (f"get_{noun}", f"get_{noun}_list", f"get_{noun}_config", f"get_{noun}_info"):
+        rec = service_methods.get(cand)
+        if rec and isinstance(rec.get("signature"), dict):
+            return cand, rec["signature"]
+    return None
+
+
 def _to_json_schema(shape: Any) -> dict[str, Any]:
     """Convert a captured type-erased shape (e.g. {'n': 'int'}) into a JSON Schema fragment."""
     if isinstance(shape, dict):
@@ -170,6 +185,14 @@ def to_openrpc(profile: dict[str, Any]) -> dict[str, Any]:
             }
             if rec.get("covered_by"):
                 entry["x-gli4py"] = rec["covered_by"]
+            if rec.get("risk") == "write" and not entry["params"]:
+                pair = _paired_read(profile["services"][service], method)
+                if pair:
+                    read_name, read_sig = pair
+                    entry["params"] = [
+                        {"name": k, "schema": _signature_to_schema(v)} for k, v in read_sig.items()
+                    ]
+                    entry["x-inferred-from"] = f"{service}.{read_name}"
             methods.append(entry)
     return {
         "openrpc": "1.2.6",
