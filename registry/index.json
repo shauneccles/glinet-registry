@@ -2,6 +2,7 @@
   "devices": [
     {
       "available_count": 131,
+      "country_code": "US",
       "discovered_count": 300,
       "firmware_version": "4.9.0",
       "id": "mt6000_4.9.0",

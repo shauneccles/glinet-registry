@@ -137,6 +137,24 @@ def test_to_openrpc_exports_exists_methods_with_extensions():
     assert by_name["acl.add_user"]["result"]["schema"] == {}
 
 
+def test_manifest_and_openrpc_carry_capabilities():
+    prof = {
+        "id": "x_1",
+        "model": "x",
+        "firmware_version": "1",
+        "capabilities": {
+            "country_code": "US",
+            "software_feature": {"vpn": True},
+            "hardware_feature": {"simo": False},
+        },
+        "services": {"system": {"get_info": {"status": "available", "covered_by": None}}},
+    }
+    assert build_manifest([prof])["devices"][0]["country_code"] == "US"
+    doc = to_openrpc(prof)
+    assert doc["x-capabilities"]["country_code"] == "US"
+    assert doc["x-capabilities"]["hardware_feature"]["simo"] is False
+
+
 def test_committed_index_matches_devices():
     reg = Path(__file__).resolve().parent.parent / "registry"
     profiles = [

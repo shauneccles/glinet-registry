@@ -72,6 +72,7 @@ def build_manifest(profiles: list[dict[str, Any]]) -> dict[str, Any]:
                 "id": dev["id"],
                 "model": dev.get("model", "unknown"),
                 "firmware_version": dev.get("firmware_version", "unknown"),
+                "country_code": dev.get("capabilities", {}).get("country_code"),
                 "service_count": service_count,
                 "available_count": len(present),
                 "discovered_count": discovered_count,
@@ -150,5 +151,6 @@ def to_openrpc(profile: dict[str, Any]) -> dict[str, Any]:
             ),
             "license": {"name": "GPL-3.0-or-later"},
         },
+        "x-capabilities": profile.get("capabilities", {}),
         "methods": methods,
     }

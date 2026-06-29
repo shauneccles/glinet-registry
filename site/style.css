@@ -4,7 +4,12 @@
 }
 * { box-sizing: border-box; }
 body { margin: 0; font: 14px/1.5 system-ui, sans-serif; background: var(--bg); color: var(--fg); }
-header, .controls, main, footer { max-width: 1000px; margin: 0 auto; padding: 0 16px; }
+header, .controls, .capabilities, main, footer { max-width: 1000px; margin: 0 auto; padding: 0 16px; }
+.capabilities { color: var(--muted); font-size: .9rem; margin-bottom: 10px; }
+.capabilities[hidden] { display: none; }
+.cap-summary b { color: var(--fg); }
+.capabilities details { margin-top: 4px; }
+.capabilities pre { background: var(--panel); padding: 8px; border-radius: 6px; overflow: auto; max-height: 320px; }
 header { padding-top: 24px; }
 h1 { margin: 0 0 4px; font-size: 22px; }
 .sub, footer { color: var(--muted); font-size: 13px; }

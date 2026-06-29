@@ -8,8 +8,27 @@ const els = {
   discoveredOnly: document.getElementById("discovered-only"),
   openrpc: document.getElementById("openrpc"),
   count: document.getElementById("count"),
+  capabilities: document.getElementById("capabilities"),
   results: document.getElementById("results"),
 };
+
+function renderCapabilities(caps) {
+  if (!caps || !(caps.country_code || caps.software_feature || caps.hardware_feature)) {
+    els.capabilities.hidden = true;
+    els.capabilities.innerHTML = "";
+    return;
+  }
+  const sw = caps.software_feature || {};
+  const swOn = Object.keys(sw).filter((k) => sw[k] === true).sort();
+  const region = caps.country_code ? `region <b>${escapeHtml(caps.country_code)}</b>` : "";
+  const features = swOn.length ? `features: ${swOn.map(escapeHtml).join(", ")}` : "";
+  const detail = JSON.stringify(
+    { software_feature: sw, hardware_feature: caps.hardware_feature || {} }, null, 2);
+  els.capabilities.innerHTML =
+    `<span class="cap-summary">${[region, features].filter(Boolean).join(" · ")}</span>` +
+    `<details><summary>raw capabilities</summary><pre>${escapeHtml(detail)}</pre></details>`;
+  els.capabilities.hidden = false;
+}
 
 const PRESENT = new Set(["available", "needs_params"]);
 let current = null;
@@ -76,6 +95,7 @@ async function loadDevice(id) {
     els.openrpc.href = `data/openrpc/${id}.openrpc.json`;
     els.openrpc.download = `${id}.openrpc.json`;
     els.openrpc.hidden = false;
+    renderCapabilities(current.capabilities);
     render();
   } catch (err) {
     els.results.innerHTML = "<p class='empty'>Could not load this device's data.</p>";
