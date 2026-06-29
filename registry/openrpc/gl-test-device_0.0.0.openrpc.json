@@ -1,0 +1,81 @@
+{
+  "info": {
+    "description": "Auto-generated from a sanitized glinet-profiler capture of a GL.iNet gl-test-device on firmware 0.0.0. Calls are JSON-RPC 2.0 over POST /rpc. The `x-status`, `x-risk`, `x-discovered-by` and `x-gli4py` extensions carry registry metadata. Empirical observation, not an official vendor contract.",
+    "license": {
+      "name": "GPL-3.0-or-later"
+    },
+    "title": "GL.iNet gl-test-device RPC API",
+    "version": "0.0.0"
+  },
+  "methods": [
+    {
+      "name": "clients.get_list",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "clients": {
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-gli4py": "list_all_clients",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "system.get_info",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "firmware_version": {
+              "type": "string"
+            },
+            "model": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-gli4py": "router_info",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "system.reboot",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {}
+      },
+      "x-discovered-by": "ssh",
+      "x-risk": "dangerous",
+      "x-status": "discovered"
+    },
+    {
+      "name": "system.set_timezone_config",
+      "params": [
+        {
+          "name": "timezone",
+          "schema": {}
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {}
+      },
+      "x-discovered-by": "ssh",
+      "x-risk": "write",
+      "x-status": "discovered"
+    }
+  ],
+  "openrpc": "1.2.6"
+}
