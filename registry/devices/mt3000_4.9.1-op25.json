@@ -1,0 +1,4077 @@
+{
+  "capabilities": {
+    "country_code": "DE",
+    "hardware_feature": {
+      "bluetooth": false,
+      "build_in_modem": "",
+      "fan": true,
+      "gps": false,
+      "hwnat": true,
+      "lan": "eth1",
+      "lcd_sched": false,
+      "mcu": false,
+      "microsd": "",
+      "modem_reset": 2,
+      "nand": false,
+      "noled": false,
+      "nowds": false,
+      "radio": "radio0 radio1",
+      "reset_button": "gpio-456",
+      "rs485": false,
+      "screen": false,
+      "simo": false,
+      "slot": "single",
+      "submodel": "",
+      "switch_button": "gpio-455",
+      "usb": "1-1,2-1",
+      "usb3": "2-1",
+      "usb_power": "",
+      "usb_reset": "",
+      "wan": "eth0",
+      "wifi_type": ""
+    },
+    "software_feature": {
+      "adguard": true,
+      "astrowarp_lite": false,
+      "bark": false,
+      "cellular_ref": "1.0",
+      "cellular_upgrade": false,
+      "ids_ips": false,
+      "ipv6": true,
+      "is_need_6g_bssid_sync": false,
+      "ksmbd": false,
+      "minimum_temperature": 70,
+      "mlo": false,
+      "nas": true,
+      "obfuscation": true,
+      "passthrough": false,
+      "repeater_eap": true,
+      "secondwan": false,
+      "sms_forward": true,
+      "tor": true,
+      "vlan": false,
+      "vpn": true
+    }
+  },
+  "device_type": 1,
+  "firmware_version": "4.9.1-op25",
+  "hardware_version": "",
+  "id": "mt3000_4.9.1-op25",
+  "model": "mt3000",
+  "services": {
+    "acl": {
+      "get_acl_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32602,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "needs_params"
+      },
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_group_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "groups": []
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      }
+    },
+    "adguardhome": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "dns_enabled": true,
+          "enabled": true
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      }
+    },
+    "bark": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      }
+    },
+    "black_white_list": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "mode": "black"
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      }
+    },
+    "cable": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "protocol": "dhcp"
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "mode": 0,
+          "secondwan": {
+            "err_code": -4,
+            "err_msg": "<string>"
+          },
+          "status": 3,
+          "usbwan": {
+            "err_code": -4,
+            "err_msg": "<string>"
+          }
+        },
+        "status": "available"
+      }
+    },
+    "clients": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": "list_all_clients",
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "clients": [
+            {
+              "blocked": false,
+              "iface": "cable",
+              "ip": "<ipv4>",
+              "ipv6": [],
+              "last_update_rate": 1790413411,
+              "limit_rx": 0,
+              "limit_tx": 0,
+              "mac": "<mac>",
+              "name": "<string>",
+              "online": false,
+              "online_time": 1760892014,
+              "remote": false,
+              "rx": 0,
+              "total_rx": "0",
+              "total_rx_init": 0,
+              "total_tx": "0",
+              "total_tx_init": 0,
+              "tx": 0,
+              "type": 2
+            }
+          ]
+        },
+        "status": "available"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "auto_remove_offline": false,
+          "cable_total": 0,
+          "wireless_total": 1
+        },
+        "status": "available"
+      }
+    },
+    "cloud": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "aw_api_url": "<string>",
+          "aw_url": "<string>",
+          "bindtype": "<string>",
+          "cloud_enable": false,
+          "rtty_ssh": false,
+          "rtty_web": false,
+          "serverzones": [
+            "Europe"
+          ],
+          "token_invalid": false,
+          "token_status": 0
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      }
+    },
+    "custom_dns": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      }
+    },
+    "ddns": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "device_id": "<secret>",
+          "enable_ddns": false
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "ips": [
+            {
+              "interface": "wan6",
+              "ip": []
+            }
+          ],
+          "status": 2
+        },
+        "status": "available"
+      }
+    },
+    "diag": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      }
+    },
+    "dlna": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      }
+    },
+    "dns": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "controld_id": "<string>",
+          "controld_type": 1,
+          "force_dns": false,
+          "manual_list": [],
+          "mode": "auto",
+          "nextdns_id": "<string>",
+          "override_vpn": false,
+          "proto": "<string>",
+          "proto_manual": "<string>",
+          "provider": "<string>",
+          "proxy_list": [],
+          "rebind_protection": false,
+          "secure_manual_list": [],
+          "server_auto": [
+            "<string>"
+          ],
+          "servers_list": []
+        },
+        "status": "available"
+      },
+      "get_host": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "content": "<string>"
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": [
+          {
+            "provider": "controld",
+            "server_list": [
+              {
+                "address": [
+                  "<ipv4>"
+                ],
+                "address6": [
+                  "<ipv6>"
+                ],
+                "description": "<string>",
+                "name": "<string>",
+                "url_doh": "<string>",
+                "url_doq": "<string>",
+                "url_dot": "<string>"
+              }
+            ],
+            "sup_proto": [
+              "dot"
+            ]
+          }
+        ],
+        "status": "available"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      }
+    },
+    "dpi": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      }
+    },
+    "edgerouter": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "enable": false,
+          "ignore": true
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": "connected_to_internet",
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "detected": 3
+        },
+        "status": "available"
+      },
+      "status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      }
+    },
+    "fan": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "temperature": 76,
+          "warn_temperature": 76
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "speed": 0,
+          "status": false
+        },
+        "status": "available"
+      }
+    },
+    "firewall": {
+      "get_acl_rule_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": [],
+        "status": "available"
+      },
+      "get_acl_zone_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "externals": [
+            "lan"
+          ],
+          "internals": [
+            "lan"
+          ]
+        },
+        "status": "available"
+      },
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_dmz": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "enabled": false
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_port_forward_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "res": []
+        },
+        "status": "available"
+      },
+      "get_rule_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "res": []
+        },
+        "status": "available"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_wan_access": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "enable_https": false,
+          "enable_ping": false,
+          "enable_ssh": false,
+          "enable_whitelist": false,
+          "whitelist": []
+        },
+        "status": "available"
+      },
+      "get_zone_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "externals": [
+            "lan"
+          ],
+          "internals": [
+            "lan"
+          ]
+        },
+        "status": "available"
+      }
+    },
+    "flow_statistics": {
+      "get_app_flow_statistics": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": [],
+        "status": "available"
+      },
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_flow_statistics": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": [],
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_statistics_rule": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "enable": false,
+          "time": "day",
+          "type": "app"
+        },
+        "status": "available"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_top_app_flow_statistics": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": [],
+        "status": "available"
+      }
+    },
+    "igmp": {
+      "get": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "enable": false,
+          "version": 3
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      }
+    },
+    "ipv6": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_ipv6": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "enable": false,
+          "lan_dns_mode": true,
+          "lan_mode": "nat6"
+        },
+        "status": "available"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      }
+    },
+    "kmwan": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "interfaces": [
+            {
+              "enable_check": true,
+              "enable_ssl": false,
+              "interface": "wan",
+              "metric": 10,
+              "track_ipv4": [
+                "<ipv4>"
+              ],
+              "track_ipv6": [
+                "<ipv6>"
+              ],
+              "track_method": 0,
+              "track_mode": 1,
+              "track_proto": 0,
+              "weight": 1
+            }
+          ],
+          "mode": 0
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "interfaces": [
+            {
+              "interface": "wan",
+              "status_v4": 1,
+              "status_v6": 1
+            }
+          ]
+        },
+        "status": "available"
+      }
+    },
+    "lan": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_config_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "interfaces": [
+            {
+              "ap_isolate": 0,
+              "dns": [],
+              "enable": 1,
+              "end": "<ipv4>",
+              "gateway": "<string>",
+              "interface": "lan",
+              "ip": "<ipv4>",
+              "leasetime": "12h",
+              "lpr": [],
+              "netmask": "<ipv4>",
+              "start": "<ipv4>"
+            }
+          ]
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_static_bind_list": {
+        "covered_by": "list_static_clients",
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "static_bind_list": []
+        },
+        "status": "available"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      }
+    },
+    "led": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "led_enable": true
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      }
+    },
+    "logread": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_crash_log": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "log": "<string>"
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_kernel_log": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "log": "<string>"
+        },
+        "status": "available"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_system_log": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "log": "<string>"
+        },
+        "status": "available"
+      },
+      "get_uboot_log": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      }
+    },
+    "macclone": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_mac": {
+        "covered_by": "router_mac",
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      }
+    },
+    "mcu": {
+      "get_battery_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      }
+    },
+    "modem": {
+      "get_cells_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_debug_msg": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "at_debug_msgs": {
+            "resp": "<string>",
+            "ret": 2
+          },
+          "modem_config_file": {
+            "is_single_dial": false,
+            "slot_feature": [],
+            "slot_multi_priority": []
+          },
+          "modem_info": {
+            "bus": "<string>",
+            "devices": [],
+            "imei": [],
+            "lock_carrier_support": false,
+            "lock_tower_support": false,
+            "mtu_need_sync": 0,
+            "name": "<string>",
+            "network_type_support": false,
+            "offline_doc": false,
+            "protocols": [],
+            "signal_support": false,
+            "sim_slot_num": 0,
+            "sms_support": false,
+            "standby_type": 0,
+            "support_pin_count": false,
+            "supports_ip_type": [
+              {
+                "label": "<string>",
+                "value": 0
+              }
+            ],
+            "supports_rrc_seg": false,
+            "type": 0,
+            "vendor": "<string>",
+            "version": "<string>"
+          },
+          "modem_status": {
+            "bus": "<string>",
+            "current_sim_slot": "<string>",
+            "slot_switch_count": 0,
+            "slot_switch_status": 0,
+            "status": 0
+          },
+          "network_info": {
+            "resp": "<string>",
+            "ret": 2
+          },
+          "network_status": {
+            "resp": "<string>",
+            "ret": 2
+          },
+          "sim_info": {
+            "sims": []
+          },
+          "sim_status": {
+            "sims": []
+          }
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_sms_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "err_code": 20002001,
+          "err_msg": "<string>"
+        },
+        "status": "available"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_traffic_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "err_code": 15,
+          "err_msg": "<string>"
+        },
+        "status": "available"
+      }
+    },
+    "mptun": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "interfaces": [
+            {
+              "enable": true,
+              "name": "<string>"
+            }
+          ]
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "nodes": [],
+          "status": 0,
+          "type": 2
+        },
+        "status": "available"
+      }
+    },
+    "nas-web": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_disk_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "disk": [],
+          "disk_number": 0
+        },
+        "status": "available"
+      },
+      "get_file_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": 1,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "other"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_nas_ser": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "enable": 0
+        },
+        "status": "available"
+      },
+      "get_proto_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": 1,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "other"
+      },
+      "get_share_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": 1,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "other"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "enable": 0
+        },
+        "status": "available"
+      },
+      "get_user_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": 1,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "other"
+      }
+    },
+    "netifyd": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      }
+    },
+    "netmode": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_mode": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "mode": "router"
+        },
+        "status": "available"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      }
+    },
+    "network": {
+      "check_wan_cable": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "cable_enabled": false,
+          "cable_inserted": false,
+          "macclone_enabled": false
+        },
+        "status": "available"
+      },
+      "get_arp_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "entries": [
+            {
+              "device": "sta0",
+              "ip": "<ipv4>",
+              "mac": "<mac>"
+            }
+          ]
+        },
+        "status": "available"
+      },
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_dhcp_leases": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "routes": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "routes6": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      }
+    },
+    "ovpn-client": {
+      "check_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "err_code": 20001011,
+          "err_msg": "<string>"
+        },
+        "status": "available"
+      },
+      "get_all_config_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "config_list": []
+        },
+        "status": "available"
+      },
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_config_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "err_code": 20001011,
+          "err_msg": "<string>"
+        },
+        "status": "available"
+      },
+      "get_group_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "groups": [
+            {
+              "askpass": "<string>",
+              "askpass_exist": false,
+              "auth_type": 1,
+              "client_count": 0,
+              "group_id": 96318,
+              "group_name": "<string>",
+              "group_type": 1,
+              "password": "<secret>",
+              "procedure": 1,
+              "show": false,
+              "username": "<string>",
+              "work_mode": "modern"
+            }
+          ]
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_recommend_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "err_code": 20001011,
+          "err_msg": "<string>"
+        },
+        "status": "available"
+      },
+      "get_route_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_setting": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_third_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "err_code": 20001011,
+          "err_msg": "<string>"
+        },
+        "status": "available"
+      }
+    },
+    "ovpn-server": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "access_scope": 1,
+          "auth": "SHA256",
+          "cipher": "AES-256-GCM",
+          "client_auth": 1,
+          "client_to_client": false,
+          "dh": "<secret>",
+          "end": "<ipv4>",
+          "hmac": false,
+          "initialization": false,
+          "local_access": false,
+          "lzo": false,
+          "mask": "<ipv4>",
+          "mode": "tun",
+          "port": 1194,
+          "proto": "udp",
+          "start": "<ipv4>",
+          "subnetv4": "<ipv4>",
+          "subnetv6": "<string>",
+          "tap_address": "<ipv4>",
+          "tap_mask": "<ipv4>",
+          "verb": "3"
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_route_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "ipv4_route_rules": [],
+          "ipv6_route_rules": []
+        },
+        "status": "available"
+      },
+      "get_setting": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "local_access": false,
+          "masq": true
+        },
+        "status": "available"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "initialization": false,
+          "log": "<string>",
+          "rx_bytes": 0,
+          "status": 0,
+          "tunnel_ip": "<string>",
+          "tx_bytes": 0
+        },
+        "status": "available"
+      },
+      "get_user_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "user_list": []
+        },
+        "status": "available"
+      }
+    },
+    "parental-control": {
+      "get_brief": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "enable": false,
+          "groups": [],
+          "init": true
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_mode": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      }
+    },
+    "plugins": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "source": [
+            {
+              "name": "<string>",
+              "system": true,
+              "url": "<string>"
+            }
+          ]
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": [],
+        "status": "available"
+      },
+      "get_package_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "err_code": -4,
+          "err_msg": "<string>"
+        },
+        "status": "available"
+      },
+      "get_repository_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "count_all": 18,
+          "count_installed": 0,
+          "count_not_installed": 0,
+          "count_reserve": 18,
+          "count_updatable": 0,
+          "status": 2,
+          "time_current": 1790439969,
+          "time_last_update": 0
+        },
+        "status": "available"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      }
+    },
+    "qos": {
+      "get_client_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "clients": []
+        },
+        "status": "available"
+      },
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "enable": false,
+          "mode": "0"
+        },
+        "status": "available"
+      },
+      "get_device_group": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "group": []
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      }
+    },
+    "reboot": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      }
+    },
+    "repeater": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "auto": true,
+          "dfs_support": true,
+          "macaddr": "<mac>",
+          "smart_reconnect": true
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_saved_ap_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "res": [
+            {
+              "auto_portal": false,
+              "disguise": false,
+              "key": "<secret>",
+              "macaddr": {
+                "macaddr": "<mac>",
+                "mode": "random",
+                "update": "none"
+              },
+              "manual": false,
+              "protocol": "dhcp",
+              "ssid": "<string>"
+            }
+          ]
+        },
+        "status": "available"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "band": "2g",
+          "bare_mode": false,
+          "bssid": "<mac>",
+          "channel": 1,
+          "config": {
+            "auto_portal": false,
+            "disguise": false,
+            "key": "<secret>",
+            "macaddr": {
+              "macaddr": "<mac>",
+              "mode": "random",
+              "update": "none"
+            },
+            "manual": false,
+            "protocol": "dhcp",
+            "remember": true,
+            "ssid": "<string>"
+          },
+          "connected": "<string>",
+          "device": "radio0",
+          "dfs": false,
+          "fail_type": "<string>",
+          "htmode": "HT20",
+          "ipv4": {
+            "dns": [
+              "<ipv4>"
+            ],
+            "gateway": "<ipv4>",
+            "ip": "<string>"
+          },
+          "macaddr": "<mac>",
+          "network": "wwan",
+          "portal": false,
+          "portal_detecting": false,
+          "portal_info": {
+            "auth_mode": 0,
+            "password": "<secret>",
+            "username": "<string>",
+            "voucher": "<string>"
+          },
+          "running": true,
+          "signal": -42,
+          "ssid": "<string>",
+          "state": 2,
+          "state_s": "connected",
+          "wifi_generation": "4",
+          "wpa_status": {
+            "address": "<mac>",
+            "bssid": "<mac>",
+            "freq": "2412",
+            "group_cipher": "CCMP",
+            "id": "0",
+            "ip_address": "<ipv4>",
+            "key_mgmt": "<secret>",
+            "mode": "station",
+            "pairwise_cipher": "CCMP",
+            "ssid": "<string>",
+            "uuid": "<string>",
+            "wifi_generation": "4",
+            "wpa_state": "COMPLETED"
+          }
+        },
+        "status": "available"
+      }
+    },
+    "rtty": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "ssh_enabled": false,
+          "web_enabled": false
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      }
+    },
+    "s2s": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "status": "<string>"
+        },
+        "status": "available"
+      }
+    },
+    "samba": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      }
+    },
+    "sms-forward": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "err_code": -1,
+          "err_msg": "<string>"
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_rule_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      }
+    },
+    "sqm": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "download": "<string>",
+          "enable": false,
+          "qdisc": "cake",
+          "upload": "<string>"
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      }
+    },
+    "srv_conn_check": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      }
+    },
+    "switch-button": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "func": "none"
+        },
+        "status": "available"
+      },
+      "get_funcs": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "funcs": [
+            {
+              "func": "adguardhome"
+            }
+          ]
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      }
+    },
+    "system": {
+      "disk_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "root": {
+            "free": 129024000,
+            "total": 152784896,
+            "used": 18808832
+          },
+          "tmp": {
+            "free": 246194176,
+            "total": 252022784,
+            "used": 5828608
+          }
+        },
+        "status": "available"
+      },
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_httpd_mem_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "memory_used": 19596
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": "router_info",
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "board_info": {
+            "architecture": "<string>",
+            "hostname": "<string>",
+            "kernel_version": "6.12.94",
+            "model": "<string>",
+            "openwrt_version": "<string>"
+          },
+          "country_code": "DE",
+          "cpu_num": 2,
+          "ddns": "<string>",
+          "device_type": 1,
+          "firmware_date": "<datetime>",
+          "firmware_type": "beta3",
+          "firmware_version": "4.9.1-op25",
+          "hardware_feature": {
+            "bluetooth": false,
+            "build_in_modem": "<string>",
+            "fan": true,
+            "gps": false,
+            "hwnat": true,
+            "lan": "eth1",
+            "lcd_sched": false,
+            "mcu": false,
+            "microsd": "<string>",
+            "modem_reset": 2,
+            "nand": false,
+            "noled": false,
+            "nowds": false,
+            "radio": "<string>",
+            "reset_button": "gpio-456",
+            "rs485": false,
+            "screen": false,
+            "simo": false,
+            "slot": "single",
+            "submodel": "<string>",
+            "switch_button": "gpio-455",
+            "usb": "<string>",
+            "usb3": "2-1",
+            "usb_power": "<string>",
+            "usb_reset": "<string>",
+            "wan": "eth0",
+            "wifi_type": "<string>"
+          },
+          "hardware_version": "<string>",
+          "hidden_features": [],
+          "mac": "<mac>",
+          "model": "mt3000",
+          "sn": "<secret>",
+          "sn_bak": "<secret>",
+          "software_feature": {
+            "adguard": true,
+            "astrowarp_lite": false,
+            "bark": false,
+            "cellular_ref": "1.0",
+            "cellular_upgrade": false,
+            "ids_ips": false,
+            "ipv6": true,
+            "is_need_6g_bssid_sync": false,
+            "ksmbd": false,
+            "minimum_temperature": 70,
+            "mlo": false,
+            "nas": true,
+            "obfuscation": true,
+            "passthrough": false,
+            "repeater_eap": true,
+            "secondwan": false,
+            "sms_forward": true,
+            "tor": true,
+            "vlan": false,
+            "vpn": true
+          },
+          "vendor": "GL.iNet"
+        },
+        "status": "available"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_load": {
+        "covered_by": "router_get_load",
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "load_average": [
+            0.09
+          ],
+          "memory_buff_cache": 130662400,
+          "memory_free": 96202752,
+          "memory_total": 504049664
+        },
+        "status": "available"
+      },
+      "get_percent": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_security_policy": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "redirect_https": 0,
+          "security_rule": 1
+        },
+        "status": "available"
+      },
+      "get_status": {
+        "covered_by": "router_get_status",
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "client": [
+            {
+              "auto_remove_offline": false,
+              "cable_total": 0,
+              "wireless_total": 1
+            }
+          ],
+          "network": [
+            {
+              "interface": "modem_1_1_2_6",
+              "online": true,
+              "up": false
+            }
+          ],
+          "service": [
+            {
+              "name": "<string>",
+              "status": 0
+            }
+          ],
+          "system": {
+            "content_protection_enabled": false,
+            "cpu": {
+              "temperature": 61
+            },
+            "ddns_enabled": false,
+            "dpi_info": {
+              "lib_update_time": "<datetime>",
+              "lib_version": "20260226_01",
+              "status": "0"
+            },
+            "flash_app": 18808832,
+            "flash_free": 129024000,
+            "flash_total": 268435456,
+            "flow_statistics_enabled": false,
+            "guest_ip": "<ipv4>",
+            "guest_netmask": "<ipv4>",
+            "iot_ip": "<ipv4>",
+            "iot_netmask": "<ipv4>",
+            "ipv6_enabled": false,
+            "lan_ip": "<ipv4>",
+            "lan_netmask": "<ipv4>",
+            "load_average": [
+              0.09
+            ],
+            "memory_buff_cache": 130662400,
+            "memory_free": 96202752,
+            "memory_total": 504049664,
+            "mode": 0,
+            "netnat_enabled": true,
+            "prio_enabled": false,
+            "qos_enabled": false,
+            "sqm_enabled": false,
+            "time_sync_status": true,
+            "timestamp": 1790439965,
+            "tzoffset": "<string>",
+            "uptime": 3559.81
+          },
+          "wifi": [
+            {
+              "band": "2G",
+              "channel": 0,
+              "encryption": "sae",
+              "guest": false,
+              "hidden": false,
+              "init": true,
+              "iot": false,
+              "mld": false,
+              "name": "<string>",
+              "passwd": "<secret>",
+              "ssid": "<string>",
+              "up": true
+            }
+          ]
+        },
+        "status": "available"
+      },
+      "get_timezone_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "autotimezone_enabled": true,
+          "localtime": 1790447165,
+          "timestamp": 1790439965,
+          "timezone": "<string>",
+          "tzoffset": "<string>",
+          "zonename": "<string>"
+        },
+        "status": "available"
+      },
+      "get_unixtime": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "time": 1790439965
+        },
+        "status": "available"
+      }
+    },
+    "tailscale": {
+      "get_config": {
+        "covered_by": "tailscale_configured",
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "enabled": true,
+          "lan_enabled": true,
+          "lan_ip": "<string>",
+          "masq": false,
+          "run_exit_node": false,
+          "wan_enabled": false
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": "tailscale_connection_state",
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "address_v4": "<ipv4>",
+          "dns": [
+            "<ipv4>"
+          ],
+          "login_name": "<string>",
+          "status": 3
+        },
+        "status": "available"
+      }
+    },
+    "tethering": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": [],
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "devices": [],
+          "status": 0
+        },
+        "status": "available"
+      }
+    },
+    "timer": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      }
+    },
+    "tor": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "countries": [],
+          "enable": false,
+          "manual": false
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": [],
+        "status": "available"
+      }
+    },
+    "ui": {
+      "check_initialized": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "environment_support": false,
+          "firmware_category": "2c",
+          "firmware_version": "4.9.1-op25",
+          "hostname": "<string>",
+          "inited_agent": false,
+          "inited_internet": true,
+          "initialized": true,
+          "mac": "<mac>",
+          "model": "mt3000",
+          "partner": "<string>",
+          "security_rule": 1,
+          "support_screen_init": false,
+          "time_info": {
+            "api_extra": 0,
+            "init": 3,
+            "reboot": 60,
+            "upgrade": 120
+          },
+          "vpn_wizard_done": false
+        },
+        "status": "available"
+      },
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_lang": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "lang": "en",
+          "list": [
+            {
+              "id": 16,
+              "label": "<string>",
+              "value": "de"
+            }
+          ]
+        },
+        "status": "available"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_menu_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "menus": [
+            {
+              "disables": [
+                "taps2s"
+              ],
+              "hidden_mode": [
+                "agent"
+              ],
+              "index": 15,
+              "level": 2,
+              "parent": "security",
+              "parent_icon": "security",
+              "parent_index": 50,
+              "title": {
+                "translate": "menu_acl"
+              },
+              "view": "acl-view"
+            }
+          ]
+        },
+        "status": "available"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "load_locales": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32602,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "needs_params"
+      }
+    },
+    "upgrade": {
+      "check_firmware_local": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "sha256": "<string>",
+          "status": 5
+        },
+        "status": "available"
+      },
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "prompt": true,
+          "upgrade_enable": true
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_online_upgrade_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": [],
+        "status": "available"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      }
+    },
+    "vpn-client": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": "wireguard_client_state",
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "mode": 0,
+          "status_list": [
+            {
+              "domain": [
+                "<string>"
+              ],
+              "enabled": false,
+              "group_id": 8791,
+              "name": "<string>",
+              "peer_id": 1800,
+              "peer_name": "<string>",
+              "port": 443,
+              "tunnel_id": 10,
+              "type": "wireguard",
+              "via": "wgclient1"
+            }
+          ]
+        },
+        "status": "available"
+      },
+      "get_tunnel": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "default_tunnels": [
+            {
+              "enabled": true,
+              "from": {
+                "type": "default"
+              },
+              "id": "cfg02548a",
+              "killswitch": false,
+              "name": "<string>",
+              "to": {
+                "domain_list": "<string>",
+                "domain_list_len": 0,
+                "manual": true,
+                "type": "default"
+              },
+              "tunnel_id": 100,
+              "via": {
+                "via": "novpn"
+              }
+            }
+          ],
+          "global_enabled": false,
+          "tunnels": [
+            {
+              "enabled": false,
+              "from": {
+                "type": "default"
+              },
+              "id": "cfg0492bd",
+              "killswitch": true,
+              "name": "<string>",
+              "options": {
+                "local_access": false,
+                "masq": true,
+                "options_in_used": false,
+                "service_policy": false
+              },
+              "to": {
+                "domain_list": "<string>",
+                "domain_list_len": 0,
+                "manual": true,
+                "type": "default"
+              },
+              "tunnel_id": 10,
+              "via": {
+                "configs": [
+                  {
+                    "group_id": 8791,
+                    "id_list": [
+                      1800
+                    ]
+                  }
+                ],
+                "type": "wireguard",
+                "via": "wgclient1"
+              }
+            }
+          ]
+        },
+        "status": "available"
+      }
+    },
+    "vpn-policy": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_domain_policy": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_global_policy": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_mac_policy": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_proxy_mode": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_vlan_policy": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      }
+    },
+    "wg-client": {
+      "check_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "err_code": 20001011,
+          "err_msg": "<string>"
+        },
+        "status": "available"
+      },
+      "get_all_config_list": {
+        "covered_by": "wireguard_client_list",
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "config_list": [
+            {
+              "auth_type": 1,
+              "group_id": 10000,
+              "group_name": "<string>",
+              "group_type": 1,
+              "password": "<secret>",
+              "peers": [],
+              "username": "<string>"
+            }
+          ]
+        },
+        "status": "available"
+      },
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_config_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "err_code": 20001011,
+          "err_msg": "<string>"
+        },
+        "status": "available"
+      },
+      "get_group_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "groups": [
+            {
+              "auth_type": 1,
+              "group_id": 10000,
+              "group_name": "<string>",
+              "group_type": 1,
+              "password": "<secret>",
+              "peer_count": 0,
+              "procedure": 0,
+              "show": false,
+              "username": "<string>"
+            }
+          ]
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_recommend_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "err_code": 20001011,
+          "err_msg": "<string>"
+        },
+        "status": "available"
+      },
+      "get_route_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_setting": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": "wireguard_client_state",
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_third_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "err_code": 20001011,
+          "err_msg": "<string>"
+        },
+        "status": "available"
+      }
+    },
+    "wg-server": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "address_v4": "<string>",
+          "address_v6": "<string>",
+          "initialization": false,
+          "local_access": false,
+          "obfuscation": 0,
+          "port": 51820,
+          "private_key": "<secret>",
+          "public_key": "<secret>"
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_peer_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "peers": []
+        },
+        "status": "available"
+      },
+      "get_route_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "ipv4_route_rules": [],
+          "ipv6_route_rules": []
+        },
+        "status": "available"
+      },
+      "get_setting": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "client_to_client": false,
+          "local_access": false,
+          "masq": true
+        },
+        "status": "available"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "peers": [],
+          "server": {
+            "initialization": false,
+            "log": "<string>",
+            "rx_bytes": 0,
+            "status": 0,
+            "tunnel_ip": "<string>",
+            "tx_bytes": 0
+          }
+        },
+        "status": "available"
+      }
+    },
+    "wifi": {
+      "get_config": {
+        "covered_by": "wifi_ifaces_get",
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "bandmode": [],
+          "dfs_support": true,
+          "res": [
+            {
+              "band": "2G",
+              "channel": 1,
+              "channels": [
+                {
+                  "channel": 1,
+                  "dfs": false,
+                  "psc": false
+                }
+              ],
+              "device": "radio0",
+              "encryptions": [
+                "none"
+              ],
+              "htmode": "40",
+              "htmodes": {
+                "11b/g/n": 40,
+                "11b/g/n/ax": 40,
+                "11g/n/ax": 40,
+                "11n/ax": 40,
+                "auto": true
+              },
+              "hwmode": "<string>",
+              "hwmodes": [
+                "<string>"
+              ],
+              "ifaces": [
+                {
+                  "bssid": "<mac>",
+                  "enabled": true,
+                  "encryption": "sae",
+                  "guest": false,
+                  "hidden": false,
+                  "init": true,
+                  "iot": false,
+                  "key": "<secret>",
+                  "name": "<string>",
+                  "random_bssid": true,
+                  "ssid": "<string>"
+                }
+              ],
+              "txpower": "Max"
+            }
+          ]
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_mlo_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "res": {
+            "encryptions": [
+              "none"
+            ],
+            "ifaces": [],
+            "random_bssid": false
+          }
+        },
+        "status": "available"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "res": [
+            {
+              "channel": 1,
+              "name": "<string>",
+              "state": "ready"
+            }
+          ]
+        },
+        "status": "available"
+      }
+    },
+    "zerotier": {
+      "get_config": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": {
+          "enabled": false,
+          "lan_enabled": false,
+          "wan_enabled": false
+        },
+        "status": "available"
+      },
+      "get_info": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_list": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": -32601,
+        "params": null,
+        "risk": "read",
+        "signature": null,
+        "status": "absent"
+      },
+      "get_status": {
+        "covered_by": null,
+        "discovered_by": "catalog",
+        "error_code": null,
+        "params": null,
+        "risk": "read",
+        "signature": [],
+        "status": "available"
+      }
+    }
+  },
+  "vendor": "GL.iNet"
+}

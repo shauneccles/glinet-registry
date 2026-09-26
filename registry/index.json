@@ -1,6 +1,16 @@
 {
   "devices": [
     {
+      "available_count": 117,
+      "country_code": "DE",
+      "discovered_count": 0,
+      "firmware_version": "4.9.1-op25",
+      "id": "mt3000_4.9.1-op25",
+      "model": "mt3000",
+      "not_wrapped_count": 106,
+      "service_count": 45
+    },
+    {
       "available_count": 145,
       "country_code": "US",
       "discovered_count": 300,

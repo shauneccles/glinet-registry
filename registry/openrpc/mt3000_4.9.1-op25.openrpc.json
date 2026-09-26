@@ -1,0 +1,5599 @@
+{
+  "info": {
+    "description": "Auto-generated from a sanitized glinet-profiler capture of a GL.iNet mt3000 on firmware 4.9.1-op25. Calls are JSON-RPC 2.0 over POST /rpc. The `x-status`, `x-risk`, `x-discovered-by` and `x-gli4py` extensions carry registry metadata. Empirical observation, not an official vendor contract.",
+    "license": {
+      "name": "GPL-3.0-or-later"
+    },
+    "title": "GL.iNet mt3000 RPC API",
+    "version": "4.9.1-op25"
+  },
+  "methods": [
+    {
+      "name": "acl.get_acl_list",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {}
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "needs_params"
+    },
+    {
+      "name": "acl.get_group_list",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "groups": {
+              "items": {},
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "adguardhome.get_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "dns_enabled": {
+              "examples": [
+                true
+              ],
+              "type": "boolean"
+            },
+            "enabled": {
+              "examples": [
+                true
+              ],
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "black_white_list.get_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "mode": {
+              "examples": [
+                "black"
+              ],
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "cable.get_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "protocol": {
+              "examples": [
+                "dhcp"
+              ],
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "cable.get_status",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "mode": {
+              "examples": [
+                0
+              ],
+              "type": "integer"
+            },
+            "secondwan": {
+              "properties": {
+                "err_code": {
+                  "examples": [
+                    -4
+                  ],
+                  "type": "integer"
+                },
+                "err_msg": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "status": {
+              "examples": [
+                3
+              ],
+              "type": "integer"
+            },
+            "usbwan": {
+              "properties": {
+                "err_code": {
+                  "examples": [
+                    -4
+                  ],
+                  "type": "integer"
+                },
+                "err_msg": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "clients.get_list",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "clients": {
+              "items": {
+                "properties": {
+                  "blocked": {
+                    "examples": [
+                      false
+                    ],
+                    "type": "boolean"
+                  },
+                  "iface": {
+                    "examples": [
+                      "cable"
+                    ],
+                    "type": "string"
+                  },
+                  "ip": {
+                    "format": "ipv4",
+                    "type": "string"
+                  },
+                  "ipv6": {
+                    "items": {},
+                    "type": "array"
+                  },
+                  "last_update_rate": {
+                    "examples": [
+                      1790413411
+                    ],
+                    "type": "integer"
+                  },
+                  "limit_rx": {
+                    "examples": [
+                      0
+                    ],
+                    "type": "integer"
+                  },
+                  "limit_tx": {
+                    "examples": [
+                      0
+                    ],
+                    "type": "integer"
+                  },
+                  "mac": {
+                    "format": "mac",
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "online": {
+                    "examples": [
+                      false
+                    ],
+                    "type": "boolean"
+                  },
+                  "online_time": {
+                    "examples": [
+                      1760892014
+                    ],
+                    "type": "integer"
+                  },
+                  "remote": {
+                    "examples": [
+                      false
+                    ],
+                    "type": "boolean"
+                  },
+                  "rx": {
+                    "examples": [
+                      0
+                    ],
+                    "type": "integer"
+                  },
+                  "total_rx": {
+                    "examples": [
+                      "0"
+                    ],
+                    "type": "string"
+                  },
+                  "total_rx_init": {
+                    "examples": [
+                      0
+                    ],
+                    "type": "integer"
+                  },
+                  "total_tx": {
+                    "examples": [
+                      "0"
+                    ],
+                    "type": "string"
+                  },
+                  "total_tx_init": {
+                    "examples": [
+                      0
+                    ],
+                    "type": "integer"
+                  },
+                  "tx": {
+                    "examples": [
+                      0
+                    ],
+                    "type": "integer"
+                  },
+                  "type": {
+                    "examples": [
+                      2
+                    ],
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-gli4py": "list_all_clients",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "clients.get_status",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "auto_remove_offline": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "cable_total": {
+              "examples": [
+                0
+              ],
+              "type": "integer"
+            },
+            "wireless_total": {
+              "examples": [
+                1
+              ],
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "cloud.get_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "aw_api_url": {
+              "type": "string"
+            },
+            "aw_url": {
+              "type": "string"
+            },
+            "bindtype": {
+              "type": "string"
+            },
+            "cloud_enable": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "rtty_ssh": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "rtty_web": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "serverzones": {
+              "items": {
+                "examples": [
+                  "Europe"
+                ],
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "token_invalid": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "token_status": {
+              "examples": [
+                0
+              ],
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "ddns.get_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "device_id": {
+              "type": "string"
+            },
+            "enable_ddns": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "ddns.get_status",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "ips": {
+              "items": {
+                "properties": {
+                  "interface": {
+                    "examples": [
+                      "wan6"
+                    ],
+                    "type": "string"
+                  },
+                  "ip": {
+                    "items": {},
+                    "type": "array"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "status": {
+              "examples": [
+                2
+              ],
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "dns.get_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "controld_id": {
+              "type": "string"
+            },
+            "controld_type": {
+              "examples": [
+                1
+              ],
+              "type": "integer"
+            },
+            "force_dns": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "manual_list": {
+              "items": {},
+              "type": "array"
+            },
+            "mode": {
+              "examples": [
+                "auto"
+              ],
+              "type": "string"
+            },
+            "nextdns_id": {
+              "type": "string"
+            },
+            "override_vpn": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "proto": {
+              "type": "string"
+            },
+            "proto_manual": {
+              "type": "string"
+            },
+            "provider": {
+              "type": "string"
+            },
+            "proxy_list": {
+              "items": {},
+              "type": "array"
+            },
+            "rebind_protection": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "secure_manual_list": {
+              "items": {},
+              "type": "array"
+            },
+            "server_auto": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "servers_list": {
+              "items": {},
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "dns.get_host",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "content": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "dns.get_info",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "items": {
+            "properties": {
+              "provider": {
+                "examples": [
+                  "controld"
+                ],
+                "type": "string"
+              },
+              "server_list": {
+                "items": {
+                  "properties": {
+                    "address": {
+                      "items": {
+                        "format": "ipv4",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "address6": {
+                      "items": {
+                        "format": "ipv6",
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "url_doh": {
+                      "type": "string"
+                    },
+                    "url_doq": {
+                      "type": "string"
+                    },
+                    "url_dot": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              "sup_proto": {
+                "items": {
+                  "examples": [
+                    "dot"
+                  ],
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "edgerouter.get_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "enable": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "ignore": {
+              "examples": [
+                true
+              ],
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "edgerouter.get_status",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "detected": {
+              "examples": [
+                3
+              ],
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-gli4py": "connected_to_internet",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "fan.get_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "temperature": {
+              "examples": [
+                76
+              ],
+              "type": "integer"
+            },
+            "warn_temperature": {
+              "examples": [
+                76
+              ],
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "fan.get_status",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "speed": {
+              "examples": [
+                0
+              ],
+              "type": "integer"
+            },
+            "status": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "firewall.get_acl_rule_list",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "items": {},
+          "type": "array"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "firewall.get_acl_zone_list",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "externals": {
+              "items": {
+                "examples": [
+                  "lan"
+                ],
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "internals": {
+              "items": {
+                "examples": [
+                  "lan"
+                ],
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "firewall.get_dmz",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "enabled": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "firewall.get_port_forward_list",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "res": {
+              "items": {},
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "firewall.get_rule_list",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "res": {
+              "items": {},
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "firewall.get_wan_access",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "enable_https": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "enable_ping": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "enable_ssh": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "enable_whitelist": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "whitelist": {
+              "items": {},
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "firewall.get_zone_list",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "externals": {
+              "items": {
+                "examples": [
+                  "lan"
+                ],
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "internals": {
+              "items": {
+                "examples": [
+                  "lan"
+                ],
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "flow_statistics.get_app_flow_statistics",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "items": {},
+          "type": "array"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "flow_statistics.get_flow_statistics",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "items": {},
+          "type": "array"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "flow_statistics.get_statistics_rule",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "enable": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "time": {
+              "examples": [
+                "day"
+              ],
+              "type": "string"
+            },
+            "type": {
+              "examples": [
+                "app"
+              ],
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "flow_statistics.get_top_app_flow_statistics",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "items": {},
+          "type": "array"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "igmp.get_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "enable": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "version": {
+              "examples": [
+                3
+              ],
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "ipv6.get_ipv6",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "enable": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "lan_dns_mode": {
+              "examples": [
+                true
+              ],
+              "type": "boolean"
+            },
+            "lan_mode": {
+              "examples": [
+                "nat6"
+              ],
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "kmwan.get_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "interfaces": {
+              "items": {
+                "properties": {
+                  "enable_check": {
+                    "examples": [
+                      true
+                    ],
+                    "type": "boolean"
+                  },
+                  "enable_ssl": {
+                    "examples": [
+                      false
+                    ],
+                    "type": "boolean"
+                  },
+                  "interface": {
+                    "examples": [
+                      "wan"
+                    ],
+                    "type": "string"
+                  },
+                  "metric": {
+                    "examples": [
+                      10
+                    ],
+                    "type": "integer"
+                  },
+                  "track_ipv4": {
+                    "items": {
+                      "format": "ipv4",
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "track_ipv6": {
+                    "items": {
+                      "format": "ipv6",
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "track_method": {
+                    "examples": [
+                      0
+                    ],
+                    "type": "integer"
+                  },
+                  "track_mode": {
+                    "examples": [
+                      1
+                    ],
+                    "type": "integer"
+                  },
+                  "track_proto": {
+                    "examples": [
+                      0
+                    ],
+                    "type": "integer"
+                  },
+                  "weight": {
+                    "examples": [
+                      1
+                    ],
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "mode": {
+              "examples": [
+                0
+              ],
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "kmwan.get_status",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "interfaces": {
+              "items": {
+                "properties": {
+                  "interface": {
+                    "examples": [
+                      "wan"
+                    ],
+                    "type": "string"
+                  },
+                  "status_v4": {
+                    "examples": [
+                      1
+                    ],
+                    "type": "integer"
+                  },
+                  "status_v6": {
+                    "examples": [
+                      1
+                    ],
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "lan.get_config_list",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "interfaces": {
+              "items": {
+                "properties": {
+                  "ap_isolate": {
+                    "examples": [
+                      0
+                    ],
+                    "type": "integer"
+                  },
+                  "dns": {
+                    "items": {},
+                    "type": "array"
+                  },
+                  "enable": {
+                    "examples": [
+                      1
+                    ],
+                    "type": "integer"
+                  },
+                  "end": {
+                    "format": "ipv4",
+                    "type": "string"
+                  },
+                  "gateway": {
+                    "type": "string"
+                  },
+                  "interface": {
+                    "examples": [
+                      "lan"
+                    ],
+                    "type": "string"
+                  },
+                  "ip": {
+                    "format": "ipv4",
+                    "type": "string"
+                  },
+                  "leasetime": {
+                    "examples": [
+                      "12h"
+                    ],
+                    "type": "string"
+                  },
+                  "lpr": {
+                    "items": {},
+                    "type": "array"
+                  },
+                  "netmask": {
+                    "format": "ipv4",
+                    "type": "string"
+                  },
+                  "start": {
+                    "format": "ipv4",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "lan.get_static_bind_list",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "static_bind_list": {
+              "items": {},
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-gli4py": "list_static_clients",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "led.get_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "led_enable": {
+              "examples": [
+                true
+              ],
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "logread.get_crash_log",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "log": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "logread.get_kernel_log",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "log": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "logread.get_system_log",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "log": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "modem.get_debug_msg",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "at_debug_msgs": {
+              "properties": {
+                "resp": {
+                  "type": "string"
+                },
+                "ret": {
+                  "examples": [
+                    2
+                  ],
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            },
+            "modem_config_file": {
+              "properties": {
+                "is_single_dial": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "slot_feature": {
+                  "items": {},
+                  "type": "array"
+                },
+                "slot_multi_priority": {
+                  "items": {},
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            },
+            "modem_info": {
+              "properties": {
+                "bus": {
+                  "type": "string"
+                },
+                "devices": {
+                  "items": {},
+                  "type": "array"
+                },
+                "imei": {
+                  "items": {},
+                  "type": "array"
+                },
+                "lock_carrier_support": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "lock_tower_support": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "mtu_need_sync": {
+                  "examples": [
+                    0
+                  ],
+                  "type": "integer"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "network_type_support": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "offline_doc": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "protocols": {
+                  "items": {},
+                  "type": "array"
+                },
+                "signal_support": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "sim_slot_num": {
+                  "examples": [
+                    0
+                  ],
+                  "type": "integer"
+                },
+                "sms_support": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "standby_type": {
+                  "examples": [
+                    0
+                  ],
+                  "type": "integer"
+                },
+                "support_pin_count": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "supports_ip_type": {
+                  "items": {
+                    "properties": {
+                      "label": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "examples": [
+                          0
+                        ],
+                        "type": "integer"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "supports_rrc_seg": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "type": {
+                  "examples": [
+                    0
+                  ],
+                  "type": "integer"
+                },
+                "vendor": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "modem_status": {
+              "properties": {
+                "bus": {
+                  "type": "string"
+                },
+                "current_sim_slot": {
+                  "type": "string"
+                },
+                "slot_switch_count": {
+                  "examples": [
+                    0
+                  ],
+                  "type": "integer"
+                },
+                "slot_switch_status": {
+                  "examples": [
+                    0
+                  ],
+                  "type": "integer"
+                },
+                "status": {
+                  "examples": [
+                    0
+                  ],
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            },
+            "network_info": {
+              "properties": {
+                "resp": {
+                  "type": "string"
+                },
+                "ret": {
+                  "examples": [
+                    2
+                  ],
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            },
+            "network_status": {
+              "properties": {
+                "resp": {
+                  "type": "string"
+                },
+                "ret": {
+                  "examples": [
+                    2
+                  ],
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            },
+            "sim_info": {
+              "properties": {
+                "sims": {
+                  "items": {},
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            },
+            "sim_status": {
+              "properties": {
+                "sims": {
+                  "items": {},
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "modem.get_sms_list",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "err_code": {
+              "examples": [
+                20002001
+              ],
+              "type": "integer"
+            },
+            "err_msg": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "modem.get_traffic_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "err_code": {
+              "examples": [
+                15
+              ],
+              "type": "integer"
+            },
+            "err_msg": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "mptun.get_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "interfaces": {
+              "items": {
+                "properties": {
+                  "enable": {
+                    "examples": [
+                      true
+                    ],
+                    "type": "boolean"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "mptun.get_status",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "nodes": {
+              "items": {},
+              "type": "array"
+            },
+            "status": {
+              "examples": [
+                0
+              ],
+              "type": "integer"
+            },
+            "type": {
+              "examples": [
+                2
+              ],
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "nas-web.get_disk_list",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "disk": {
+              "items": {},
+              "type": "array"
+            },
+            "disk_number": {
+              "examples": [
+                0
+              ],
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "nas-web.get_nas_ser",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "enable": {
+              "examples": [
+                0
+              ],
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "nas-web.get_status",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "enable": {
+              "examples": [
+                0
+              ],
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "netmode.get_mode",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "mode": {
+              "examples": [
+                "router"
+              ],
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "network.check_wan_cable",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "cable_enabled": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "cable_inserted": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "macclone_enabled": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "network.get_arp_list",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "entries": {
+              "items": {
+                "properties": {
+                  "device": {
+                    "examples": [
+                      "sta0"
+                    ],
+                    "type": "string"
+                  },
+                  "ip": {
+                    "format": "ipv4",
+                    "type": "string"
+                  },
+                  "mac": {
+                    "format": "mac",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "ovpn-client.check_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "err_code": {
+              "examples": [
+                20001011
+              ],
+              "type": "integer"
+            },
+            "err_msg": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "ovpn-client.get_all_config_list",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "config_list": {
+              "items": {},
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "ovpn-client.get_config_list",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "err_code": {
+              "examples": [
+                20001011
+              ],
+              "type": "integer"
+            },
+            "err_msg": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "ovpn-client.get_group_list",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "groups": {
+              "items": {
+                "properties": {
+                  "askpass": {
+                    "type": "string"
+                  },
+                  "askpass_exist": {
+                    "examples": [
+                      false
+                    ],
+                    "type": "boolean"
+                  },
+                  "auth_type": {
+                    "examples": [
+                      1
+                    ],
+                    "type": "integer"
+                  },
+                  "client_count": {
+                    "examples": [
+                      0
+                    ],
+                    "type": "integer"
+                  },
+                  "group_id": {
+                    "examples": [
+                      96318
+                    ],
+                    "type": "integer"
+                  },
+                  "group_name": {
+                    "type": "string"
+                  },
+                  "group_type": {
+                    "examples": [
+                      1
+                    ],
+                    "type": "integer"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "procedure": {
+                    "examples": [
+                      1
+                    ],
+                    "type": "integer"
+                  },
+                  "show": {
+                    "examples": [
+                      false
+                    ],
+                    "type": "boolean"
+                  },
+                  "username": {
+                    "type": "string"
+                  },
+                  "work_mode": {
+                    "examples": [
+                      "modern"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "ovpn-client.get_recommend_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "err_code": {
+              "examples": [
+                20001011
+              ],
+              "type": "integer"
+            },
+            "err_msg": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "ovpn-client.get_third_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "err_code": {
+              "examples": [
+                20001011
+              ],
+              "type": "integer"
+            },
+            "err_msg": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "ovpn-server.get_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "access_scope": {
+              "examples": [
+                1
+              ],
+              "type": "integer"
+            },
+            "auth": {
+              "examples": [
+                "SHA256"
+              ],
+              "type": "string"
+            },
+            "cipher": {
+              "examples": [
+                "AES-256-GCM"
+              ],
+              "type": "string"
+            },
+            "client_auth": {
+              "examples": [
+                1
+              ],
+              "type": "integer"
+            },
+            "client_to_client": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "dh": {
+              "type": "string"
+            },
+            "end": {
+              "format": "ipv4",
+              "type": "string"
+            },
+            "hmac": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "initialization": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "local_access": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "lzo": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "mask": {
+              "format": "ipv4",
+              "type": "string"
+            },
+            "mode": {
+              "examples": [
+                "tun"
+              ],
+              "type": "string"
+            },
+            "port": {
+              "examples": [
+                1194
+              ],
+              "type": "integer"
+            },
+            "proto": {
+              "examples": [
+                "udp"
+              ],
+              "type": "string"
+            },
+            "start": {
+              "format": "ipv4",
+              "type": "string"
+            },
+            "subnetv4": {
+              "format": "ipv4",
+              "type": "string"
+            },
+            "subnetv6": {
+              "type": "string"
+            },
+            "tap_address": {
+              "format": "ipv4",
+              "type": "string"
+            },
+            "tap_mask": {
+              "format": "ipv4",
+              "type": "string"
+            },
+            "verb": {
+              "examples": [
+                "3"
+              ],
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "ovpn-server.get_route_list",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "ipv4_route_rules": {
+              "items": {},
+              "type": "array"
+            },
+            "ipv6_route_rules": {
+              "items": {},
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "ovpn-server.get_setting",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "local_access": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "masq": {
+              "examples": [
+                true
+              ],
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "ovpn-server.get_status",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "initialization": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "log": {
+              "type": "string"
+            },
+            "rx_bytes": {
+              "examples": [
+                0
+              ],
+              "type": "integer"
+            },
+            "status": {
+              "examples": [
+                0
+              ],
+              "type": "integer"
+            },
+            "tunnel_ip": {
+              "type": "string"
+            },
+            "tx_bytes": {
+              "examples": [
+                0
+              ],
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "ovpn-server.get_user_list",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "user_list": {
+              "items": {},
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "parental-control.get_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "enable": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "groups": {
+              "items": {},
+              "type": "array"
+            },
+            "init": {
+              "examples": [
+                true
+              ],
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "plugins.get_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "source": {
+              "items": {
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "system": {
+                    "examples": [
+                      true
+                    ],
+                    "type": "boolean"
+                  },
+                  "url": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "plugins.get_list",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "items": {},
+          "type": "array"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "plugins.get_package_info",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "err_code": {
+              "examples": [
+                -4
+              ],
+              "type": "integer"
+            },
+            "err_msg": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "plugins.get_repository_status",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "count_all": {
+              "examples": [
+                18
+              ],
+              "type": "integer"
+            },
+            "count_installed": {
+              "examples": [
+                0
+              ],
+              "type": "integer"
+            },
+            "count_not_installed": {
+              "examples": [
+                0
+              ],
+              "type": "integer"
+            },
+            "count_reserve": {
+              "examples": [
+                18
+              ],
+              "type": "integer"
+            },
+            "count_updatable": {
+              "examples": [
+                0
+              ],
+              "type": "integer"
+            },
+            "status": {
+              "examples": [
+                2
+              ],
+              "type": "integer"
+            },
+            "time_current": {
+              "examples": [
+                1790439969
+              ],
+              "type": "integer"
+            },
+            "time_last_update": {
+              "examples": [
+                0
+              ],
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "qos.get_client_list",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "clients": {
+              "items": {},
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "qos.get_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "enable": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "mode": {
+              "examples": [
+                "0"
+              ],
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "qos.get_device_group",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "group": {
+              "items": {},
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "repeater.get_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "auto": {
+              "examples": [
+                true
+              ],
+              "type": "boolean"
+            },
+            "dfs_support": {
+              "examples": [
+                true
+              ],
+              "type": "boolean"
+            },
+            "macaddr": {
+              "format": "mac",
+              "type": "string"
+            },
+            "smart_reconnect": {
+              "examples": [
+                true
+              ],
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "repeater.get_saved_ap_list",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "res": {
+              "items": {
+                "properties": {
+                  "auto_portal": {
+                    "examples": [
+                      false
+                    ],
+                    "type": "boolean"
+                  },
+                  "disguise": {
+                    "examples": [
+                      false
+                    ],
+                    "type": "boolean"
+                  },
+                  "key": {
+                    "type": "string"
+                  },
+                  "macaddr": {
+                    "properties": {
+                      "macaddr": {
+                        "format": "mac",
+                        "type": "string"
+                      },
+                      "mode": {
+                        "examples": [
+                          "random"
+                        ],
+                        "type": "string"
+                      },
+                      "update": {
+                        "examples": [
+                          "none"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "manual": {
+                    "examples": [
+                      false
+                    ],
+                    "type": "boolean"
+                  },
+                  "protocol": {
+                    "examples": [
+                      "dhcp"
+                    ],
+                    "type": "string"
+                  },
+                  "ssid": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "repeater.get_status",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "band": {
+              "examples": [
+                "2g"
+              ],
+              "type": "string"
+            },
+            "bare_mode": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "bssid": {
+              "format": "mac",
+              "type": "string"
+            },
+            "channel": {
+              "examples": [
+                1
+              ],
+              "type": "integer"
+            },
+            "config": {
+              "properties": {
+                "auto_portal": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "disguise": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "key": {
+                  "type": "string"
+                },
+                "macaddr": {
+                  "properties": {
+                    "macaddr": {
+                      "format": "mac",
+                      "type": "string"
+                    },
+                    "mode": {
+                      "examples": [
+                        "random"
+                      ],
+                      "type": "string"
+                    },
+                    "update": {
+                      "examples": [
+                        "none"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "manual": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "protocol": {
+                  "examples": [
+                    "dhcp"
+                  ],
+                  "type": "string"
+                },
+                "remember": {
+                  "examples": [
+                    true
+                  ],
+                  "type": "boolean"
+                },
+                "ssid": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "connected": {
+              "type": "string"
+            },
+            "device": {
+              "examples": [
+                "radio0"
+              ],
+              "type": "string"
+            },
+            "dfs": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "fail_type": {
+              "type": "string"
+            },
+            "htmode": {
+              "examples": [
+                "HT20"
+              ],
+              "type": "string"
+            },
+            "ipv4": {
+              "properties": {
+                "dns": {
+                  "items": {
+                    "format": "ipv4",
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "gateway": {
+                  "format": "ipv4",
+                  "type": "string"
+                },
+                "ip": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "macaddr": {
+              "format": "mac",
+              "type": "string"
+            },
+            "network": {
+              "examples": [
+                "wwan"
+              ],
+              "type": "string"
+            },
+            "portal": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "portal_detecting": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "portal_info": {
+              "properties": {
+                "auth_mode": {
+                  "examples": [
+                    0
+                  ],
+                  "type": "integer"
+                },
+                "password": {
+                  "type": "string"
+                },
+                "username": {
+                  "type": "string"
+                },
+                "voucher": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "running": {
+              "examples": [
+                true
+              ],
+              "type": "boolean"
+            },
+            "signal": {
+              "examples": [
+                -42
+              ],
+              "type": "integer"
+            },
+            "ssid": {
+              "type": "string"
+            },
+            "state": {
+              "examples": [
+                2
+              ],
+              "type": "integer"
+            },
+            "state_s": {
+              "examples": [
+                "connected"
+              ],
+              "type": "string"
+            },
+            "wifi_generation": {
+              "examples": [
+                "4"
+              ],
+              "type": "string"
+            },
+            "wpa_status": {
+              "properties": {
+                "address": {
+                  "format": "mac",
+                  "type": "string"
+                },
+                "bssid": {
+                  "format": "mac",
+                  "type": "string"
+                },
+                "freq": {
+                  "examples": [
+                    "2412"
+                  ],
+                  "type": "string"
+                },
+                "group_cipher": {
+                  "examples": [
+                    "CCMP"
+                  ],
+                  "type": "string"
+                },
+                "id": {
+                  "examples": [
+                    "0"
+                  ],
+                  "type": "string"
+                },
+                "ip_address": {
+                  "format": "ipv4",
+                  "type": "string"
+                },
+                "key_mgmt": {
+                  "type": "string"
+                },
+                "mode": {
+                  "examples": [
+                    "station"
+                  ],
+                  "type": "string"
+                },
+                "pairwise_cipher": {
+                  "examples": [
+                    "CCMP"
+                  ],
+                  "type": "string"
+                },
+                "ssid": {
+                  "type": "string"
+                },
+                "uuid": {
+                  "type": "string"
+                },
+                "wifi_generation": {
+                  "examples": [
+                    "4"
+                  ],
+                  "type": "string"
+                },
+                "wpa_state": {
+                  "examples": [
+                    "COMPLETED"
+                  ],
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "rtty.get_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "ssh_enabled": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "web_enabled": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "s2s.get_status",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "status": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "sms-forward.get_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "err_code": {
+              "examples": [
+                -1
+              ],
+              "type": "integer"
+            },
+            "err_msg": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "sqm.get_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "download": {
+              "type": "string"
+            },
+            "enable": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "qdisc": {
+              "examples": [
+                "cake"
+              ],
+              "type": "string"
+            },
+            "upload": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "switch-button.get_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "func": {
+              "examples": [
+                "none"
+              ],
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "switch-button.get_funcs",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "funcs": {
+              "items": {
+                "properties": {
+                  "func": {
+                    "examples": [
+                      "adguardhome"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "system.disk_info",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "root": {
+              "properties": {
+                "free": {
+                  "examples": [
+                    129024000
+                  ],
+                  "type": "integer"
+                },
+                "total": {
+                  "examples": [
+                    152784896
+                  ],
+                  "type": "integer"
+                },
+                "used": {
+                  "examples": [
+                    18808832
+                  ],
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            },
+            "tmp": {
+              "properties": {
+                "free": {
+                  "examples": [
+                    246194176
+                  ],
+                  "type": "integer"
+                },
+                "total": {
+                  "examples": [
+                    252022784
+                  ],
+                  "type": "integer"
+                },
+                "used": {
+                  "examples": [
+                    5828608
+                  ],
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "system.get_httpd_mem_status",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "memory_used": {
+              "examples": [
+                19596
+              ],
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "system.get_info",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "board_info": {
+              "properties": {
+                "architecture": {
+                  "type": "string"
+                },
+                "hostname": {
+                  "type": "string"
+                },
+                "kernel_version": {
+                  "examples": [
+                    "6.12.94"
+                  ],
+                  "type": "string"
+                },
+                "model": {
+                  "type": "string"
+                },
+                "openwrt_version": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "country_code": {
+              "examples": [
+                "DE"
+              ],
+              "type": "string"
+            },
+            "cpu_num": {
+              "examples": [
+                2
+              ],
+              "type": "integer"
+            },
+            "ddns": {
+              "type": "string"
+            },
+            "device_type": {
+              "examples": [
+                1
+              ],
+              "type": "integer"
+            },
+            "firmware_date": {
+              "format": "date-time",
+              "type": "string"
+            },
+            "firmware_type": {
+              "examples": [
+                "beta3"
+              ],
+              "type": "string"
+            },
+            "firmware_version": {
+              "examples": [
+                "4.9.1-op25"
+              ],
+              "type": "string"
+            },
+            "hardware_feature": {
+              "properties": {
+                "bluetooth": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "build_in_modem": {
+                  "type": "string"
+                },
+                "fan": {
+                  "examples": [
+                    true
+                  ],
+                  "type": "boolean"
+                },
+                "gps": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "hwnat": {
+                  "examples": [
+                    true
+                  ],
+                  "type": "boolean"
+                },
+                "lan": {
+                  "examples": [
+                    "eth1"
+                  ],
+                  "type": "string"
+                },
+                "lcd_sched": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "mcu": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "microsd": {
+                  "type": "string"
+                },
+                "modem_reset": {
+                  "examples": [
+                    2
+                  ],
+                  "type": "integer"
+                },
+                "nand": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "noled": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "nowds": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "radio": {
+                  "type": "string"
+                },
+                "reset_button": {
+                  "examples": [
+                    "gpio-456"
+                  ],
+                  "type": "string"
+                },
+                "rs485": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "screen": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "simo": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "slot": {
+                  "examples": [
+                    "single"
+                  ],
+                  "type": "string"
+                },
+                "submodel": {
+                  "type": "string"
+                },
+                "switch_button": {
+                  "examples": [
+                    "gpio-455"
+                  ],
+                  "type": "string"
+                },
+                "usb": {
+                  "type": "string"
+                },
+                "usb3": {
+                  "examples": [
+                    "2-1"
+                  ],
+                  "type": "string"
+                },
+                "usb_power": {
+                  "type": "string"
+                },
+                "usb_reset": {
+                  "type": "string"
+                },
+                "wan": {
+                  "examples": [
+                    "eth0"
+                  ],
+                  "type": "string"
+                },
+                "wifi_type": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "hardware_version": {
+              "type": "string"
+            },
+            "hidden_features": {
+              "items": {},
+              "type": "array"
+            },
+            "mac": {
+              "format": "mac",
+              "type": "string"
+            },
+            "model": {
+              "examples": [
+                "mt3000"
+              ],
+              "type": "string"
+            },
+            "sn": {
+              "type": "string"
+            },
+            "sn_bak": {
+              "type": "string"
+            },
+            "software_feature": {
+              "properties": {
+                "adguard": {
+                  "examples": [
+                    true
+                  ],
+                  "type": "boolean"
+                },
+                "astrowarp_lite": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "bark": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "cellular_ref": {
+                  "examples": [
+                    "1.0"
+                  ],
+                  "type": "string"
+                },
+                "cellular_upgrade": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "ids_ips": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "ipv6": {
+                  "examples": [
+                    true
+                  ],
+                  "type": "boolean"
+                },
+                "is_need_6g_bssid_sync": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "ksmbd": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "minimum_temperature": {
+                  "examples": [
+                    70
+                  ],
+                  "type": "integer"
+                },
+                "mlo": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "nas": {
+                  "examples": [
+                    true
+                  ],
+                  "type": "boolean"
+                },
+                "obfuscation": {
+                  "examples": [
+                    true
+                  ],
+                  "type": "boolean"
+                },
+                "passthrough": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "repeater_eap": {
+                  "examples": [
+                    true
+                  ],
+                  "type": "boolean"
+                },
+                "secondwan": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "sms_forward": {
+                  "examples": [
+                    true
+                  ],
+                  "type": "boolean"
+                },
+                "tor": {
+                  "examples": [
+                    true
+                  ],
+                  "type": "boolean"
+                },
+                "vlan": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "vpn": {
+                  "examples": [
+                    true
+                  ],
+                  "type": "boolean"
+                }
+              },
+              "type": "object"
+            },
+            "vendor": {
+              "examples": [
+                "GL.iNet"
+              ],
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-gli4py": "router_info",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "system.get_load",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "load_average": {
+              "items": {
+                "examples": [
+                  0.09
+                ],
+                "type": "number"
+              },
+              "type": "array"
+            },
+            "memory_buff_cache": {
+              "examples": [
+                130662400
+              ],
+              "type": "integer"
+            },
+            "memory_free": {
+              "examples": [
+                96202752
+              ],
+              "type": "integer"
+            },
+            "memory_total": {
+              "examples": [
+                504049664
+              ],
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-gli4py": "router_get_load",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "system.get_security_policy",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "redirect_https": {
+              "examples": [
+                0
+              ],
+              "type": "integer"
+            },
+            "security_rule": {
+              "examples": [
+                1
+              ],
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "system.get_status",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "client": {
+              "items": {
+                "properties": {
+                  "auto_remove_offline": {
+                    "examples": [
+                      false
+                    ],
+                    "type": "boolean"
+                  },
+                  "cable_total": {
+                    "examples": [
+                      0
+                    ],
+                    "type": "integer"
+                  },
+                  "wireless_total": {
+                    "examples": [
+                      1
+                    ],
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "network": {
+              "items": {
+                "properties": {
+                  "interface": {
+                    "examples": [
+                      "modem_1_1_2_6"
+                    ],
+                    "type": "string"
+                  },
+                  "online": {
+                    "examples": [
+                      true
+                    ],
+                    "type": "boolean"
+                  },
+                  "up": {
+                    "examples": [
+                      false
+                    ],
+                    "type": "boolean"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "service": {
+              "items": {
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "examples": [
+                      0
+                    ],
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "system": {
+              "properties": {
+                "content_protection_enabled": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "cpu": {
+                  "properties": {
+                    "temperature": {
+                      "examples": [
+                        61
+                      ],
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                },
+                "ddns_enabled": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "dpi_info": {
+                  "properties": {
+                    "lib_update_time": {
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "lib_version": {
+                      "examples": [
+                        "20260226_01"
+                      ],
+                      "type": "string"
+                    },
+                    "status": {
+                      "examples": [
+                        "0"
+                      ],
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "flash_app": {
+                  "examples": [
+                    18808832
+                  ],
+                  "type": "integer"
+                },
+                "flash_free": {
+                  "examples": [
+                    129024000
+                  ],
+                  "type": "integer"
+                },
+                "flash_total": {
+                  "examples": [
+                    268435456
+                  ],
+                  "type": "integer"
+                },
+                "flow_statistics_enabled": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "guest_ip": {
+                  "format": "ipv4",
+                  "type": "string"
+                },
+                "guest_netmask": {
+                  "format": "ipv4",
+                  "type": "string"
+                },
+                "iot_ip": {
+                  "format": "ipv4",
+                  "type": "string"
+                },
+                "iot_netmask": {
+                  "format": "ipv4",
+                  "type": "string"
+                },
+                "ipv6_enabled": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "lan_ip": {
+                  "format": "ipv4",
+                  "type": "string"
+                },
+                "lan_netmask": {
+                  "format": "ipv4",
+                  "type": "string"
+                },
+                "load_average": {
+                  "items": {
+                    "examples": [
+                      0.09
+                    ],
+                    "type": "number"
+                  },
+                  "type": "array"
+                },
+                "memory_buff_cache": {
+                  "examples": [
+                    130662400
+                  ],
+                  "type": "integer"
+                },
+                "memory_free": {
+                  "examples": [
+                    96202752
+                  ],
+                  "type": "integer"
+                },
+                "memory_total": {
+                  "examples": [
+                    504049664
+                  ],
+                  "type": "integer"
+                },
+                "mode": {
+                  "examples": [
+                    0
+                  ],
+                  "type": "integer"
+                },
+                "netnat_enabled": {
+                  "examples": [
+                    true
+                  ],
+                  "type": "boolean"
+                },
+                "prio_enabled": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "qos_enabled": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "sqm_enabled": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "time_sync_status": {
+                  "examples": [
+                    true
+                  ],
+                  "type": "boolean"
+                },
+                "timestamp": {
+                  "examples": [
+                    1790439965
+                  ],
+                  "type": "integer"
+                },
+                "tzoffset": {
+                  "type": "string"
+                },
+                "uptime": {
+                  "examples": [
+                    3559.81
+                  ],
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            },
+            "wifi": {
+              "items": {
+                "properties": {
+                  "band": {
+                    "examples": [
+                      "2G"
+                    ],
+                    "type": "string"
+                  },
+                  "channel": {
+                    "examples": [
+                      0
+                    ],
+                    "type": "integer"
+                  },
+                  "encryption": {
+                    "examples": [
+                      "sae"
+                    ],
+                    "type": "string"
+                  },
+                  "guest": {
+                    "examples": [
+                      false
+                    ],
+                    "type": "boolean"
+                  },
+                  "hidden": {
+                    "examples": [
+                      false
+                    ],
+                    "type": "boolean"
+                  },
+                  "init": {
+                    "examples": [
+                      true
+                    ],
+                    "type": "boolean"
+                  },
+                  "iot": {
+                    "examples": [
+                      false
+                    ],
+                    "type": "boolean"
+                  },
+                  "mld": {
+                    "examples": [
+                      false
+                    ],
+                    "type": "boolean"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "passwd": {
+                    "type": "string"
+                  },
+                  "ssid": {
+                    "type": "string"
+                  },
+                  "up": {
+                    "examples": [
+                      true
+                    ],
+                    "type": "boolean"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-gli4py": "router_get_status",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "system.get_timezone_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "autotimezone_enabled": {
+              "examples": [
+                true
+              ],
+              "type": "boolean"
+            },
+            "localtime": {
+              "examples": [
+                1790447165
+              ],
+              "type": "integer"
+            },
+            "timestamp": {
+              "examples": [
+                1790439965
+              ],
+              "type": "integer"
+            },
+            "timezone": {
+              "type": "string"
+            },
+            "tzoffset": {
+              "type": "string"
+            },
+            "zonename": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "system.get_unixtime",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "time": {
+              "examples": [
+                1790439965
+              ],
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "tailscale.get_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "enabled": {
+              "examples": [
+                true
+              ],
+              "type": "boolean"
+            },
+            "lan_enabled": {
+              "examples": [
+                true
+              ],
+              "type": "boolean"
+            },
+            "lan_ip": {
+              "type": "string"
+            },
+            "masq": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "run_exit_node": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "wan_enabled": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-gli4py": "tailscale_configured",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "tailscale.get_status",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "address_v4": {
+              "format": "ipv4",
+              "type": "string"
+            },
+            "dns": {
+              "items": {
+                "format": "ipv4",
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "login_name": {
+              "type": "string"
+            },
+            "status": {
+              "examples": [
+                3
+              ],
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-gli4py": "tailscale_connection_state",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "tethering.get_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "items": {},
+          "type": "array"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "tethering.get_status",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "devices": {
+              "items": {},
+              "type": "array"
+            },
+            "status": {
+              "examples": [
+                0
+              ],
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "tor.get_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "countries": {
+              "items": {},
+              "type": "array"
+            },
+            "enable": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "manual": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "tor.get_status",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "items": {},
+          "type": "array"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "ui.check_initialized",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "environment_support": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "firmware_category": {
+              "examples": [
+                "2c"
+              ],
+              "type": "string"
+            },
+            "firmware_version": {
+              "examples": [
+                "4.9.1-op25"
+              ],
+              "type": "string"
+            },
+            "hostname": {
+              "type": "string"
+            },
+            "inited_agent": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "inited_internet": {
+              "examples": [
+                true
+              ],
+              "type": "boolean"
+            },
+            "initialized": {
+              "examples": [
+                true
+              ],
+              "type": "boolean"
+            },
+            "mac": {
+              "format": "mac",
+              "type": "string"
+            },
+            "model": {
+              "examples": [
+                "mt3000"
+              ],
+              "type": "string"
+            },
+            "partner": {
+              "type": "string"
+            },
+            "security_rule": {
+              "examples": [
+                1
+              ],
+              "type": "integer"
+            },
+            "support_screen_init": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "time_info": {
+              "properties": {
+                "api_extra": {
+                  "examples": [
+                    0
+                  ],
+                  "type": "integer"
+                },
+                "init": {
+                  "examples": [
+                    3
+                  ],
+                  "type": "integer"
+                },
+                "reboot": {
+                  "examples": [
+                    60
+                  ],
+                  "type": "integer"
+                },
+                "upgrade": {
+                  "examples": [
+                    120
+                  ],
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            },
+            "vpn_wizard_done": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "ui.get_lang",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "lang": {
+              "examples": [
+                "en"
+              ],
+              "type": "string"
+            },
+            "list": {
+              "items": {
+                "properties": {
+                  "id": {
+                    "examples": [
+                      16
+                    ],
+                    "type": "integer"
+                  },
+                  "label": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "examples": [
+                      "de"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "ui.get_menu_list",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "menus": {
+              "items": {
+                "properties": {
+                  "disables": {
+                    "items": {
+                      "examples": [
+                        "taps2s"
+                      ],
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "hidden_mode": {
+                    "items": {
+                      "examples": [
+                        "agent"
+                      ],
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "index": {
+                    "examples": [
+                      15
+                    ],
+                    "type": "integer"
+                  },
+                  "level": {
+                    "examples": [
+                      2
+                    ],
+                    "type": "integer"
+                  },
+                  "parent": {
+                    "examples": [
+                      "security"
+                    ],
+                    "type": "string"
+                  },
+                  "parent_icon": {
+                    "examples": [
+                      "security"
+                    ],
+                    "type": "string"
+                  },
+                  "parent_index": {
+                    "examples": [
+                      50
+                    ],
+                    "type": "integer"
+                  },
+                  "title": {
+                    "properties": {
+                      "translate": {
+                        "examples": [
+                          "menu_acl"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "view": {
+                    "examples": [
+                      "acl-view"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "ui.load_locales",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {}
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "needs_params"
+    },
+    {
+      "name": "upgrade.check_firmware_local",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "sha256": {
+              "type": "string"
+            },
+            "status": {
+              "examples": [
+                5
+              ],
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "upgrade.get_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "prompt": {
+              "examples": [
+                true
+              ],
+              "type": "boolean"
+            },
+            "upgrade_enable": {
+              "examples": [
+                true
+              ],
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "upgrade.get_online_upgrade_status",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "items": {},
+          "type": "array"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "vpn-client.get_status",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "mode": {
+              "examples": [
+                0
+              ],
+              "type": "integer"
+            },
+            "status_list": {
+              "items": {
+                "properties": {
+                  "domain": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "enabled": {
+                    "examples": [
+                      false
+                    ],
+                    "type": "boolean"
+                  },
+                  "group_id": {
+                    "examples": [
+                      8791
+                    ],
+                    "type": "integer"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "peer_id": {
+                    "examples": [
+                      1800
+                    ],
+                    "type": "integer"
+                  },
+                  "peer_name": {
+                    "type": "string"
+                  },
+                  "port": {
+                    "examples": [
+                      443
+                    ],
+                    "type": "integer"
+                  },
+                  "tunnel_id": {
+                    "examples": [
+                      10
+                    ],
+                    "type": "integer"
+                  },
+                  "type": {
+                    "examples": [
+                      "wireguard"
+                    ],
+                    "type": "string"
+                  },
+                  "via": {
+                    "examples": [
+                      "wgclient1"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-gli4py": "wireguard_client_state",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "vpn-client.get_tunnel",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "default_tunnels": {
+              "items": {
+                "properties": {
+                  "enabled": {
+                    "examples": [
+                      true
+                    ],
+                    "type": "boolean"
+                  },
+                  "from": {
+                    "properties": {
+                      "type": {
+                        "examples": [
+                          "default"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "id": {
+                    "examples": [
+                      "cfg02548a"
+                    ],
+                    "type": "string"
+                  },
+                  "killswitch": {
+                    "examples": [
+                      false
+                    ],
+                    "type": "boolean"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "to": {
+                    "properties": {
+                      "domain_list": {
+                        "type": "string"
+                      },
+                      "domain_list_len": {
+                        "examples": [
+                          0
+                        ],
+                        "type": "integer"
+                      },
+                      "manual": {
+                        "examples": [
+                          true
+                        ],
+                        "type": "boolean"
+                      },
+                      "type": {
+                        "examples": [
+                          "default"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "tunnel_id": {
+                    "examples": [
+                      100
+                    ],
+                    "type": "integer"
+                  },
+                  "via": {
+                    "properties": {
+                      "via": {
+                        "examples": [
+                          "novpn"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "global_enabled": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "tunnels": {
+              "items": {
+                "properties": {
+                  "enabled": {
+                    "examples": [
+                      false
+                    ],
+                    "type": "boolean"
+                  },
+                  "from": {
+                    "properties": {
+                      "type": {
+                        "examples": [
+                          "default"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "id": {
+                    "examples": [
+                      "cfg0492bd"
+                    ],
+                    "type": "string"
+                  },
+                  "killswitch": {
+                    "examples": [
+                      true
+                    ],
+                    "type": "boolean"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "options": {
+                    "properties": {
+                      "local_access": {
+                        "examples": [
+                          false
+                        ],
+                        "type": "boolean"
+                      },
+                      "masq": {
+                        "examples": [
+                          true
+                        ],
+                        "type": "boolean"
+                      },
+                      "options_in_used": {
+                        "examples": [
+                          false
+                        ],
+                        "type": "boolean"
+                      },
+                      "service_policy": {
+                        "examples": [
+                          false
+                        ],
+                        "type": "boolean"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "to": {
+                    "properties": {
+                      "domain_list": {
+                        "type": "string"
+                      },
+                      "domain_list_len": {
+                        "examples": [
+                          0
+                        ],
+                        "type": "integer"
+                      },
+                      "manual": {
+                        "examples": [
+                          true
+                        ],
+                        "type": "boolean"
+                      },
+                      "type": {
+                        "examples": [
+                          "default"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "tunnel_id": {
+                    "examples": [
+                      10
+                    ],
+                    "type": "integer"
+                  },
+                  "via": {
+                    "properties": {
+                      "configs": {
+                        "items": {
+                          "properties": {
+                            "group_id": {
+                              "examples": [
+                                8791
+                              ],
+                              "type": "integer"
+                            },
+                            "id_list": {
+                              "items": {
+                                "examples": [
+                                  1800
+                                ],
+                                "type": "integer"
+                              },
+                              "type": "array"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "type": "array"
+                      },
+                      "type": {
+                        "examples": [
+                          "wireguard"
+                        ],
+                        "type": "string"
+                      },
+                      "via": {
+                        "examples": [
+                          "wgclient1"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "wg-client.check_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "err_code": {
+              "examples": [
+                20001011
+              ],
+              "type": "integer"
+            },
+            "err_msg": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "wg-client.get_all_config_list",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "config_list": {
+              "items": {
+                "properties": {
+                  "auth_type": {
+                    "examples": [
+                      1
+                    ],
+                    "type": "integer"
+                  },
+                  "group_id": {
+                    "examples": [
+                      10000
+                    ],
+                    "type": "integer"
+                  },
+                  "group_name": {
+                    "type": "string"
+                  },
+                  "group_type": {
+                    "examples": [
+                      1
+                    ],
+                    "type": "integer"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "peers": {
+                    "items": {},
+                    "type": "array"
+                  },
+                  "username": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-gli4py": "wireguard_client_list",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "wg-client.get_config_list",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "err_code": {
+              "examples": [
+                20001011
+              ],
+              "type": "integer"
+            },
+            "err_msg": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "wg-client.get_group_list",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "groups": {
+              "items": {
+                "properties": {
+                  "auth_type": {
+                    "examples": [
+                      1
+                    ],
+                    "type": "integer"
+                  },
+                  "group_id": {
+                    "examples": [
+                      10000
+                    ],
+                    "type": "integer"
+                  },
+                  "group_name": {
+                    "type": "string"
+                  },
+                  "group_type": {
+                    "examples": [
+                      1
+                    ],
+                    "type": "integer"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "peer_count": {
+                    "examples": [
+                      0
+                    ],
+                    "type": "integer"
+                  },
+                  "procedure": {
+                    "examples": [
+                      0
+                    ],
+                    "type": "integer"
+                  },
+                  "show": {
+                    "examples": [
+                      false
+                    ],
+                    "type": "boolean"
+                  },
+                  "username": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "wg-client.get_recommend_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "err_code": {
+              "examples": [
+                20001011
+              ],
+              "type": "integer"
+            },
+            "err_msg": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "wg-client.get_third_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "err_code": {
+              "examples": [
+                20001011
+              ],
+              "type": "integer"
+            },
+            "err_msg": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "wg-server.get_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "address_v4": {
+              "type": "string"
+            },
+            "address_v6": {
+              "type": "string"
+            },
+            "initialization": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "local_access": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "obfuscation": {
+              "examples": [
+                0
+              ],
+              "type": "integer"
+            },
+            "port": {
+              "examples": [
+                51820
+              ],
+              "type": "integer"
+            },
+            "private_key": {
+              "type": "string"
+            },
+            "public_key": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "wg-server.get_peer_list",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "peers": {
+              "items": {},
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "wg-server.get_route_list",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "ipv4_route_rules": {
+              "items": {},
+              "type": "array"
+            },
+            "ipv6_route_rules": {
+              "items": {},
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "wg-server.get_setting",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "client_to_client": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "local_access": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "masq": {
+              "examples": [
+                true
+              ],
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "wg-server.get_status",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "peers": {
+              "items": {},
+              "type": "array"
+            },
+            "server": {
+              "properties": {
+                "initialization": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                },
+                "log": {
+                  "type": "string"
+                },
+                "rx_bytes": {
+                  "examples": [
+                    0
+                  ],
+                  "type": "integer"
+                },
+                "status": {
+                  "examples": [
+                    0
+                  ],
+                  "type": "integer"
+                },
+                "tunnel_ip": {
+                  "type": "string"
+                },
+                "tx_bytes": {
+                  "examples": [
+                    0
+                  ],
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "wifi.get_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "bandmode": {
+              "items": {},
+              "type": "array"
+            },
+            "dfs_support": {
+              "examples": [
+                true
+              ],
+              "type": "boolean"
+            },
+            "res": {
+              "items": {
+                "properties": {
+                  "band": {
+                    "examples": [
+                      "2G"
+                    ],
+                    "type": "string"
+                  },
+                  "channel": {
+                    "examples": [
+                      1
+                    ],
+                    "type": "integer"
+                  },
+                  "channels": {
+                    "items": {
+                      "properties": {
+                        "channel": {
+                          "examples": [
+                            1
+                          ],
+                          "type": "integer"
+                        },
+                        "dfs": {
+                          "examples": [
+                            false
+                          ],
+                          "type": "boolean"
+                        },
+                        "psc": {
+                          "examples": [
+                            false
+                          ],
+                          "type": "boolean"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "device": {
+                    "examples": [
+                      "radio0"
+                    ],
+                    "type": "string"
+                  },
+                  "encryptions": {
+                    "items": {
+                      "examples": [
+                        "none"
+                      ],
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "htmode": {
+                    "examples": [
+                      "40"
+                    ],
+                    "type": "string"
+                  },
+                  "htmodes": {
+                    "properties": {
+                      "11b/g/n": {
+                        "examples": [
+                          40
+                        ],
+                        "type": "integer"
+                      },
+                      "11b/g/n/ax": {
+                        "examples": [
+                          40
+                        ],
+                        "type": "integer"
+                      },
+                      "11g/n/ax": {
+                        "examples": [
+                          40
+                        ],
+                        "type": "integer"
+                      },
+                      "11n/ax": {
+                        "examples": [
+                          40
+                        ],
+                        "type": "integer"
+                      },
+                      "auto": {
+                        "examples": [
+                          true
+                        ],
+                        "type": "boolean"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "hwmode": {
+                    "type": "string"
+                  },
+                  "hwmodes": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "ifaces": {
+                    "items": {
+                      "properties": {
+                        "bssid": {
+                          "format": "mac",
+                          "type": "string"
+                        },
+                        "enabled": {
+                          "examples": [
+                            true
+                          ],
+                          "type": "boolean"
+                        },
+                        "encryption": {
+                          "examples": [
+                            "sae"
+                          ],
+                          "type": "string"
+                        },
+                        "guest": {
+                          "examples": [
+                            false
+                          ],
+                          "type": "boolean"
+                        },
+                        "hidden": {
+                          "examples": [
+                            false
+                          ],
+                          "type": "boolean"
+                        },
+                        "init": {
+                          "examples": [
+                            true
+                          ],
+                          "type": "boolean"
+                        },
+                        "iot": {
+                          "examples": [
+                            false
+                          ],
+                          "type": "boolean"
+                        },
+                        "key": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "random_bssid": {
+                          "examples": [
+                            true
+                          ],
+                          "type": "boolean"
+                        },
+                        "ssid": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "txpower": {
+                    "examples": [
+                      "Max"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-gli4py": "wifi_ifaces_get",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "wifi.get_mlo_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "res": {
+              "properties": {
+                "encryptions": {
+                  "items": {
+                    "examples": [
+                      "none"
+                    ],
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "ifaces": {
+                  "items": {},
+                  "type": "array"
+                },
+                "random_bssid": {
+                  "examples": [
+                    false
+                  ],
+                  "type": "boolean"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "wifi.get_status",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "res": {
+              "items": {
+                "properties": {
+                  "channel": {
+                    "examples": [
+                      1
+                    ],
+                    "type": "integer"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "state": {
+                    "examples": [
+                      "ready"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "zerotier.get_config",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "properties": {
+            "enabled": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "lan_enabled": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            },
+            "wan_enabled": {
+              "examples": [
+                false
+              ],
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    },
+    {
+      "name": "zerotier.get_status",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "items": {},
+          "type": "array"
+        }
+      },
+      "x-discovered-by": "catalog",
+      "x-risk": "read",
+      "x-status": "available"
+    }
+  ],
+  "openrpc": "1.2.6",
+  "x-capabilities": {
+    "country_code": "DE",
+    "hardware_feature": {
+      "bluetooth": false,
+      "build_in_modem": "",
+      "fan": true,
+      "gps": false,
+      "hwnat": true,
+      "lan": "eth1",
+      "lcd_sched": false,
+      "mcu": false,
+      "microsd": "",
+      "modem_reset": 2,
+      "nand": false,
+      "noled": false,
+      "nowds": false,
+      "radio": "radio0 radio1",
+      "reset_button": "gpio-456",
+      "rs485": false,
+      "screen": false,
+      "simo": false,
+      "slot": "single",
+      "submodel": "",
+      "switch_button": "gpio-455",
+      "usb": "1-1,2-1",
+      "usb3": "2-1",
+      "usb_power": "",
+      "usb_reset": "",
+      "wan": "eth0",
+      "wifi_type": ""
+    },
+    "software_feature": {
+      "adguard": true,
+      "astrowarp_lite": false,
+      "bark": false,
+      "cellular_ref": "1.0",
+      "cellular_upgrade": false,
+      "ids_ips": false,
+      "ipv6": true,
+      "is_need_6g_bssid_sync": false,
+      "ksmbd": false,
+      "minimum_temperature": 70,
+      "mlo": false,
+      "nas": true,
+      "obfuscation": true,
+      "passthrough": false,
+      "repeater_eap": true,
+      "secondwan": false,
+      "sms_forward": true,
+      "tor": true,
+      "vlan": false,
+      "vpn": true
+    }
+  }
+}
