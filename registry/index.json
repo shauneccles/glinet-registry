@@ -1,6 +1,16 @@
 {
   "devices": [
     {
+      "available_count": 173,
+      "country_code": "DE",
+      "discovered_count": 1,
+      "firmware_version": "4.8.5",
+      "id": "e5800_4.8.5",
+      "model": "e5800",
+      "not_wrapped_count": 162,
+      "service_count": 47
+    },
+    {
       "available_count": 145,
       "country_code": "US",
       "discovered_count": 300,
